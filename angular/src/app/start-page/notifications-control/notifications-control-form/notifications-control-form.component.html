@@ -1,0 +1,6 @@
+<div class="notifications-box" *ngIf="data.length > 0">
+  <div class="notifications-box-card" *ngFor="let item of data">
+    {{ item.title }}
+    <mat-slide-toggle></mat-slide-toggle>
+  </div>
+</div>

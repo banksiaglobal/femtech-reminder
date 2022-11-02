@@ -1,0 +1,11 @@
+.notifications-box {
+  max-width: 930px;
+  margin: 0 auto;
+  padding: 30px;
+
+  &-card {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
