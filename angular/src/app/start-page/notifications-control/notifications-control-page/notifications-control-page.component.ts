@@ -10,26 +10,31 @@ export class NotificationsControlPageComponent implements OnInit {
     {
       id: '1',
       title: 'Notification Type 1',
+      description: 'Some description for notification',
       state: true,
     },
     {
       id: '2',
       title: 'Notification Type 2',
+      description: 'Some description for notification',
       state: true,
     },
     {
       id: '3',
       title: 'Notification Type 3',
+      description: 'Some description for notification and some description for notification and some description for notification',
       state: false,
     },
     {
       id: '4',
       title: 'Notification Type 4',
+      description: 'Some description for notification and some description for notification',
       state: true,
     },
     {
       id: '5',
       title: 'Notification Type 5',
+      description: 'Some description for notification',
       state: false,
     },
   ]
@@ -39,7 +44,10 @@ export class NotificationsControlPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onChangeState(event: any) {
-    console.log(event);
+  onChangeState(id: string) {
+    this.notificationsList.map(el => {
+      if (el.id === id) return el.state = !el.state;
+      return;
+    });
   }
 }

@@ -8,5 +8,5 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class NotificationsControlFormComponent {
   @Input() data!: any[];
 
-  @Output() changeState: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() changeState: EventEmitter<string> = new EventEmitter<string>();
 }
