@@ -4,7 +4,7 @@ Class FTR.Production.Operation.TelegramOutRequest Extends Ens.Request
 
 Property ChatId As %String;
 
-Property Text As %String;
+Property Text As %String(MAXLEN = 2500);
 
 Storage Default
 {

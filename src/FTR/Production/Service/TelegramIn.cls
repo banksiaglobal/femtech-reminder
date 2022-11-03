@@ -9,7 +9,7 @@ Parameter HandleCorsRequest = 1;
 
 // 
 
-Method OnProcessInput(pInput As %Stream.GlobalCharacter, Output pOutput As FTR.Production.Service.TelegramResponse) As %Status
+Method OnProcessInput(pInput As %Stream.GlobalCharacter, Output pOutput As FTR.Production.Message.TelegramResponse) As %Status
 {
 	try {		
 		$$$TRACE("hello2")
@@ -23,18 +23,18 @@ Method OnProcessInput(pInput As %Stream.GlobalCharacter, Output pOutput As FTR.P
 		} else {
 			set outRequest=##class(FTR.Production.Operation.TelegramOutRequest).%New()
 			set outRequest.ChatId=json.message.chat.id
-			set outRequest.Text = ..RouterCall(json.message.text, user)
+			set outRequest.Text = ..RouterCall(json.message.text, User)
 			//set outRequest.Text = User.LastMessage 
 			//$$$TRACE(User.LastMessage)
 		}
 		set tSC = ..SendRequestAsync("Operation.TelegramOut",outRequest)
 
-    	set pOutput.JSONResponse = "qwerty"	 
+    	//set pOutput.JSONResponse = "qwerty"	 
 		$$$ThrowOnError(tSC)
 	    
 	 }
 	catch ex {
-		$$$TRACE("ERR")
+		$$$TRACE(ex.DisplayString())
 		set tSC = ex.AsStatus()
 	}
 	return $$$OK
@@ -43,11 +43,11 @@ Method OnProcessInput(pInput As %Stream.GlobalCharacter, Output pOutput As FTR.P
 ClassMethod RouterCall(text As %String, user As FTR.Model.User) As %String
 {
 	if ((text = "/start") && (user.LastMessage = "")) {
-		set q = ..SendHello()
+		set q = "Welcome, if you want to registrating in our reminder please enter /registration"
 		set user.LastMessage = text
 	}
 	elseif ((text = "/registration") && (user.LastMessage = "/start")){
-		set q =  ..BeforeRegistration(user)
+		set q =  "Please, enter your full name and birthday if fromat: FirstName LastName DD/MM/YYYY"
 		set user.LastMessage = text
 	}
 	elseif (user.LastMessage = "/registration"){
@@ -59,7 +59,7 @@ ClassMethod RouterCall(text As %String, user As FTR.Model.User) As %String
 		set q = "Help"
 	}
 	try{
-		Set sc = user.%Save()
+		do user.%Save()
 	}
 	catch ex {
 		set tSC = ex.AsStatus()
@@ -76,16 +76,6 @@ ClassMethod Registration(user As FTR.Production.User, mes As %String) As %Status
 	set user.Date = $PIECE(mes, " ", 3)
 
 	return $$$OK
-}
-
-ClassMethod BeforeRegistration() As %String
-{
-	return "Please, enter your full name and birthday if fromat: FirstName LastName DD/MM/YYYY"
-}
-
-ClassMethod SendHello() As %String
-{
-	return "Welcome, if you want to registrating in our reminder please enter /registration"
 }
 
 }

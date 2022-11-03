@@ -11,12 +11,12 @@ Property TelegramID As %String;
 
 Property LastMessage As %String;
 
-ClassMethod CheckUser(idTelegram As %String) As FTR.Model.User
+ClassMethod CheckUser(telegramId As %String) As FTR.Model.User
 {
-    &sql(select id into :userId from FTR_Model.User where TelegramID = :idTelegram)
+    &sql(select id into :userId from FTR_Model."User" where TelegramID = :telegramId)
     Quit:SQLCODE=0 ##class(FTR.Model.User).%OpenId(userId)
     set User = ##class(FTR.Model.User).%New()
-    set User.TelegramID = idTelegram
+    set User.TelegramID = telegramId
     do User.%Save()
     Quit User
 }
