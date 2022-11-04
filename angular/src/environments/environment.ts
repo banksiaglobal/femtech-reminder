@@ -6,7 +6,7 @@
 
 export const environment = {
   production: false,
-  API_URL:'http://sandbox.banksiaglobal.com:52773/femtech-reminder/patient',
+  API_URL:'http://sandbox.banksiaglobal.com:52773/femtech-reminder',
 };
 
 
