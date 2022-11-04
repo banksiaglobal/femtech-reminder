@@ -46,8 +46,7 @@ export class NotificationsControlPageComponent implements OnInit {
 
   onChangeState(id: string) {
     this.notificationsList.map(el => {
-      if (el.id === id) return el.state = !el.state;
-      return;
+      if (el.id === id) el.state = !el.state;
     });
   }
 }
