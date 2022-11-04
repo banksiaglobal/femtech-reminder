@@ -13,7 +13,7 @@ XData ProductionDefinition
   </Item>
   <Item Name="Ens.Alert" Category="" ClassName="EnsLib.MsgRouter.RoutingEngine" PoolSize="1" Enabled="true" Foreground="false" Comment="" LogTraceEvents="false" Schedule="">
     <Setting Target="Host" Name="Validation"></Setting>
-    <Setting Target="Host" Name="BusinessRuleName">FTR.BusinessRule.EmailAlert</Setting>
+    <Setting Target="Host" Name="BusinessRuleName">FTR.Production.BusinessRule.Alert</Setting>
   </Item>
   <Item Name="Operation.TelegramOut" Category="" ClassName="FTR.Production.Operation.TelegramOut" PoolSize="1" Enabled="true" Foreground="false" Comment="" LogTraceEvents="true" Schedule="">
     <Setting Target="Adapter" Name="HTTPPort">443</Setting>
@@ -28,6 +28,9 @@ XData ProductionDefinition
     <Setting Target="Host" Name="AlertOnError">1</Setting>
   </Item>
   <Item Name="FTR.Process.CheckPatient" Category="" ClassName="FTR.Production.Process.CheckPatient" PoolSize="1" Enabled="true" Foreground="false" Comment="" LogTraceEvents="false" Schedule="">
+    <Setting Target="Host" Name="AlertOnError">1</Setting>
+  </Item>
+  <Item Name="FTR.Production.Process.NotifyPatient" Category="" ClassName="FTR.Production.Process.NotifyPatient" PoolSize="1" Enabled="true" Foreground="false" Comment="" LogTraceEvents="true" Schedule="">
     <Setting Target="Host" Name="AlertOnError">1</Setting>
   </Item>
 </Production>
