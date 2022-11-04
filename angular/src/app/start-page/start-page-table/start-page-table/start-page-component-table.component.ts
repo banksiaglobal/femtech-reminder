@@ -1,33 +1,41 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { DataUser } from '../start-page-table-page/start-page-table-page.component';
+import { IDataUser } from 'src/app/models/users';
 
 @Component({
   selector: 'app-start-page-component-table',
   templateUrl: './start-page-component-table.component.html',
   styleUrls: ['./start-page-component-table.component.scss']
 })
-export class StartPageComponentTableComponent implements OnInit {
-  @Input() data!: DataUser[];
+export class StartPageComponentTableComponent implements OnChanges, OnInit {
+  @Input() data: IDataUser[] = [];
 
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatPaginator, {static: true}) paginator!: MatPaginator;
 
-  dataSource!: MatTableDataSource<DataUser>;
+  dataSource: MatTableDataSource<IDataUser> = new MatTableDataSource<IDataUser>([]);
 
-  displayedColumns: string[] = ['name','dob'];
-
-
+  displayedColumns: string[] = ['name','lastName','birthdayDate','telegramID' ];
 
   constructor() { }
-
   ngOnInit(): void {
-    if (this.data.length > 0) {
-      this.dataSource = new MatTableDataSource<DataUser>(this.data);
-    }
   }
+ 
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes){
+      this.dataSource = new MatTableDataSource<IDataUser>(this.data);    
+    }
+    console.log('onCheck')
+  }
+  
 
+ 
   ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
+    if (this.dataSource){
+      console.log('ngAfterViewInit');
+      this.dataSource.paginator = this.paginator;
+    }
+  
+
   }
 }

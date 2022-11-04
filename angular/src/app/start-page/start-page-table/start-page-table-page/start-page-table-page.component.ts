@@ -1,32 +1,25 @@
 import { Component, OnInit } from '@angular/core';
+import { map, Observable, of } from 'rxjs';
+import { IDataUser } from 'src/app/models/users';
+import { UsersService } from 'src/app/services/users.service';
 
-export interface DataUser {
-  name: string;
-  dob: string;
-}
+
 
 @Component({
   selector: 'app-start-page-table-page',
   templateUrl: './start-page-table-page.component.html',
   styleUrls: ['./start-page-table-page.component.scss'],
+
+  
 })
 export class StartPageTablePageComponent implements OnInit {
 
-  public listUsers: DataUser[] = [
-    { name: 'Hydrogen', dob: '12/01/1988' },
-    { name: 'Helium', dob: '12/01/1988' },
-    { name: 'Lithium', dob: '12/01/1988' },
-    { name: 'Beryllium', dob: '12/01/1988' },
-    { name: 'Hydrogen', dob: '12/01/1988' },
-    { name: 'Helium', dob: '12/01/1988' },
-    { name: 'Lithium', dob: '12/01/1988' },
-    { name: 'Beryllium', dob: '12/01/1988' },
-  ];
-
-  constructor() {
+  public listUsers$: Observable<any> = of([]);
+  
+  constructor(private userService: UsersService) {
   }
 
   ngOnInit(): void {
-  }
-
+   this.listUsers$ =  this.userService.getListUsers().pipe(map(data => data));
+}
 }

@@ -1,6 +1,7 @@
 <div class="users-table">
   <h2>List users</h2>
   <table
+    *ngIf="data"
     mat-table
     [dataSource]="dataSource"
     class="mat-elevation-z8 demo-table"
@@ -11,17 +12,27 @@
       <td mat-cell *matCellDef="let element">{{ element.name }}</td>
     </ng-container>
 
+    <ng-container matColumnDef="lastName">
+      <th mat-header-cell *matHeaderCellDef>Last Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.lastName }}</td>
+    </ng-container>
+
     <!-- Name Column -->
-    <ng-container matColumnDef="dob">
+    <ng-container matColumnDef="birthdayDate">
       <th mat-header-cell *matHeaderCellDef>Date of birthday</th>
-      <td mat-cell *matCellDef="let element">{{ element.dob }}</td>
+      <td mat-cell *matCellDef="let element">{{ element.birthdayDate }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="telegramID">
+      <th mat-header-cell *matHeaderCellDef>TelegramID</th>
+      <td mat-cell *matCellDef="let element">{{ element.telegramID }}</td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
   <mat-paginator
-    [pageSizeOptions]="[5, 10, 20]"
+    [pageSizeOptions]="[3, 10, 20]"
     showFirstLastButtons
     aria-label="Select page of periodic elements"
   >
