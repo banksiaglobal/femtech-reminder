@@ -1,13 +1,45 @@
-.notifications-box {
-  max-width: 930px;
+.notifications-page {
   margin: 0 auto;
-  padding: 30px;
+  max-width: 1200px;
+  padding: 20px;
+  height: 100%;
+}
 
+.notifications-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  height: 100%;
+  
   &-card {
-    width: 300px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
+    align-items: center;  
+    gap: 10px;
+    max-width: 200px;
+    max-height: 200px;  
+    padding: 10px;
+    background-color: #ffe4c442;
+    border-radius: 10px;
+  
+
+  &_content {
+    display: flex;
+    flex-direction: column;   
+    height: 100%;
   }
+
+  &_title {
+    flex: 0 0 auto;
+    font-size: 20px;
+    text-align: center;
+
+  }
+
+  &_description {
+    flex: 1 0 auto;
+    text-align: justify;
+  }
+}
 }

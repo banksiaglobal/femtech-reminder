@@ -37,6 +37,36 @@ export class NotificationsControlPageComponent implements OnInit {
       description: 'Some description for notification',
       state: false,
     },
+    {
+      id: '6',
+      title: 'Notification Type 6',
+      description: 'Some description for notification',
+      state: true,
+    },
+    {
+      id: '7',
+      title: 'Notification Type 7',
+      description: 'Some description for notification',
+      state: true,
+    },
+    {
+      id: '8',
+      title: 'Notification Type 8',
+      description: 'Some description for notification and some description for notification and some description for notification',
+      state: false,
+    },
+    {
+      id: '9',
+      title: 'Notification Type 9',
+      description: 'Some description for notification and some description for notification',
+      state: true,
+    },
+    {
+      id: '10',
+      title: 'Notification Type 10',
+      description: 'Some description for notification',
+      state: false,
+    },
   ]
 
   constructor() { }

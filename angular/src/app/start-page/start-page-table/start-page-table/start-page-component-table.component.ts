@@ -21,7 +21,7 @@ export class StartPageComponentTableComponent implements OnChanges, AfterViewIni
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes['data'].currentValue) this.dataSource.data = changes['data'].currentValue;
+    if (changes['data'].currentValue) this.dataSource.data = changes['data'].currentValue.patients;
   }
 
   ngAfterViewInit() {

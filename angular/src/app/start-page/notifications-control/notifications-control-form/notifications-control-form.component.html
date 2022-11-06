@@ -1,9 +1,18 @@
-<div class="notifications-box" *ngIf="data.length > 0">
-  <mat-card class="notifications-box-card" *ngFor="let item of data">
-    <div>
-      <p>{{ item.title }}</p>
-      <p>{{ item.description }}</p>
-    </div>
-    <mat-slide-toggle [checked]="item.state" (change)="changeState.emit(item.id)"></mat-slide-toggle>
-  </mat-card>
+<div class="notifications-page">
+  <div class="notifications-box" *ngIf="data.length > 0">
+    <mat-card class="notifications-box-card" *ngFor="let item of data">
+      <div class="notifications-box-card_content">
+        <mat-card-title class="notifications-box-card_title">
+          {{ item.title }}
+        </mat-card-title>
+        <mat-card-content class="notifications-box-card_description">
+          {{ item.description }}
+        </mat-card-content>
+      </div>
+      <mat-slide-toggle
+        [checked]="item.state"
+        (change)="changeState.emit(item.id)"
+      ></mat-slide-toggle>
+    </mat-card>
+  </div>
 </div>
