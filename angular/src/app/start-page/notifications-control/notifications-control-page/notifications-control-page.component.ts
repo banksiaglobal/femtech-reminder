@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { map, Observable } from 'rxjs';
-import { INotificationByAge } from 'src/app/models/listNotificationsByAge';
-import { NotificationsService } from 'src/app/services/notifications.service';
+
 
 @Component({
   selector: 'app-notifications-control-page',
@@ -71,14 +69,11 @@ export class NotificationsControlPageComponent implements OnInit {
       state: false,
     },
   ]
-  public listNotificationsByAge$:Observable<INotificationByAge[]>
 
-  constructor(private notificationsService: NotificationsService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.listNotificationsByAge$ = this.notificationsService.getListNotificationsByAge().pipe(map(data => {
-      return data ?? [];
-    }));
+   
   }
 
   onChangeState(id: string) {

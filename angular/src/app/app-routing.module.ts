@@ -5,12 +5,20 @@ export const routes: Routes = [
   {
     path: 'overview',
     loadChildren: () => import('./start-page/start-page-table/start-page-table.module').then(m=>m.StartPageTableModule),
-    pathMatch:'full'
+    pathMatch:'full',
+    title: 'Overview'
   },
   {
     path: 'notifications-control',
     loadChildren: () => import('./start-page/notifications-control/notifications-control.module').then(m=>m.NotificationsControlModule),
-    pathMatch:'full'
+    pathMatch:'full',
+    title: 'Notifications'
+  },
+  {
+    path: 'recomendations',
+    loadComponent: () => import('./start-page/recomendations/recomendations-page/recomendations-page.component').then(m=>m.RecomendationsPageComponent),
+    pathMatch:'full',
+    title: 'Recomendations'
   },
   {
       path: '',

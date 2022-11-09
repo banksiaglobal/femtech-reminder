@@ -1,0 +1,19 @@
+<div class="page recomendations-page">
+  <div class="box recomendations-box">
+    <mat-card class="box-card" *ngFor="let item of data">
+      <mat-card-title>Recomendation:</mat-card-title>
+      <mat-card-subtitle>Source:{{ item.source }}</mat-card-subtitle>
+      <mat-card-content>
+        <p>{{ item.description }}</p>
+        <p>
+          age:
+          <br />
+          <span>from: {{ item.ageFrom }} </span>
+          <span>to: {{ item.ageUpTo }}</span>
+        </p>
+        <p>period: {{ item.period }}</p>
+      </mat-card-content>
+      <mat-card-actions> </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

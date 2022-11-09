@@ -1,4 +1,4 @@
-export interface INotificationByAge {
+export interface IDataRecomendationByAge {
   id: string;
   description: string;
   source: string;

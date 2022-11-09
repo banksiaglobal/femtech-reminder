@@ -41,3 +41,54 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   
 }
 
+.page {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 20px;
+  height: 100%;
+}
+
+.box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  height: 100%;
+}  
+  .mat-card {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;  
+    gap: 10px;
+    max-width: 200px;
+    max-height: 220px;  
+    padding: 10px;
+    background-color: #ffe4c442;
+    border-radius: 10px;
+  }
+
+  .mat-card-title {
+    display: flex;
+    flex-direction: column;  
+    justify-content: space-between; 
+    
+  }
+
+  .mat-card-content {
+    flex: 0 0 auto;
+    height: 100%;
+    font-size: 20px;
+    text-align: justify;
+
+  }
+
+  .mat-slide-toggle{
+    flex: 1 0 auto;
+    text-align: justify;
+  }
+
+
+
+
