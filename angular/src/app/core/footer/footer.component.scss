@@ -1,0 +1,28 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 6vh;
+  padding: 5px 0 5px 0;
+  background-color: #8a609f;
+ 
+
+}
+
+.footer-menu {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  gap: 10px;
+
+  &_date {
+    padding-top: 4px;
+  }
+
+  &_img {
+    height: 20px;
+    width: 100px;
+  }
+}
+

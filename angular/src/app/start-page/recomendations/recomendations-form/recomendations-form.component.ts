@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { IDataRecomendationByAge } from 'src/app/models/lDataRecomendationsByAge';
 
@@ -15,6 +15,8 @@ export class RecomendationsFormComponent implements OnInit, OnChanges {
 
   @Input()data: IDataRecomendationByAge[];
 
+  @Output() createNewRecomendation:EventEmitter<any> = new EventEmitter();
+
   constructor() { }
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['data'].currentValue) {
@@ -26,5 +28,11 @@ export class RecomendationsFormComponent implements OnInit, OnChanges {
   ngOnInit(): void {
 
   }
+
+  createRecomendation(){
+    this.createNewRecomendation.emit();
+  }
+
+  
 
 }

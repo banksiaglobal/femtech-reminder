@@ -1,4 +1,5 @@
 <div class="page notifications-page">
+  <h2 class="h2">List notifications</h2>
   <div class="box notifications-box" *ngIf="data.length > 0">
     <mat-card class="box-card" *ngFor="let item of data">
       <div class="box-card_content">
@@ -9,10 +10,12 @@
           {{ item.description }}
         </mat-card-content>
       </div>
-      <mat-slide-toggle
-        [checked]="item.state"
-        (change)="changeState.emit(item.id)"
-      ></mat-slide-toggle>
+      <mat-card-actions>
+        <mat-slide-toggle
+          [checked]="item.state"
+          (change)="changeState.emit(item.id)"
+        ></mat-slide-toggle>
+      </mat-card-actions>
     </mat-card>
   </div>
 </div>

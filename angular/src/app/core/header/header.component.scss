@@ -1,0 +1,40 @@
+@import url('../../../scss/fonts.scss');
+.header {
+  display: flex;
+  justify-content: center;
+  height: 8vh;
+  width: 100%;
+  padding: 8px;
+  background-color: #ad8fbcb0;
+  
+
+}
+
+.header-menu {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.link-page {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  color: white;
+  font-size: 25px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.link-page:active {
+  color: rgb(111, 53, 99);
+}
+
+
+.header-button {
+  margin-right: 25px;
+  height: 100%;
+
+}
+
+

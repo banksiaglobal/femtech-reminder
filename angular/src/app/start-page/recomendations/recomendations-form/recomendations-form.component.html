@@ -1,4 +1,13 @@
 <div class="page recomendations-page">
+  <div class="recomendations-title">
+    <h2 class="h2">List recomendations</h2>
+    <span (click)="createRecomendation()"
+      ><img
+        class="recomendations-title_img"
+        src="../../../../assets/icons8-add-new-50.png"
+        alt="icon plus"
+    /></span>
+  </div>
   <div class="box recomendations-box">
     <mat-card class="box-card" *ngFor="let item of data">
       <mat-card-title>Recomendation:</mat-card-title>

@@ -1,0 +1,12 @@
+.recomendations-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &_btn {
+    background-image: url('../../../../assets/icons8-add-new-50.png');
+    height: 50px;
+    width: 50px;
+
+  }
+}

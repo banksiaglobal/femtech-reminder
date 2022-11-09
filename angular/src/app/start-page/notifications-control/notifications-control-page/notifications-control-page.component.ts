@@ -17,7 +17,7 @@ export class NotificationsControlPageComponent implements OnInit {
     {
       id: '2',
       title: 'Notification Type 2',
-      description: 'Some description for notification',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, optio quis. Blanditiis eos, voluptates perspiciatis accusamus cum molestias culpa sint est doloremque doloribus repellat magnam ab facere odio cupiditate officiis.',
       state: true,
     },
     {

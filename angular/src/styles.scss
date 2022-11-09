@@ -1,12 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./scss/null.scss";
+@import "./scss/variables.scss";
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { 
+  margin: 0; 
+  background-color: #e8dfec;
+}
 //table settings
 .demo-table {
   width: 100%;
 }
-
+.h2 {
+  margin: 0 0 0 0;
+  color:  #533960;
+  text-align: center;
+}
 .mat-column-demo-position {
   width: 32px;
   border-right: 1px solid currentColor;
@@ -35,17 +44,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   margin: 0 auto;
 }
 
-.mat-header-cell {
-  font-size: 20px;
-  color: #d3547d;
-  
-}
-
 .page {
   margin: 0 auto;
   max-width: 1200px;
+  min-height: 86vh;
   padding: 20px;
-  height: 100%;
+
 }
 
 .box {
@@ -55,40 +59,46 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   justify-content: center;
   gap: 10px;
   height: 100%;
-}  
+ 
   .mat-card {
     display: flex;
     justify-content: space-between;
-    flex-direction: column;
-    align-items: center;  
+    flex-direction: column;    
     gap: 10px;
     max-width: 200px;
-    max-height: 220px;  
-    padding: 10px;
-    background-color: #ffe4c442;
+    min-height: 200px;      
+    background-color: #dccfe2;
     border-radius: 10px;
+    color: #533960;
   }
+}
 
   .mat-card-title {
-    display: flex;
-    flex-direction: column;  
-    justify-content: space-between; 
+    text-align: center;
+    font-size: 20px;
     
   }
 
   .mat-card-content {
     flex: 0 0 auto;
     height: 100%;
-    font-size: 20px;
+    font-size: 15px;
     text-align: justify;
 
   }
 
   .mat-slide-toggle{
     flex: 1 0 auto;
-    text-align: justify;
+    text-align: justify;  
   }
 
+  .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+    background-color: #7c568f;
+  }
+  .mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+    background-color: #d0bfd9;
+  }
 
+ 
 
 

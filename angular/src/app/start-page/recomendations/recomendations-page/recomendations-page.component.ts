@@ -23,4 +23,8 @@ export class RecomendationsPageComponent implements OnInit {
     }));
   }
 
+  createNewRecomendation(){
+    alert('create!')
+  }
+
 }
