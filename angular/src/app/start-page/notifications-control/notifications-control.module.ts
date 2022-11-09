@@ -5,13 +5,15 @@ import { NotificationsControlRoutingModule } from './notifications-control-routi
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
     NotificationsControlPageComponent,
     NotificationsControlFormComponent
   ],
-  imports: [CommonModule, MatSlideToggleModule, MatCardModule],
+  imports: [CommonModule, MatSlideToggleModule, MatCardModule, MatPaginatorModule, MatTableModule],
   exports: [NotificationsControlRoutingModule],
 })
 export class NotificationsControlModule {}

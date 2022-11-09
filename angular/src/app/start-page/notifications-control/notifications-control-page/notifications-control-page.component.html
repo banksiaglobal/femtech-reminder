@@ -1,1 +1,4 @@
-<app-notifications-control-form [data]="notificationsList" (changeState)="onChangeState($event)"></app-notifications-control-form>
+<app-notifications-control-form
+  [data]="listNotificationsByAge$ | async"
+  (changeState)="onChangeState($event)"
+></app-notifications-control-form>
