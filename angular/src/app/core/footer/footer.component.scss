@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 6vh;
+  height: 8vh;
   padding: 5px 0 5px 0;
   background-color: #8a609f;
  
@@ -17,11 +17,12 @@
   gap: 10px;
 
   &_date {
-    padding-top: 4px;
+    display: flex;
+    align-items: center;
   }
 
   &_img {
-    height: 20px;
+    height: 40px;
     width: 100px;
   }
 }

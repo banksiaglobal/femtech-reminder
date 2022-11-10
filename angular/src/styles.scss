@@ -11,10 +11,11 @@ body {
 .demo-table {
   width: 100%;
 }
-.h2 {
+.mat-typography h2 {
   margin: 0 0 0 0;
   color:  #533960;
   text-align: center;
+  font-weight: bold;
 }
 .mat-column-demo-position {
   width: 32px;
@@ -39,7 +40,7 @@ body {
 }
 
 .main-table { 
-  max-width: 1200px;
+  max-width: 100%;
   padding: 0 20px;
   margin: 0 auto;
 }
@@ -47,8 +48,8 @@ body {
 .page {
   margin: 0 auto;
   max-width: 1200px;
-  min-height: 86vh;
-  padding: 20px;
+  min-height: 84vh;
+  padding: 10px 
 
 }
 
@@ -80,8 +81,7 @@ body {
   }
 
   .mat-card-content {
-    flex: 0 0 auto;
-    height: 100%;
+    flex: 0 0 auto;    
     font-size: 15px;
     text-align: justify;
 
