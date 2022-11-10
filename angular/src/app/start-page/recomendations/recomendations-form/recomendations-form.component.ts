@@ -28,15 +28,12 @@ export class RecomendationsFormComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
-  this.recomendation = {id:'24',description: "test old",
-  source: "VOZ",
-  ageFrom: 90,
-  ageUpTo: 95,
-  period: "1"};
+
   }
 
   createRecomendation(){
-    this.createNewRecomendation.emit(this.recomendation);
+
+    this.createNewRecomendation.emit();
   }
 
   
