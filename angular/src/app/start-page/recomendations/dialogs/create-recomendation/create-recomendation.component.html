@@ -1,1 +1,60 @@
-<p>create-recomendation works!</p>
+<div class="box">
+  <mat-card>
+    <h2 mat-dialog-title>Create new recomendation:</h2>
+    <mat-dialog-content class="mat-typography">
+      <form class="recomendation-form">
+        <mat-form-field appearance="legacy">
+          <mat-label>ID</mat-label>
+          <input matInput placeholder="id" autocomplete="off" />
+          <mat-hint>enter user id</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="standard">
+          <mat-label>description recomendation</mat-label>
+          <input
+            matInput
+            placeholder="Placeholder"
+            autocomplete="off"
+            type="text"
+          />
+          <mat-hint>description</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="standard">
+          <mat-label>source recomendation</mat-label>
+          <input matInput placeholder="Placeholder" autocomplete="off" />
+          <mat-hint>source</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="standard">
+          <mat-label>age from</mat-label>
+          <input matInput placeholder="Placeholder" autocomplete="off" />
+          <mat-hint>age from</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="standard">
+          <mat-label>age to</mat-label>
+          <input matInput placeholder="Placeholder" autocomplete="off" />
+          <mat-hint>age to</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="standard">
+          <mat-label>period</mat-label>
+          <input matInput placeholder="Placeholder" autocomplete="off" />
+          <mat-hint>period</mat-hint>
+        </mat-form-field>
+      </form>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <button mat-button mat-dialog-close>Cancel</button>
+      <button
+        class="accept-btn"
+        mat-button
+        [mat-dialog-close]="true"
+        cdkFocusInitial
+      >
+        Create
+      </button>
+    </mat-dialog-actions>
+  </mat-card>
+</div>
