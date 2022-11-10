@@ -9,12 +9,16 @@ import { IDataRecomendationByAge } from '../models/lDataRecomendationsByAge';
 @Injectable({
   providedIn: 'root',
 })
-export class REcomendationsService {
+export class RecomendationsService {
 
   constructor(private http: HttpClient) {
   }
 
   getListRecomendationsByAge (): Observable<IDataRecomendationByAge[]> {
     return this.http.get<IDataRecomendationByAge[]>(environment.API_URL + '/recommendation-age');
+  }
+
+  postRecomendation(recomendation: IDataRecomendationByAge): Observable<any> {
+    return this.http.post<any>(environment.API_URL + '/recommendation-age', recomendation);
   }
 }

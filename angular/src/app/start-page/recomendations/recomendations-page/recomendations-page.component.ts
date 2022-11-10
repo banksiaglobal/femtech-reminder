@@ -1,8 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 import { Observable, map } from 'rxjs';
 import { IDataRecomendationByAge } from 'src/app/models/lDataRecomendationsByAge';
-import { REcomendationsService } from 'src/app/services/recomendations.service';
+import { RecomendationsService } from 'src/app/services/recomendations.service';
+import { CreateRecomendationComponent } from '../dialogs/create-recomendation/create-recomendation.component';
 import { RecomendationsFormComponent } from '../recomendations-form/recomendations-form.component';
 
 @Component({
@@ -15,16 +17,17 @@ import { RecomendationsFormComponent } from '../recomendations-form/recomendatio
 export class RecomendationsPageComponent implements OnInit {
   public listRecomendations$!: Observable<IDataRecomendationByAge[]>;
 
-  constructor(private recomendationsService: REcomendationsService) { }
+  constructor(private recomendationsService: RecomendationsService) { }
 
   ngOnInit(): void {
-    this.listRecomendations$ = this.recomendationsService.getListRecomendationsByAge().pipe(map(data => {
+      this.listRecomendations$ = this.recomendationsService.getListRecomendationsByAge().pipe(map(data => {
       return data ?? [];
     }));
   }
 
-  createNewRecomendation(){
-    alert('create!')
+  createNewRecomendation(recomendation:IDataRecomendationByAge){
+    console.log(recomendation);
+    this.recomendationsService.postRecomendation(recomendation).subscribe();
   }
 
 }
