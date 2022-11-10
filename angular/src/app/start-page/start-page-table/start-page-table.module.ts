@@ -5,13 +5,14 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { StartPageTableRoutingModule } from './start-page-table-routing.module';
 import { CommonModule } from '@angular/common';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
     StartPageTablePageComponent,
     StartPageComponentTableComponent
   ],
-  imports: [CommonModule, MatTableModule, MatPaginatorModule],
+  imports: [CommonModule, MatTableModule, MatPaginatorModule, MatProgressSpinnerModule],
   exports: [StartPageTableRoutingModule],
 })
 export class StartPageTableModule {}

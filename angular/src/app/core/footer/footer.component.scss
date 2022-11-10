@@ -2,28 +2,29 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 8vh;
+  height: 5vh;
+  width: 100%;
   padding: 5px 0 5px 0;
   background-color: #8a609f;
- 
-
 }
 
 .footer-menu {
   display: flex;
   justify-content: center;
-  text-align: center;
+  text-align: center; 
   height: 100%;
   gap: 10px;
 
   &_date {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
   }
 
   &_img {
-    height: 40px;
-    width: 100px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
   }
 }
 

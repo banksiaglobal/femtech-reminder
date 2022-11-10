@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { IDataRecomendationByAge } from 'src/app/models/lDataRecomendationsByAge';
 
 
@@ -9,9 +10,9 @@ import { IDataRecomendationByAge } from 'src/app/models/lDataRecomendationsByAge
   templateUrl: './recomendations-form.component.html',
   styleUrls: ['./recomendations-form.component.scss'],
   standalone: true,
-  imports: [CommonModule, MatCardModule]
+  imports: [CommonModule, MatCardModule, MatProgressSpinnerModule]
 })
-export class RecomendationsFormComponent implements OnInit, OnChanges {
+export class RecomendationsFormComponent implements OnChanges {
 
   @Input()data: IDataRecomendationByAge[];
 
@@ -26,11 +27,6 @@ export class RecomendationsFormComponent implements OnInit, OnChanges {
     
     }
   }
-
-  ngOnInit(): void {
-
-  }
-
   createRecomendation(){
 
     this.createNewRecomendation.emit();

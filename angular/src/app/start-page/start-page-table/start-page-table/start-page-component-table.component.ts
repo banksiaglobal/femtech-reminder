@@ -3,6 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { IDataUser } from 'src/app/models/users';
 
+
 @Component({
   selector: 'app-start-page-component-table',
   templateUrl: './start-page-component-table.component.html',

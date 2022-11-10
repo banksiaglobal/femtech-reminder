@@ -2,18 +2,30 @@
 .header {
   display: flex;
   justify-content: center;
+  align-items: center;
   height: 8vh;
   width: 100%;
   padding: 8px;
-  background-color: #ad8fbcb0;
-  
+  background-color: #ad8fbcb0; 
 
 }
 
 .header-menu {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
   flex-direction: row;
+  gap: 20px;
+}
+
+@import url('../../../scss/fonts.scss');
+.header-logo {
+  &_img {
+    display: flex;    
+    height: 30px;
+    width: 30px;
+    margin-right: 20px;
+  }
 }
 
 .link-page {
@@ -24,6 +36,7 @@
   font-size: 25px;
   text-decoration: none;
   font-weight: 600;
+  font-family: 'Courgette', cursive;
 }
 
 .link-page:active {

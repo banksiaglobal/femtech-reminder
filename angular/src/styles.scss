@@ -1,22 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
 @import "./scss/null.scss";
 @import "./scss/variables.scss";
+@import url('./scss/fonts.scss');
 
 html, body { height: 100%; }
 body { 
   margin: 0; 
   background-color: #e8dfec;
 }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 //table settings
 .demo-table {
   width: 100%;
 }
+
 .mat-typography h2 {
-  margin: 0 0 0 0;
+  margin: 0;
   color:  #533960;
   text-align: center;
   font-weight: bold;
+  font-family: 'Courgette', cursive;
 }
+
 .mat-column-demo-position {
   width: 32px;
   border-right: 1px solid currentColor;
@@ -39,17 +48,26 @@ body {
   font-weight: bold;
 }
 
-.main-table { 
-  max-width: 100%;
-  padding: 0 20px;
+.mat-table,
+.mat-paginator { 
+  max-width: 80%; 
   margin: 0 auto;
+  background-color: rgb(220 207 226 / 38%); 
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+  color: #533960;
+  font-family: 'Courgette', cursive;
 }
 
 .page {
   margin: 0 auto;
-  max-width: 1200px;
-  min-height: 84vh;
-  padding: 10px 
+  width: 100%;
+  min-height: 87vh;
+  padding: 10px;
+  background: url('./assets/georgia-de-lotz-1n_HNfGVBxE-unsplash.jpg') 0 0/100% 100% no-repeat;;
+  background-size: cover;
+  background-attachment: fixed; 
+  backdrop-filter: blur(2px); 
 
 }
 
@@ -68,8 +86,9 @@ body {
     gap: 10px;
     max-width: 200px;
     min-height: 200px;      
-    background-color: #dccfe2;
+    background-color: #dccfe2a1; 
     border-radius: 10px;
+    backdrop-filter: blur(6px);
     color: #533960;
   }
 }
@@ -77,13 +96,18 @@ body {
   .mat-card-title {
     text-align: center;
     font-size: 20px;
-    
+    font-family: 'Courgette', cursive;    
+  }
+
+  .mat-card-subtitle {
+    color: #533960;
   }
 
   .mat-card-content {
     flex: 0 0 auto;    
     font-size: 15px;
     text-align: justify;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
   }
 
@@ -102,6 +126,23 @@ body {
   .mat-button-base {
     background-color: #ac539c24;
   }
+
+  .mat-progress-spinner circle, .mat-spinner circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    stroke: rgb(225 123 137);
+}
+
+.spinner-wrapper {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+}
+
 
  
 

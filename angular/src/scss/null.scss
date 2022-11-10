@@ -71,7 +71,13 @@ h6 {
   font-weight: 400;
 }
 /*------------------------------------*/
+.mat-card {
 
-.mat-h2, .mat-title, .mat-typography .mat-h2, .mat-typography .mat-title, .mat-typography h2 {
-  margin: 0;
+
+.mat-h2, .mat-title, .mat-typography .mat-h2, .mat-typography .mat-title, .mat-typography h2,
+.mat-card-actions, .mat-card-subtitle, .mat-card-content {
+  margin: 0 0 0 0;
+  margin-bottom: 0;
+}
+
 }

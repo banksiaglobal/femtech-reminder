@@ -7,13 +7,14 @@ import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
     NotificationsControlPageComponent,
     NotificationsControlFormComponent
   ],
-  imports: [CommonModule, MatSlideToggleModule, MatCardModule, MatPaginatorModule, MatTableModule],
+  imports: [CommonModule, MatSlideToggleModule, MatCardModule, MatPaginatorModule, MatTableModule, MatProgressSpinnerModule],
   exports: [NotificationsControlRoutingModule],
 })
 export class NotificationsControlModule {}
