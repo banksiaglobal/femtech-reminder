@@ -15,7 +15,7 @@ export const routes: Routes = [
     title: 'Notifications'
   },
   {
-    path: 'recomendations',
+    path: 'recommendations',
     loadComponent: () => import('./start-page/recomendations/recomendations-page/recomendations-page.component').then(m=>m.RecomendationsPageComponent),
     pathMatch:'full',
     title: 'Recomendations'
