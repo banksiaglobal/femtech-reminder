@@ -84,13 +84,14 @@ body {
     justify-content: space-between;
     flex-direction: column;    
     gap: 10px;
-    max-width: 200px;
+    width: 200px;
     min-height: 200px;      
     background-color: #dccfe2a1; 
     border-radius: 10px;
     backdrop-filter: blur(6px);
     color: #533960;
   }
+
 }
 
   .mat-card-title {

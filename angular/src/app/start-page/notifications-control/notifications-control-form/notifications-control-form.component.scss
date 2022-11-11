@@ -1,0 +1,11 @@
+.notifications-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 27px;
+
+  &_img {
+  cursor: grab;
+
+  }
+}

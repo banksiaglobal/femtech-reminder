@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { IDataNotification } from 'src/app/models/IDataNotification';
+import { NotificationService } from 'src/app/services/notifications.service';
 
 
 @Component({
@@ -7,109 +10,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./notifications-control-page.component.scss']
 })
 export class NotificationsControlPageComponent implements OnInit {
-  notificationsList: any[] = [
-    {
-      id: '1',
-      title: 'Notification Type 1',
-      description: 'Some description for notification',
-      state: true,
-    },
-    {
-      id: '2',
-      title: 'Notification Type 2',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, optio quis. Blanditiis eos, voluptates perspiciatis accusamus cum molestias culpa sint est doloremque doloribus repellat magnam ab facere odio cupiditate officiis.',
-      state: true,
-    },
-    {
-      id: '3',
-      title: 'Notification Type 3',
-      description: 'Some description for notification and some description for notification and some description for notification',
-      state: false,
-    },
-    {
-      id: '4',
-      title: 'Notification Type 4',
-      description: 'Some description for notification and some description for notification',
-      state: true,
-    },
-    {
-      id: '5',
-      title: 'Notification Type 5',
-      description: 'Some description for notification',
-      state: false,
-    },
-    {
-      id: '6',
-      title: 'Notification Type 6',
-      description: 'Some description for notification',
-      state: true,
-    },
-    {
-      id: '7',
-      title: 'Notification Type 7',
-      description: 'Some description for notification',
-      state: true,
-    },
-    {
-      id: '8',
-      title: 'Notification Type 8',
-      description: 'Some description for notification and some description for notification and some description for notification',
-      state: false,
-    },
-    {
-      id: '9',
-      title: 'Notification Type 9',
-      description: 'Some description for notification and some description for notification',
-      state: true,
-    },
-    {
-      id: '10',
-      title: 'Notification Type 10',
-      description: 'Some description for notification',
-      state: false,
-    },
-    {
-      id: '6',
-      title: 'Notification Type 6',
-      description: 'Some description for notification',
-      state: true,
-    },
-    {
-      id: '7',
-      title: 'Notification Type 7',
-      description: 'Some description for notification',
-      state: true,
-    },
-    {
-      id: '8',
-      title: 'Notification Type 8',
-      description: 'Some description for notification and some description for notification and some description for notification',
-      state: false,
-    },
-    {
-      id: '9',
-      title: 'Notification Type 9',
-      description: 'Some description for notification and some description for notification',
-      state: true,
-    },
-    {
-      id: '10',
-      title: 'Notification Type 10',
-      description: 'Some description for notification',
-      state: false,
-    },
-  ]
 
-  constructor() { }
+  public listNotifications$:  Observable<IDataNotification[]>;
+
+
+  constructor(private notificationService: NotificationService) { }
 
   ngOnInit(): void {
-   
+   this.setListNotifications();
   }
+
+  setListNotifications():Observable<IDataNotification[]> {
+  this.listNotifications$ =  this.notificationService.getListNotifications();  
+  return this.listNotifications$;
+}
 
   onChangeState(id: string) {
    
-    this.notificationsList.map(el => {
-      if (el.id === id) el.state = !el.state;
-    });
+  //   // this.notificationsList.map(el => {
+  //   //   if (el.id === id) el.state = !el.state;
+    // });
   }
 }

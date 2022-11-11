@@ -1,4 +1,4 @@
 <app-notifications-control-form
-  [data]="notificationsList"
+  [data]="listNotifications$ | async"
   (changeState)="onChangeState($event)"
 ></app-notifications-control-form>

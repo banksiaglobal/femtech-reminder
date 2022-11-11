@@ -1,20 +1,29 @@
 <div class="page notifications-page">
   <div class="container">
-    <h2>List notifications</h2>
     <div class="spinner-wrapper">
       <mat-spinner *ngIf="!data"></mat-spinner>
     </div>
     <div *ngIf="data">
-      <div class="box notifications-box" *ngIf="data.length > 0">
+      <div class="notifications-title">
+        <h2>List notifications</h2>
+        <span class="notifications-title_img" (click)="createNotifications()"
+          ><img src="../../../../assets/icons8-add-new-50.png" alt="icon plus"
+        /></span>
+      </div>
+      <div class="box notifications-box">
         <mat-card class="box-card" *ngFor="let item of data">
-          <div class="box-card_content">
-            <mat-card-title class="box-card_title">
-              {{ item.title }}
-            </mat-card-title>
-            <mat-card-content class="box-card_description">
-              {{ item.description }}
-            </mat-card-content>
-          </div>
+          <mat-card-title>notification</mat-card-title>
+          <mat-card-content>
+            <p>{{ item.recommendation }}</p>
+            <p>
+              nootify time:
+              <br />
+              <span>{{ item.notifyTime | date }} </span>
+              <br />
+            </p>
+            <p>patient: {{ item.patient }}</p>
+          </mat-card-content>
+          <mat-card-actions> </mat-card-actions>
           <mat-card-actions>
             <mat-slide-toggle
               [checked]="item.state"

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { map, Observable, of } from 'rxjs';
+import { map, Observable} from 'rxjs';
 import { IDataUser } from 'src/app/models/users';
 import { UsersService } from 'src/app/services/users.service';
 
