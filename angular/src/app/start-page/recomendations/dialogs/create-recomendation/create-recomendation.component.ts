@@ -39,11 +39,7 @@ export class CreateRecomendationComponent implements OnInit  {
     if(this.recomendationForm.valid){    
       this.data = this.recomendationForm.value;      
       this.dialogRef.close(this.data);
-    }
-    else {
-
-    }
-
+    }   
   }
 
 }

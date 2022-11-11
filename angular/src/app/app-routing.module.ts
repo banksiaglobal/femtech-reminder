@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: 'overview',
-    loadChildren: () => import('./start-page/start-page-table/start-page-table.module').then(m=>m.StartPageTableModule),
+    loadComponent: () => import('./start-page/start-page-table/start-page-table-page/start-page-table-page.component').then(m=>m.StartPageTablePageComponent),
     pathMatch:'full',
     title: 'Overview'
   },

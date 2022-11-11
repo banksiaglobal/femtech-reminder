@@ -1,1 +1,4 @@
-<app-start-page-component-table [data]="listUsers$ | async"></app-start-page-component-table>
+<app-start-page-component-table
+  [data]="listUsers$ | async"
+  (chooseCurrentUser)="chooseCurrentUser($event)"
+></app-start-page-component-table>

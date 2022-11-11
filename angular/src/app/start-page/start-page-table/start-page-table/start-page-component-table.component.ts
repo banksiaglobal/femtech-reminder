@@ -1,6 +1,9 @@
-import { AfterViewInit, Component, Input, OnChanges, SimpleChanges, ViewChild } from '@angular/core';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatTableDataSource } from '@angular/material/table';
+import { CommonModule } from '@angular/common';
+import { AfterViewInit, Component, EventEmitter, Input, OnChanges, Output, SimpleChanges, ViewChild } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { IDataUser } from 'src/app/models/users';
 
 
@@ -8,9 +11,13 @@ import { IDataUser } from 'src/app/models/users';
   selector: 'app-start-page-component-table',
   templateUrl: './start-page-component-table.component.html',
   styleUrls: ['./start-page-component-table.component.scss'],
+  standalone: true,
+  imports: [CommonModule, MatCardModule, MatProgressSpinnerModule, MatTableModule, MatPaginatorModule, MatProgressSpinnerModule]
 })
 export class StartPageComponentTableComponent implements OnChanges, AfterViewInit {
   @Input() data: IDataUser[];
+
+  @Output() chooseCurrentUser: EventEmitter<any> = new EventEmitter();
 
   dataSource = new MatTableDataSource<IDataUser>();
 
@@ -27,5 +34,11 @@ export class StartPageComponentTableComponent implements OnChanges, AfterViewIni
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
+  }
+
+
+  chooseUser(event){   
+    this.chooseCurrentUser.emit(event.target.innerHTML);
+
   }
 }

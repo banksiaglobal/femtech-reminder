@@ -31,8 +31,7 @@ export class RecomendationsPageComponent implements OnInit {
 
   }
 
-  createNewRecomendation(recomendation:any= {}){
-    console.log(recomendation)
+  createNewRecomendation(recomendation:IDataRecomendationByAge): any{   
     const dialogRef =  this.dialog.open(CreateRecomendationComponent, 
       {enterAnimationDuration:'500ms',
        exitAnimationDuration:'500ms',

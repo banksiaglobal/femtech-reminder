@@ -3,8 +3,9 @@
     <div class="spinner-wrapper">
       <mat-spinner *ngIf="!data"></mat-spinner>
     </div>
-    <div *ngIf="data">
+    <div class="users-table" *ngIf="data">
       <h2>List users</h2>
+      <h3>*click for user's name and get more information</h3>
       <table
         mat-table
         [dataSource]="dataSource"
@@ -13,7 +14,15 @@
         <!-- Position Column -->
         <ng-container matColumnDef="name">
           <th mat-header-cell *matHeaderCellDef>Name</th>
-          <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+          <td
+            class="user-name-box"
+            mat-cell
+            *matCellDef="let element"
+            title="more info"
+            (click)="chooseUser($event)"
+          >
+            {{ element.name }}
+          </td>
         </ng-container>
 
         <ng-container matColumnDef="lastName">
