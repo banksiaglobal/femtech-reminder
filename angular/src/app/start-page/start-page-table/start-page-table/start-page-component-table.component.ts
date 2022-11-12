@@ -25,6 +25,8 @@ export class StartPageComponentTableComponent implements OnChanges, AfterViewIni
 
   displayedColumns: string[] = ['name', 'lastName', 'birthdayDate', 'telegramID'];
 
+  public userName: string;
+
   constructor() {
   }
 
@@ -32,13 +34,13 @@ export class StartPageComponentTableComponent implements OnChanges, AfterViewIni
     if (changes['data'].currentValue) this.dataSource.data = changes['data'].currentValue.patients;
   }
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     this.dataSource.paginator = this.paginator;
   }
 
-
-  chooseUser(event){   
-    this.chooseCurrentUser.emit(event.target.innerHTML);
+  chooseUser(event): void{   
+    this.userName = event.target.innerHTML.trim();
+    this.chooseCurrentUser.emit(this.userName);
 
   }
 }

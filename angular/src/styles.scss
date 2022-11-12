@@ -49,13 +49,12 @@ body {
 }
 
 .mat-table,
-.mat-paginator { 
-  max-width: 80%; 
+.mat-paginator {   
   margin: 0 auto;
   background-color: rgb(220 207 226 / 38%); 
   border-radius: 10px;
   backdrop-filter: blur(6px);
-  color: #533960;
+  color: #533960;    
   font-family: 'Courgette', cursive;
 }
 
@@ -92,6 +91,10 @@ body {
     color: #533960;
   }
 
+  .mat-card-popup {  
+    min-width: 300px;
+  }
+
 }
 
   .mat-card-title {
@@ -100,8 +103,9 @@ body {
     font-family: 'Courgette', cursive;    
   }
 
-  .mat-card-subtitle {
-    color: #533960;
+  .mat-card-subtitle,
+  .mat-typography h3   {
+   color: #533960;
   }
 
   .mat-card-content {
@@ -144,7 +148,12 @@ body {
   -webkit-transform: translateX(-50%) translateY(-50%);
 }
 
+.mat-typography h3 {
+  margin: 20% 0 30%;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  font-size: 30px;
+  font-family: "Courgette", cursive;
 
- 
-
-
+}

@@ -35,7 +35,7 @@ export class CreateRecomendationComponent implements OnInit  {
   });
   }
 
-  saveNewRecomendations(){
+  saveNewRecomendations(): void{
     if(this.recomendationForm.valid){    
       this.data = this.recomendationForm.value;      
       this.dialogRef.close(this.data);

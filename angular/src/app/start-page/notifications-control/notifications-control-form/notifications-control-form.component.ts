@@ -10,11 +10,13 @@ export class NotificationsControlFormComponent  implements OnChanges{
 
   @Output() changeState: EventEmitter<string> = new EventEmitter<string>();
 
+  public isEmptyData: boolean;
+
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['data'].currentValue) {
-      this.data = changes['data'].currentValue.notifications;      
-   
+      (changes['data'].currentValue).length === 0 ? this.isEmptyData = true : false;
+      this.data = changes['data'].currentValue;   
     }
   }
   createNotifications(){

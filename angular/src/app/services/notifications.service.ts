@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, shareReplay } from 'rxjs';
+import { map, Observable, shareReplay } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { IDataNotification } from '../models/IDataNotification';
@@ -15,7 +15,12 @@ export class NotificationService {
   }
 
   getListNotifications (): Observable<IDataNotification[]> {
-    return this.http.get<IDataNotification[]>(environment.API_URL + '/get-log');
+    return this.http.get<IDataNotification[]>(environment.API_URL + '/get-log').pipe(shareReplay());
+  }
+
+  findNotificationsByUserName(userName: string): Observable<IDataNotification[]> {
+    // console.log(this.getListNotifications().pipe(map(data=> data['notifications'].find(el=> el.patient == userName))).subscribe(data=> console.log(data)))
+   return this.getListNotifications().pipe(map(data=> data['notifications'].filter(el=> el.patient == userName)));
   }
 
 

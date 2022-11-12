@@ -20,14 +20,14 @@
   font-weight: bold;
 }
 
-.users-table { 
-  max-width: 1200px;
+.users-table {   
   padding: 0 20px;
   margin: 0 auto;
-}
-
-.mat-header-cell {
-  font-size: 20px;
-  color: #533960;
+  color: #533960;  
   
 }
+
+.user-name-box {
+  cursor: grab; 
+}
+

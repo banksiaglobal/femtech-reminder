@@ -3,13 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
-    path: 'overview',
+    path: 'users',
     loadComponent: () => import('./start-page/start-page-table/start-page-table-page/start-page-table-page.component').then(m=>m.StartPageTablePageComponent),
     pathMatch:'full',
-    title: 'Overview'
+    title: 'Users'
   },
   {
-    path: 'notifications-control',
+    path: 'notifications/:user',
     loadChildren: () => import('./start-page/notifications-control/notifications-control.module').then(m=>m.NotificationsControlModule),
     pathMatch:'full',
     title: 'Notifications'
@@ -22,12 +22,12 @@ export const routes: Routes = [
   },
   {
       path: '',
-      redirectTo: 'overview',
+      redirectTo: 'users',
       pathMatch: 'full',
   },
   {
     path: '**',
-    redirectTo: 'overview',
+    redirectTo: 'users',
     pathMatch: 'full',
   }
 ];

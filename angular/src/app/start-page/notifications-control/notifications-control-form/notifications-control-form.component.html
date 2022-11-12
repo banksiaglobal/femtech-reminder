@@ -3,7 +3,10 @@
     <div class="spinner-wrapper">
       <mat-spinner *ngIf="!data"></mat-spinner>
     </div>
-    <div *ngIf="data">
+    <h3 class="message-title" *ngIf="isEmptyData">
+      This patient has'n got notifications
+    </h3>
+    <div *ngIf="!isEmptyData">
       <div class="notifications-title">
         <h2>List notifications</h2>
         <span class="notifications-title_img" (click)="createNotifications()"
