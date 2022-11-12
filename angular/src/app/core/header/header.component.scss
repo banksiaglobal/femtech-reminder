@@ -1,21 +1,30 @@
 @import url('../../../scss/fonts.scss');
 .header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 8vh;
   width: 100%;
   padding: 8px;
   background-color: #ad8fbcb0; 
-
 }
 
 .header-menu {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between; 
   align-items: center;
-  flex-direction: row;
-  gap: 20px;
+  height: 100%;
+  gap: 40px;
+  margin-right: 5%;
+
+  &-left,
+  &-right {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px
+}
+
+&-right div:last-child {
+  margin-left: 40px;
+}
 }
 
 @import url('../../../scss/fonts.scss');
@@ -41,13 +50,6 @@
 
 .link-page:active {
   color: rgb(111, 53, 99);
-}
-
-
-.header-button {
-  margin-right: 25px;
-  height: 100%;
-
 }
 
 

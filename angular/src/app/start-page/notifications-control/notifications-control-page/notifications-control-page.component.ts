@@ -14,7 +14,7 @@ export class NotificationsControlPageComponent implements OnInit {
 
   public listNotifications$:  Observable<IDataNotification[]>;
 
-  private userName: string;
+  public userName: string;
 
 
   constructor(private notificationService: NotificationService, private route: ActivatedRoute) { }

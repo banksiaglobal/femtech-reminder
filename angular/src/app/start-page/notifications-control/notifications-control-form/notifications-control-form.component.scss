@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 20px;
   font-size: 27px;
 
   &_img {
@@ -19,5 +20,8 @@
     font-family: "Courgette", cursive !important;
   }
 }
+
+
+
 
 

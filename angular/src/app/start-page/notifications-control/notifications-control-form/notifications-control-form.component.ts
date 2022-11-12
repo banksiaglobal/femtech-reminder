@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '@angular/core';
+import { IDataNotification } from 'src/app/models/IDataNotification';
 
 @Component({
   selector: 'app-notifications-control-form',
@@ -6,7 +7,11 @@ import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from 
   styleUrls: ['./notifications-control-form.component.scss']
 })
 export class NotificationsControlFormComponent  implements OnChanges{
-  @Input() data!: any[];
+  @Input() data!: IDataNotification[];
+
+  @Input() userName: string;
+
+
 
   @Output() changeState: EventEmitter<string> = new EventEmitter<string>();
 
@@ -17,6 +22,7 @@ export class NotificationsControlFormComponent  implements OnChanges{
     if (changes['data'].currentValue) {
       (changes['data'].currentValue).length === 0 ? this.isEmptyData = true : false;
       this.data = changes['data'].currentValue;   
+      this.userName = changes['data'].currentValue[0].patient
     }
   }
   createNotifications(){

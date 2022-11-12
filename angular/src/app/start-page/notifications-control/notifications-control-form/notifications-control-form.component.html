@@ -8,10 +8,13 @@
     </h3>
     <div *ngIf="!isEmptyData">
       <div class="notifications-title">
-        <h2>List notifications</h2>
-        <span class="notifications-title_img" (click)="createNotifications()"
-          ><img src="../../../../assets/icons8-add-new-50.png" alt="icon plus"
-        /></span>
+        <h2>
+          List notifications for: <br />
+          {{ userName }}
+        </h2>
+        <div class="notifications-title_img" (click)="createNotifications()">
+          <img src="../../../../assets/icons8-add-new-50.png" alt="icon plus" />
+        </div>
       </div>
       <div class="box notifications-box">
         <mat-card class="box-card" *ngFor="let item of data">
@@ -24,12 +27,10 @@
               <span>{{ item.notifyTime | date }} </span>
               <br />
             </p>
-            <p>patient: {{ item.patient }}</p>
           </mat-card-content>
-          <mat-card-actions> </mat-card-actions>
           <mat-card-actions>
             <mat-slide-toggle
-              [checked]="item.state"
+              [checked]=""
               (change)="changeState.emit(item.id)"
             ></mat-slide-toggle>
           </mat-card-actions>

@@ -21,13 +21,19 @@ export const routes: Routes = [
     title: 'Recomendations'
   },
   {
+    path: 'info',
+    loadComponent: () => import('./start-page/info/info-page/info-page.component').then(m=>m.InfoPageComponent),
+    pathMatch:'full',
+    title: 'Info'
+  },
+  {
       path: '',
-      redirectTo: 'users',
+      redirectTo: 'info',
       pathMatch: 'full',
   },
   {
     path: '**',
-    redirectTo: 'users',
+    redirectTo: 'info',
     pathMatch: 'full',
   }
 ];
