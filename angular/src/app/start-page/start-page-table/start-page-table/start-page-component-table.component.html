@@ -3,14 +3,10 @@
     <div class="spinner-wrapper">
       <mat-spinner *ngIf="!data"></mat-spinner>
     </div>
-    <div class="users-table" *ngIf="data">
+    <div class="users-table-box" *ngIf="data">
       <h2>List users</h2>
       <h4>*click for name and you will get the notifications for this user</h4>
-      <table
-        mat-table
-        [dataSource]="dataSource"
-        class="mat-elevation-z8 demo-table"
-      >
+      <table mat-table [dataSource]="dataSource" class="users-table">
         <!-- Position Column -->
         <ng-container matColumnDef="name">
           <th mat-header-cell *matHeaderCellDef>Name</th>

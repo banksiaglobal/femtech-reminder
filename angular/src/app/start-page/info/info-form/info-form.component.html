@@ -1,23 +1,23 @@
 <div class="page info-page">
   <div class="container">
     <div class="text-box">
-      <mat-card class="box-card">
+      <div class="box-card">
         <h2>Some information for you</h2>
         <p class="subtitle-box-card">
           This app is one of the client parts of FHIR ChatBot (Web GUI)
         </p>
         <p class="subtitle-box-card">You have opportunity:</p>
-        <mat-list>
-          <mat-list-item *ngFor="let message of listFeatures">
+        <ul>
+          <li *ngFor="let message of listFeatures">
             <mat-icon matListIcon>check</mat-icon>
             <p matLine>
               <span> {{ message.title }} </span>
               <br />
               <span class="demo-2"> => {{ message.content }} </span>
             </p>
-          </mat-list-item>
-        </mat-list>
-      </mat-card>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

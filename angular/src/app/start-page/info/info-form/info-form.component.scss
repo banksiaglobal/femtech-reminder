@@ -1,8 +1,31 @@
 .box-card svg {
   padding-top: 10px;
+  
+}
+
+.text-box {
+  display: flex;
+  justify-content: center;
+  color: #3f284a; 
+}
+
+ul {
+  padding: 10px;
+  background-color: rgb(220 207 226 / 61%);
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+  word-wrap: break-word;
+  
+}
+
+li {
+  display: flex;
+  gap: 5px;
+
 }
 
 .subtitle-box-card {
   text-align: center;
+  word-wrap: break-word;
 }
 

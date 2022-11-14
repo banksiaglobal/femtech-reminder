@@ -52,4 +52,28 @@
   color: rgb(111, 53, 99);
 }
 
+@media (max-width: 640px) {
+  .link-page {
+   font-size: 20px;  
+  }
+  
+  .header-menu {
+    justify-content: center;
+    gap: 0;
+  
+    &-left,
+    &-right {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 10px
+  }
+
+    &-right div:last-child {
+    margin-left: 0px;
+       
+}
+}
+}
+
 

@@ -20,14 +20,41 @@
   font-weight: bold;
 }
 
-.users-table {   
-  padding: 0 20px;
-  margin: 0 auto;
+.users-table-box {  
+  display: flex;
+  justify-content: center; 
+  flex-direction: column;
+  padding: 0 10px;
   color: #533960;  
   
 }
 
+.users-table,
+.mat-paginator {    
+  background-color: rgb(220 207 226 / 38%); 
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+  color: #533960;    
+  font-family: 'Courgette', cursive;
+}
+
+
 .user-name-box {
   cursor: grab; 
 }
+
+
+@media (max-width: 640px) {
+  th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type {
+    padding-left: 10px;
+  }
+  th.mat-header-cell:last-of-type, td.mat-cell:last-of-type, td.mat-footer-cell:last-of-type {
+    padding-right: 10px;
+  }
+}
+
+
+
+
+
 

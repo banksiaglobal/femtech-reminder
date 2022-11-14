@@ -3,20 +3,24 @@
     <div class="spinner-wrapper">
       <mat-spinner *ngIf="!data"></mat-spinner>
     </div>
-    <h3 class="message-title" *ngIf="isEmptyData">
-      This patient has'n got notifications
-    </h3>
-    <div *ngIf="!isEmptyData">
-      <div class="notifications-title">
-        <h2>
-          List notifications for: <br />
-          {{ userName }}
-        </h2>
-        <div class="notifications-title_img" (click)="createNotifications()">
-          <img src="../../../../assets/icons8-add-new-50.png" alt="icon plus" />
+    <div class="box notifications-box">
+      <h3 class="message-title" *ngIf="isEmptyData">
+        This patient has'n got notifications
+      </h3>
+      <div *ngIf="!isEmptyData">
+        <div class="notifications-title">
+          <h2>
+            List notifications for: <br />
+            {{ userName }}
+          </h2>
+          <!-- <div class="notifications-title_img" (click)="createNotifications()">
+            <img
+              src="../../../../assets/icons8-add-new-50.png"
+              alt="icon plus"
+            />
+          </div> -->
         </div>
-      </div>
-      <div class="box notifications-box">
+
         <mat-card class="box-card" *ngFor="let item of data">
           <mat-card-title>notification</mat-card-title>
           <mat-card-content>
