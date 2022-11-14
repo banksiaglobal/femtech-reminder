@@ -3,7 +3,11 @@
     <div class="spinner-wrapper">
       <mat-spinner *ngIf="!data"></mat-spinner>
     </div>
-    <div class="users-table-box" *ngIf="data">
+    <div class="users-subtitle" *ngIf="isEmptyData">
+      Ooops... <br />No registered users <br />
+      Sorry
+    </div>
+    <div class="users-table-box" *ngIf="!isEmptyData">
       <h2>List users</h2>
       <h4>*click for name and you will get the notifications for this user</h4>
       <table mat-table [dataSource]="dataSource" class="users-table">
@@ -29,7 +33,9 @@
         <!-- Name Column -->
         <ng-container matColumnDef="birthdayDate">
           <th mat-header-cell *matHeaderCellDef>Date of birthday</th>
-          <td mat-cell *matCellDef="let element">{{ element.birthdayDate }}</td>
+          <td mat-cell *matCellDef="let element">
+            {{ element.birthdayDate | date: "yyyy-MM-dd" }}
+          </td>
         </ng-container>
 
         <ng-container matColumnDef="telegramID">

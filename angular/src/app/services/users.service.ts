@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { IDataUser } from '../models/users';
@@ -14,6 +14,6 @@ export class UsersService {
   }
 
   getListUsers(): Observable<IDataUser[]> {
-    return this.http.get<IDataUser[]>(environment.API_URL + '/patient');
+    return this.http.get<IDataUser[]>(environment.API_URL + '/patient').pipe(map(data=>data['patients']));
   }
 }

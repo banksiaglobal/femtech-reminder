@@ -6,7 +6,7 @@ import { IDataNotification } from 'src/app/models/IDataNotification';
   templateUrl: './notifications-control-form.component.html',
   styleUrls: ['./notifications-control-form.component.scss']
 })
-export class NotificationsControlFormComponent  implements OnChanges{
+export class NotificationsControlFormComponent  implements OnChanges {
   @Input() data!: IDataNotification[];
 
   @Input() userName: string;
@@ -23,6 +23,7 @@ export class NotificationsControlFormComponent  implements OnChanges{
       (changes['data'].currentValue).length === 0 ? this.isEmptyData = true : false;
       this.data = changes['data'].currentValue;   
      }
+   
   }
   createNotifications(){
 

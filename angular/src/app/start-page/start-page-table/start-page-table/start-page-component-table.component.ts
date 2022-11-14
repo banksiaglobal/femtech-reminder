@@ -27,11 +27,16 @@ export class StartPageComponentTableComponent implements OnChanges, AfterViewIni
 
   public userName: string;
 
+  public isEmptyData: boolean;
+
   constructor() {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes['data'].currentValue) this.dataSource.data = changes['data'].currentValue.patients;
+    if (changes['data'].currentValue) {
+      this.dataSource.data = changes['data'].currentValue;
+      (changes['data'].currentValue).length === 0 ? this.isEmptyData = true : false;
+    }
   }
 
   ngAfterViewInit(): void {

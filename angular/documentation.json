@@ -1,0 +1,2906 @@
+{
+    "pipes": [],
+    "interfaces": [
+        {
+            "name": "IDataNotification",
+            "id": "interface-IDataNotification-7bd9539d6ae7d0db5130e7494bfafe3d4db0bb1d4c321a3fbf7acd96c5172c18c752fee69408202082ab002801b859ae221fcdd1871b8a237337e7c360d05cba",
+            "file": "src/app/models/IDataNotification.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface IDataNotification {\r\n  id: string;\r\n  recommendation: string;\r\n  notifyTime: string;\r\n  patient: string;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "id",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "notifyTime",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "patient",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "recommendation",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 165,
+            "methods": []
+        },
+        {
+            "name": "IDataRecomendationByAge",
+            "id": "interface-IDataRecomendationByAge-453a2fe1fc19cf59a7b7fd03e0ad3037a3bf90d1c5bf08f34d188a9d91cffa28b981e3ab4142b1680376e64224433bafdb19fcb5b0e8b64e3964e2aca78c279d",
+            "file": "src/app/models/lDataRecomendationsByAge.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface IDataRecomendationByAge {\r\n  id: string;\r\n  description: string;\r\n  source: string;\r\n  ageFrom: number;\r\n  ageUpTo: number;\r\n  period: string;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "ageFrom",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "ageUpTo",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "description",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "id",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "period",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 7
+                },
+                {
+                    "name": "source",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 165,
+            "methods": []
+        },
+        {
+            "name": "IDataUser",
+            "id": "interface-IDataUser-ee0802c273ef0d2fab46dfec0be19da77edd1b55fb198c6144c0118e1a7ee55415585225e5eeed9d5635c28c3a1ac98ddb8f82ea43c0fecf112d571dc5f0d5b4",
+            "file": "src/app/models/users.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface IDataUser {\r\n  name: string;\r\n  lastName: string;\r\n  birthdayDate: string;\r\n  telegramID: number;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "birthdayDate",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "lastName",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "name",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "telegramID",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 165,
+            "methods": []
+        }
+    ],
+    "injectables": [
+        {
+            "name": "NotificationService",
+            "id": "injectable-NotificationService-47be12d9d293c3058e24e8459738c71f5321e42474051a9a7c441c846211f4f04bc762574dda2c6f035ccc1c6b6abceebf793b591e4e8feedb4361ccccae45c5",
+            "file": "src/app/services/notifications.service.ts",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "findNotificationsByUserName",
+                    "args": [
+                        {
+                            "name": "userName",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Observable<IDataNotification[]>",
+                    "typeParameters": [],
+                    "line": 21,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "userName",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "getListNotifications",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "Observable<IDataNotification[]>",
+                    "typeParameters": [],
+                    "line": 17,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport { map, Observable, shareReplay } from 'rxjs';\r\nimport { environment } from 'src/environments/environment';\r\nimport { HttpClient } from '@angular/common/http';\r\nimport { IDataNotification } from '../models/IDataNotification';\r\n\r\n\r\n\r\n@Injectable({\r\n  providedIn: 'root',\r\n})\r\nexport class NotificationService {\r\n\r\n  constructor(private http: HttpClient) {\r\n  }\r\n\r\n  getListNotifications (): Observable<IDataNotification[]> {\r\n    return this.http.get<IDataNotification[]>(environment.API_URL + '/get-log').pipe(shareReplay());\r\n  }\r\n\r\n  findNotificationsByUserName(userName: string): Observable<IDataNotification[]> {\r\n    // console.log(this.getListNotifications().pipe(map(data=> data['notifications'].find(el=> el.patient == userName))).subscribe(data=> console.log(data)))\r\n   return this.getListNotifications().pipe(map(data=> data['notifications'].filter(el=> el.patient == userName)));\r\n  }\r\n\r\n\r\n}\r\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 12,
+                "jsdoctags": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "type": "injectable"
+        },
+        {
+            "name": "RecomendationsService",
+            "id": "injectable-RecomendationsService-d693f55bd99f9941646f1c8809a0bcbba40ab3d188f32086e26e709b60f9a78d5743d13b3c2a9d83e03b6b753eea8664832d5a788a5d24841163dad3a1fee54f",
+            "file": "src/app/services/recomendations.service.ts",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "getListRecomendationsByAge",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "Observable<IDataRecomendationByAge[]>",
+                    "typeParameters": [],
+                    "line": 17,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "postRecomendation",
+                    "args": [
+                        {
+                            "name": "recomendation",
+                            "type": "IDataRecomendationByAge",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Observable<any>",
+                    "typeParameters": [],
+                    "line": 21,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "recomendation",
+                            "type": "IDataRecomendationByAge",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport { Observable } from 'rxjs';\r\nimport { environment } from 'src/environments/environment';\r\nimport { HttpClient } from '@angular/common/http';\r\nimport { IDataRecomendationByAge } from '../models/lDataRecomendationsByAge';\r\n\r\n\r\n\r\n@Injectable({\r\n  providedIn: 'root',\r\n})\r\nexport class RecomendationsService {\r\n\r\n  constructor(private http: HttpClient) {\r\n  }\r\n\r\n  getListRecomendationsByAge (): Observable<IDataRecomendationByAge[]> {\r\n    return this.http.get<IDataRecomendationByAge[]>(environment.API_URL + '/recommendation-age');\r\n  }\r\n\r\n  postRecomendation(recomendation: IDataRecomendationByAge): Observable<any> {\r\n    return this.http.post<any>(environment.API_URL + '/recommendation-age', recomendation);\r\n  }\r\n}\r\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 12,
+                "jsdoctags": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "type": "injectable"
+        },
+        {
+            "name": "UsersService",
+            "id": "injectable-UsersService-570d90830639cbea30840e1db6c1d82c1477efad66846de480e535c8e2daa80e755af5edb97e388a5928ef06573bf9fc96e165de5b1837b4cfd7b74d535b2d4a",
+            "file": "src/app/services/users.service.ts",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "getListUsers",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "Observable<IDataUser[]>",
+                    "typeParameters": [],
+                    "line": 16,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport { map, Observable } from 'rxjs';\r\nimport { environment } from 'src/environments/environment';\r\nimport { HttpClient } from '@angular/common/http';\r\nimport { IDataUser } from '../models/users';\r\n\r\n\r\n@Injectable({\r\n  providedIn: 'root',\r\n})\r\nexport class UsersService {\r\n\r\n  constructor(private http: HttpClient) {\r\n  }\r\n\r\n  getListUsers(): Observable<IDataUser[]> {\r\n    return this.http.get<IDataUser[]>(environment.API_URL + '/patient').pipe(map(data=>data['patients']));\r\n  }\r\n}\r\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 11,
+                "jsdoctags": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "type": "injectable"
+        }
+    ],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "AppComponent",
+            "id": "component-AppComponent-c2b7d4987dc6af983ed3012b72c6eca97d6757ddd255740de63386386b2486f679a38a3a32ce6db02dc10979bdc0001e7a063dc97d1e52e7cc2be072979e2bee",
+            "file": "src/app/app.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-root",
+            "styleUrls": [
+                "./app.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./app.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "title",
+                    "defaultValue": "'fem-tech-reminder'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { FooterComponent } from './core/footer/footer.component';\r\nimport { HeaderComponent } from './core/header/header.component';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrls: ['./app.component.scss'],\r\n  \r\n})\r\nexport class AppComponent {\r\n  title = 'fem-tech-reminder';\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "\r\n\r\n",
+                    "styleUrl": "./app.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<app-header></app-header>\r\n<router-outlet></router-outlet>\r\n<app-footer></app-footer>\r\n"
+        },
+        {
+            "name": "CreateRecomendationComponent",
+            "id": "component-CreateRecomendationComponent-9cb34322e10e2014c6d7318e5da5fa94effa592f1394e9bba4cc8ab25947979ebba63c96b3bf814b5fb311220ba165084ca037f76184699f969ebd200431a171",
+            "file": "src/app/start-page/recomendations/dialogs/create-recomendation/create-recomendation.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-create-recomendation",
+            "styleUrls": [
+                "./create-recomendation.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./create-recomendation.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "data",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 25,
+                    "decorators": [
+                        {
+                            "name": "Inject",
+                            "stringifiedArguments": "MAT_DIALOG_DATA"
+                        }
+                    ],
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "dialog",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "MatDialog",
+                    "optional": false,
+                    "description": "",
+                    "line": 23,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "dialogRef",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "MatDialogRef<CreateRecomendationComponent>",
+                    "optional": false,
+                    "description": "",
+                    "line": 23,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "recomendationForm",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "FormGroup",
+                    "optional": false,
+                    "description": "",
+                    "line": 21,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 27,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "saveNewRecomendations",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 38,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit, Inject } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport {MatDialog, MatDialogRef, MatDialogModule, MAT_DIALOG_DATA} from '@angular/material/dialog';\nimport {MatButtonModule} from '@angular/material/button';\nimport {MatCardModule} from '@angular/material/card';\nimport {MatFormFieldModule} from '@angular/material/form-field';\nimport {MatInputModule} from '@angular/material/input';\nimport { FormGroup, FormControl, FormsModule, ReactiveFormsModule,  Validators } from '@angular/forms';\n\n\n\n@Component({\n  selector: 'app-create-recomendation',\n  templateUrl: './create-recomendation.component.html',\n  styleUrls: ['./create-recomendation.component.scss'],\n  standalone: true,\n  imports: [CommonModule, MatCardModule, MatDialogModule, MatButtonModule, MatFormFieldModule, MatInputModule, FormsModule, ReactiveFormsModule]\n})\nexport class CreateRecomendationComponent implements OnInit  {\n\n  public recomendationForm: FormGroup;\n\n  constructor(public dialog: MatDialog,  public dialogRef: MatDialogRef<CreateRecomendationComponent>,\n    @Inject(MAT_DIALOG_DATA)\n    public data: any) {}\n\n    ngOnInit():void {  \n   this.recomendationForm = new FormGroup({             \n      \"id\": new FormControl('', Validators.required),\n      \"description\": new FormControl('', Validators.required),\n      \"source\": new FormControl('', Validators.required),\n      \"ageFrom\": new FormControl('', Validators.required),\n      \"ageUpTo\": new FormControl('', Validators.required),\n      \"period\": new FormControl('', Validators.required),\n  });\n  }\n\n  saveNewRecomendations(): void{\n    if(this.recomendationForm.valid){    \n      this.data = this.recomendationForm.value;      \n      this.dialogRef.close(this.data);\n    }   \n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".accept-btn {\r\n  background-color: rgba(173, 143, 188, 0.6901960784);;\r\n}",
+                    "styleUrl": "./create-recomendation.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "dialog",
+                        "type": "MatDialog",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "dialogRef",
+                        "type": "MatDialogRef<CreateRecomendationComponent>",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "data",
+                        "type": "any",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 21,
+                "jsdoctags": [
+                    {
+                        "name": "dialog",
+                        "type": "MatDialog",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "dialogRef",
+                        "type": "MatDialogRef<CreateRecomendationComponent>",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "data",
+                        "type": "any",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"box\">\n  <mat-card class=\"mat-card-popup\">\n    <h2 mat-dialog-title>Create new recommendation:</h2>\n    <form\n      [formGroup]=\"recomendationForm\"\n      class=\"recomendation-form\"\n      (ngSubmit)=\"saveNewRecomendations()\"\n    >\n      <mat-dialog-content class=\"mat-typography\">\n        <mat-form-field appearance=\"legacy\">\n          <mat-label>ID</mat-label>\n          <input\n            matInput\n            placeholder=\"id\"\n            autocomplete=\"off\"\n            formControlName=\"id\"\n          />\n          <mat-hint>enter user id</mat-hint>\n        </mat-form-field>\n\n        <mat-form-field appearance=\"standard\">\n          <mat-label>description recomendation</mat-label>\n          <input\n            matInput\n            placeholder=\"description\"\n            autocomplete=\"off\"\n            type=\"text\"\n            formControlName=\"description\"\n          />\n          <mat-hint>description</mat-hint>\n        </mat-form-field>\n\n        <mat-form-field appearance=\"standard\">\n          <mat-label>source recomendation</mat-label>\n          <input\n            matInput\n            placeholder=\"source\"\n            autocomplete=\"off\"\n            formControlName=\"source\"\n          />\n          <mat-hint>source</mat-hint>\n        </mat-form-field>\n\n        <mat-form-field appearance=\"standard\">\n          <mat-label>age from</mat-label>\n          <input\n            matInput\n            placeholder=\"age from\"\n            autocomplete=\"off\"\n            formControlName=\"ageFrom\"\n          />\n          <mat-hint>age from</mat-hint>\n        </mat-form-field>\n\n        <mat-form-field appearance=\"standard\">\n          <mat-label>age to</mat-label>\n          <input\n            matInput\n            placeholder=\"age to\"\n            autocomplete=\"off\"\n            formControlName=\"ageUpTo\"\n          />\n          <mat-hint>age to</mat-hint>\n        </mat-form-field>\n\n        <mat-form-field appearance=\"standard\">\n          <mat-label>period</mat-label>\n          <input\n            matInput\n            placeholder=\"period\"\n            autocomplete=\"off\"\n            formControlName=\"period\"\n          />\n          <mat-hint>period</mat-hint>\n        </mat-form-field>\n      </mat-dialog-content>\n      <mat-dialog-actions align=\"end\">\n        <button mat-button mat-dialog-close>Cancel</button>\n        <button\n          class=\"accept-btn\"\n          mat-button\n          cdkFocusInitial\n          type=\"submit\"\n          [disabled]=\"recomendationForm.invalid\"\n          [mat-dialog-close]=\"true\"\n        >\n          Create\n        </button>\n      </mat-dialog-actions>\n    </form>\n  </mat-card>\n</div>\n"
+        },
+        {
+            "name": "FooterComponent",
+            "id": "component-FooterComponent-20de8a8c3cf31f74d9cb0eb095422c338b646d996da9a3a84ee99069c600f06ac6e72dce8a2ae6134e2aff35d22fea53cc8016250d38fc1421aaf16a541ad287",
+            "file": "src/app/core/footer/footer.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-footer",
+            "styleUrls": [
+                "./footer.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./footer.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "date",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 10,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-footer',\n  templateUrl: './footer.component.html',\n  styleUrls: ['./footer.component.scss'],\n})\nexport class FooterComponent implements OnInit {\n\n  public date: number;\n\n  constructor() { }\n\n  ngOnInit(): void {\n    this.date = new Date().getFullYear();\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".footer {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  height: 5vh;\r\n  width: 100%;\r\n  padding: 5px 0 5px 0;\r\n  background-color: #cdd4cc;\r\n}\r\n\r\n.footer-menu {\r\n  display: flex;\r\n  justify-content: center;\r\n  text-align: center; \r\n  height: 100%;\r\n  gap: 10px;\r\n\r\n  &_date {\r\n    display: flex;\r\n    align-items: flex-end;\r\n  }\r\n\r\n  &_img {\r\n    height: 100%;\r\n    width: 100%;\r\n    display: flex;\r\n    justify-content: flex-end;\r\n  }\r\n}\r\n\r\n",
+                    "styleUrl": "./footer.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 10
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<footer class=\"footer\">\n  <div class=\"footer-menu\">\n    <!-- <div class=\"footer-menu_date\">{{ date }}</div> -->\n    <div class=\"footer-menu_logo\">\n      <a\n        class=\"links-box__link\"\n        href=\"https://banksiaglobal.com/\"\n        target=\"_blanc\"\n      >\n        <img\n          class=\"footer-menu_img\"\n          src=\"../../../assets/logo-head.svg\"\n          alt=\"logo company\"\n        />\n      </a>\n    </div>\n  </div>\n</footer>\n"
+        },
+        {
+            "name": "HeaderComponent",
+            "id": "component-HeaderComponent-c7947ed17b330bc857bf716652a88f502ebe2f6fa2c9e5b3c1089abb39cfbefb73319accb011ffabb8d10a8cd2ff1698be4661fb33b850f43c7aa9193dad6115",
+            "file": "src/app/core/header/header.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-header",
+            "styleUrls": [
+                "./header.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./header.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-header',\n  templateUrl: './header.component.html',\n  styleUrls: ['./header.component.scss'],\n})\nexport class HeaderComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import url('../../../scss/fonts.scss');\r\n.header {\r\n  height: 8vh;\r\n  width: 100%;\r\n  padding: 8px;\r\n  background-color: #ad8fbcb0; \r\n}\r\n\r\n.header-menu {\r\n  display: flex;\r\n  justify-content: space-between; \r\n  align-items: center;\r\n  height: 100%;\r\n  gap: 40px;\r\n  margin-right: 5%;\r\n\r\n  &-left,\r\n  &-right {\r\n    display: flex;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n    gap: 20px\r\n}\r\n\r\n&-right div:last-child {\r\n  margin-left: 40px;\r\n}\r\n}\r\n\r\n@import url('../../../scss/fonts.scss');\r\n.header-logo {\r\n  &_img {\r\n    display: flex;    \r\n    height: 30px;\r\n    width: 30px;\r\n    margin-right: 20px;\r\n  }\r\n}\r\n\r\n.link-page {\r\n  display: flex;\r\n  align-items: center;\r\n  height: 100%;\r\n  color: white;\r\n  font-size: 25px;\r\n  text-decoration: none;\r\n  font-weight: 600;\r\n  font-family: 'Courgette', cursive;\r\n}\r\n\r\n.link-page:active {\r\n  color: rgb(111, 53, 99);\r\n}\r\n\r\n@media (max-width: 640px) {\r\n  .link-page {\r\n   font-size: 20px;  \r\n  }\r\n  \r\n  .header-menu {\r\n    justify-content: center;\r\n    gap: 0;\r\n  \r\n    &-left,\r\n    &-right {\r\n      display: flex;\r\n      justify-content: flex-start;\r\n      align-items: center;\r\n      gap: 10px\r\n  }\r\n\r\n    &-right div:last-child {\r\n    margin-left: 0px;\r\n       \r\n}\r\n}\r\n}\r\n\r\n\r\n",
+                    "styleUrl": "./header.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<header class=\"header\">\n  <div class=\"container\">\n    <div class=\"header-menu\">\n      <!-- <img\n        class=\"header-logo_img\"\n        src=\"../../../assets/alarm-clock.png\"\n        alt=\"logo alarm\"\n      /> -->\n      <div class=\"header-menu-left\">\n        <a\n          href=\"https://calendar.google.com/calendar\"\n          title=\"calendar google\"\n          target=\"_blanc\"\n        >\n          <svg xmlns=\"http://www.w3.org/2000/svg\" height=\"48\" width=\"48\">\n            <path\n              fill=\"#ffffff\"\n              d=\"M29.85 37q-2.05 0-3.45-1.4-1.4-1.4-1.4-3.45 0-2.05 1.4-3.45 1.4-1.4 3.45-1.4 2.05 0 3.45 1.4 1.4 1.4 1.4 3.45 0 2.05-1.4 3.45-1.4 1.4-3.45 1.4ZM9 44q-1.2 0-2.1-.9Q6 42.2 6 41V10q0-1.2.9-2.1Q7.8 7 9 7h3.25V4h3.25v3h17V4h3.25v3H39q1.2 0 2.1.9.9.9.9 2.1v31q0 1.2-.9 2.1-.9.9-2.1.9Zm0-3h30V19.5H9V41Zm0-24.5h30V10H9Zm0 0V10v6.5Z\"\n            />\n          </svg>\n        </a>\n      </div>\n      <div class=\"header-menu-right\">\n        <div>\n          <a class=\"link-page\" href=\"\" routerLink=\"/users\"> Users </a>\n        </div>\n        <!-- <div class=\"header-button\">\n        <a class=\"link-page\" href=\"\" routerLink=\"/notifications-control\">\n          Notifications\n        </a>\n      </div> -->\n        <div>\n          <a class=\"link-page\" href=\"\" routerLink=\"/recommendations\">\n            Recommendations\n          </a>\n        </div>\n        <div>\n          <a class=\"link-page\" href=\"\" routerLink=\"/info\"> Info </a>\n        </div>\n      </div>\n    </div>\n  </div>\n</header>\n"
+        },
+        {
+            "name": "InfoFormComponent",
+            "id": "component-InfoFormComponent-cc5daa7c6e40651f8922178887e2ee74ac870e00a26065baa38679dbf4f4487072ead0bd549e48220f1f4b90b0340a5e16c10bd2d20f920ce2358d3270cce223",
+            "file": "src/app/start-page/info/info-form/info-form.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-info-form",
+            "styleUrls": [
+                "./info-form.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./info-form.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "listFeatures",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "literal type[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 20,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, OnInit } from '@angular/core';\nimport { MatCardModule } from '@angular/material/card';\nimport {MatListModule} from '@angular/material/list';\nimport {MatIconModule} from '@angular/material/icon';\n\n@Component({\n  selector: 'app-info-form',\n  templateUrl: './info-form.component.html',\n  styleUrls: ['./info-form.component.scss'],\n  standalone: true,\n  imports: [CommonModule, MatCardModule, MatListModule, MatIconModule]\n})\nexport class InfoFormComponent implements OnInit {\n\n  @Input()listFeatures: {title: string, content: string}[];\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".box-card svg {\r\n  padding-top: 10px;\r\n  \r\n}\r\n\r\n.text-box {\r\n  display: flex;\r\n  justify-content: center;\r\n  color: #3f284a; \r\n}\r\n\r\nul {\r\n  padding: 10px;\r\n  background-color: rgb(220 207 226 / 61%);\r\n  border-radius: 10px;\r\n  backdrop-filter: blur(6px);\r\n  word-wrap: break-word;\r\n  \r\n}\r\n\r\nli {\r\n  display: flex;\r\n  gap: 5px;\r\n\r\n}\r\n\r\n.subtitle-box-card {\r\n  text-align: center;\r\n  word-wrap: break-word;\r\n}\r\n\r\n",
+                    "styleUrl": "./info-form.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 16
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"page info-page\">\n  <div class=\"container\">\n    <div class=\"text-box\">\n      <div class=\"box-card\">\n        <h2>Some information for you</h2>\n        <p class=\"subtitle-box-card\">\n          This app is one of the client parts of FHIR ChatBot (Web GUI)\n        </p>\n        <p class=\"subtitle-box-card\">You have opportunity:</p>\n        <ul>\n          <li *ngFor=\"let message of listFeatures\">\n            <mat-icon matListIcon>check</mat-icon>\n            <p matLine>\n              <span> {{ message.title }} </span>\n              <br />\n              <span class=\"demo-2\"> => {{ message.content }} </span>\n            </p>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </div>\n</div>\n"
+        },
+        {
+            "name": "InfoPageComponent",
+            "id": "component-InfoPageComponent-9f52160a5f3915494064c744abaf57c2d725fd59ad518483a331a8b9192627b91552c71ca094d704424675272cff42a4173667539d3e99fc6cd1977aedd59d81",
+            "file": "src/app/start-page/info/info-page/info-page.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-info-page",
+            "styleUrls": [
+                "./info-page.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./info-page.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "listFeatures",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "literal type[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 13,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 16,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { InfoFormComponent } from '../info-form/info-form.component';\n\n@Component({\n  selector: 'app-info-page',\n  templateUrl: './info-page.component.html',\n  styleUrls: ['./info-page.component.scss'],\n  standalone: true,\n  imports: [InfoFormComponent]\n})\nexport class InfoPageComponent implements OnInit {\n\n  public listFeatures: {title: string, content: string}[];\n  constructor() { }\n\n  ngOnInit(): void {\n    this.listFeatures = [{title:'to get a list of registered at this chat-bot', content: 'click \"Users\" header-menu'},\n    {title: 'to get a list of notifications for any user at the list', content:'click \"UserName\" in the list of users'},\n    {title: 'to get a list of recommendations ', content:'click \"Recommendations\" in the header-menu'},\n    {title: 'to create a new recommendation', content:'click plus on the Recommendations page'}\n  ]\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./info-page.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 13
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<app-info-form [listFeatures]=\"listFeatures\"></app-info-form>\n"
+        },
+        {
+            "name": "MessageDialogComponent",
+            "id": "component-MessageDialogComponent-aad493cbb899d4996abbd71c4b1cafd96650dcfdd04717172a7be30e1a3edb89170a157012969e32cf37db904ebb30a304bd5fb17bf43c266042ee639943f500",
+            "file": "src/app/start-page/recomendations/dialogs/message-dialog/message-dialog.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-message-dialog",
+            "styleUrls": [
+                "./message-dialog.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./message-dialog.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "data",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 20,
+                    "decorators": [
+                        {
+                            "name": "Inject",
+                            "stringifiedArguments": "MAT_DIALOG_DATA"
+                        }
+                    ],
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "dialog",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "MatDialog",
+                    "optional": false,
+                    "description": "",
+                    "line": 18,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "dialogRef",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "MatDialogRef<CreateRecomendationComponent>",
+                    "optional": false,
+                    "description": "",
+                    "line": 18,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 21,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Inject, OnInit } from '@angular/core';\nimport { MatButtonModule } from '@angular/material/button';\nimport { MatCardModule } from '@angular/material/card';\nimport { MatDialog, MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';\nimport { CreateRecomendationComponent } from '../create-recomendation/create-recomendation.component';\n\n@Component({\n  selector: 'app-message-dialog',\n  templateUrl: './message-dialog.component.html',\n  styleUrls: ['./message-dialog.component.scss'],\n  standalone: true,\n  imports: [CommonModule, MatCardModule, MatDialogModule, MatButtonModule]\n\n})\nexport class MessageDialogComponent implements OnInit {\n\n  constructor(public dialog: MatDialog,  public dialogRef: MatDialogRef<CreateRecomendationComponent>,\n    @Inject(MAT_DIALOG_DATA)\n    public data: any) {}\n    ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".mat-dialog-content,\r\n.mat-dialog-actions {\r\n  display: flex;\r\n  justify-content: center;\r\n  text-align: center;\r\n}\r\n",
+                    "styleUrl": "./message-dialog.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "dialog",
+                        "type": "MatDialog",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "dialogRef",
+                        "type": "MatDialogRef<CreateRecomendationComponent>",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "data",
+                        "type": "any",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 16,
+                "jsdoctags": [
+                    {
+                        "name": "dialog",
+                        "type": "MatDialog",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "dialogRef",
+                        "type": "MatDialogRef<CreateRecomendationComponent>",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "data",
+                        "type": "any",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"box\">\n  <mat-card class=\"mat-card-popup\">\n    <h2 mat-dialog-title>Successful request</h2>\n    <mat-dialog-content>Recommendation was added!</mat-dialog-content>\n    <mat-dialog-actions>\n      <button mat-button mat-dialog-close>Close</button>\n    </mat-dialog-actions>\n  </mat-card>\n</div>\n"
+        },
+        {
+            "name": "NotificationsControlFormComponent",
+            "id": "component-NotificationsControlFormComponent-ccd505ef17ff33902e0b8fc06dc727d5b3e8a2b3c0b0214ca346018b395b2bb0169cd49c76ab09d199816ce44c5024ec85e672db7f449d2402c5753bdb1a49ad",
+            "file": "src/app/start-page/notifications-control/notifications-control-form/notifications-control-form.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-notifications-control-form",
+            "styleUrls": [
+                "./notifications-control-form.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./notifications-control-form.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "data",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "IDataNotification[]",
+                    "decorators": []
+                },
+                {
+                    "name": "userName",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "changeState",
+                    "defaultValue": "new EventEmitter<string>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "EventEmitter<string>"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "isEmptyData",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 18,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "createNotifications",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 27,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnChanges",
+                    "args": [
+                        {
+                            "name": "changes",
+                            "type": "SimpleChanges",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 21,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "changes",
+                            "type": "SimpleChanges",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '@angular/core';\r\nimport { IDataNotification } from 'src/app/models/IDataNotification';\r\n\r\n@Component({\r\n  selector: 'app-notifications-control-form',\r\n  templateUrl: './notifications-control-form.component.html',\r\n  styleUrls: ['./notifications-control-form.component.scss']\r\n})\r\nexport class NotificationsControlFormComponent  implements OnChanges{\r\n  @Input() data!: IDataNotification[];\r\n\r\n  @Input() userName: string;\r\n\r\n\r\n\r\n  @Output() changeState: EventEmitter<string> = new EventEmitter<string>();\r\n\r\n  public isEmptyData: boolean;\r\n\r\n\r\n  ngOnChanges(changes: SimpleChanges): void {\r\n    if (changes['data'].currentValue) {\r\n      (changes['data'].currentValue).length === 0 ? this.isEmptyData = true : false;\r\n      this.data = changes['data'].currentValue;   \r\n     }\r\n  }\r\n  createNotifications(){\r\n\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".notifications-title {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  gap: 20px;\r\n  font-size: 27px;\r\n\r\n  &_img {\r\n  cursor: grab;\r\n\r\n  }\r\n}\r\n\r\n  .message-title {   \r\n    margin-top: 10%;\r\n    text-align: center;\r\n    font-size: 30px;\r\n    font-family: \"Courgette\", cursive;\r\n    color:#533960;\r\n  }\r\n\r\n.notifications-box-card {\r\n  display: flex;\r\n  justify-content: center;\r\n  flex-wrap: wrap;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n",
+                    "styleUrl": "./notifications-control-form.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "implements": [
+                "OnChanges"
+            ],
+            "templateData": "<div class=\"page notifications-page\">\r\n  <div class=\"container\">\r\n    <div class=\"spinner-wrapper\">\r\n      <mat-spinner *ngIf=\"!data\"></mat-spinner>\r\n    </div>\r\n    <div class=\"box notifications-box\">\r\n      <h3 class=\"message-title\" *ngIf=\"isEmptyData\">\r\n        This patient has'n got notifications\r\n      </h3>\r\n      <div *ngIf=\"!isEmptyData\">\r\n        <div class=\"notifications-title\">\r\n          <h2>\r\n            List notifications for: <br />\r\n            {{ userName }}\r\n          </h2>\r\n          <!-- <div class=\"notifications-title_img\" (click)=\"createNotifications()\">\r\n            <img\r\n              src=\"../../../../assets/icons8-add-new-50.png\"\r\n              alt=\"icon plus\"\r\n            />\r\n          </div> -->\r\n        </div>\r\n        <div class=\"notifications-box-card\">\r\n          <mat-card class=\"box-card\" *ngFor=\"let item of data\">\r\n            <mat-card-title>notification</mat-card-title>\r\n            <mat-card-content>\r\n              <p>{{ item.recommendation }}</p>\r\n              <p>\r\n                nootify time:\r\n                <br />\r\n                <span>{{ item.notifyTime | date }} </span>\r\n                <br />\r\n              </p>\r\n            </mat-card-content>\r\n            <mat-card-actions>\r\n              <mat-slide-toggle\r\n                [checked]=\"\"\r\n                (change)=\"changeState.emit(item.id)\"\r\n              ></mat-slide-toggle>\r\n            </mat-card-actions>\r\n          </mat-card>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+        },
+        {
+            "name": "NotificationsControlPageComponent",
+            "id": "component-NotificationsControlPageComponent-e6ac27085f5ec032ba89fae2b459b1499e50044eed5b387fcc95c90e23fa0b8c343173db2a5b3234f11285219b02bf998a598f3b57b47c17f1bb0fd5ed43824e",
+            "file": "src/app/start-page/notifications-control/notifications-control-page/notifications-control-page.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-notifications-control-page",
+            "styleUrls": [
+                "./notifications-control-page.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./notifications-control-page.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "listNotifications$",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Observable<IDataNotification[]>",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "userName",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 17,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 22,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onChangeState",
+                    "args": [
+                        {
+                            "name": "id",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 32,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "id",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "setListNotifications",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "Observable<IDataNotification[]>",
+                    "typeParameters": [],
+                    "line": 27,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\nimport { ActivatedRoute } from '@angular/router';\r\nimport { map, Observable } from 'rxjs';\r\nimport { IDataNotification } from 'src/app/models/IDataNotification';\r\nimport { NotificationService } from 'src/app/services/notifications.service';\r\n\r\n\r\n@Component({\r\n  selector: 'app-notifications-control-page',\r\n  templateUrl: './notifications-control-page.component.html',\r\n  styleUrls: ['./notifications-control-page.component.scss']\r\n})\r\nexport class NotificationsControlPageComponent implements OnInit {\r\n\r\n  public listNotifications$:  Observable<IDataNotification[]>;\r\n\r\n  public userName: string;\r\n\r\n\r\n  constructor(private notificationService: NotificationService, private route: ActivatedRoute) { }\r\n\r\n  ngOnInit(): void {\r\n  this.userName = this.route.snapshot.paramMap.get('user');\r\n  this.setListNotifications();\r\n  }\r\n\r\n  setListNotifications():Observable<IDataNotification[]>  {\r\n  this.listNotifications$ =  this.notificationService.findNotificationsByUserName(this.userName);\r\n  return this.listNotifications$;\r\n}\r\n\r\n  onChangeState(id: string) {   \r\n    // this.notificationsList.map(el => {\r\n    //   if (el.id === id) el.state = !el.state;\r\n    // });\r\n  }\r\n\r\n\r\n}",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./notifications-control-page.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "notificationService",
+                        "type": "NotificationService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "route",
+                        "type": "ActivatedRoute",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 17,
+                "jsdoctags": [
+                    {
+                        "name": "notificationService",
+                        "type": "NotificationService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "route",
+                        "type": "ActivatedRoute",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<app-notifications-control-form\r\n  [data]=\"listNotifications$ | async\"\r\n  (changeState)=\"onChangeState($event)\"\r\n  [userName]=\"userName\"\r\n></app-notifications-control-form>\r\n"
+        },
+        {
+            "name": "RecomendationsFormComponent",
+            "id": "component-RecomendationsFormComponent-9f718684fb0131e5503c58d765bd7601b6d85bce010be52fb16b0873f007628d4ca2ea16467fff1fef491133a498fb9755582ae4145cd7926c216dde09b63aa1",
+            "file": "src/app/start-page/recomendations/recomendations-form/recomendations-form.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-recomendations-form",
+            "styleUrls": [
+                "./recomendations-form.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./recomendations-form.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "data",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "IDataRecomendationByAge[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "createNewRecomendation",
+                    "defaultValue": "new EventEmitter()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "EventEmitter<any>"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "recomendation",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "IDataRecomendationByAge",
+                    "optional": false,
+                    "description": "",
+                    "line": 21,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "createRecomendation",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 30,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnChanges",
+                    "args": [
+                        {
+                            "name": "changes",
+                            "type": "SimpleChanges",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 24,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "changes",
+                            "type": "SimpleChanges",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';\nimport { MatCardModule } from '@angular/material/card';\nimport { MatProgressSpinnerModule } from '@angular/material/progress-spinner';\nimport { IDataRecomendationByAge } from 'src/app/models/lDataRecomendationsByAge';\n\n\n@Component({\n  selector: 'app-recomendations-form',\n  templateUrl: './recomendations-form.component.html',\n  styleUrls: ['./recomendations-form.component.scss'],\n  standalone: true,\n  imports: [CommonModule, MatCardModule, MatProgressSpinnerModule]\n})\nexport class RecomendationsFormComponent implements OnChanges {\n\n  @Input()data: IDataRecomendationByAge[];\n\n  @Output() createNewRecomendation:EventEmitter<any> = new EventEmitter();\n\n  public recomendation: IDataRecomendationByAge;\n\n  constructor() { }\n  ngOnChanges(changes: SimpleChanges): void {\n    if (changes['data'].currentValue) {\n      this.data = changes['data'].currentValue.recommendations;\n    \n    }\n  }\n  createRecomendation(){\n\n    this.createNewRecomendation.emit();\n  }\n\n  \n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".recomendations-title {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  font-size: 27px;\r\n\r\n  &_img {\r\n  cursor: grab;\r\n\r\n  }\r\n}",
+                    "styleUrl": "./recomendations-form.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 21
+            },
+            "implements": [
+                "OnChanges"
+            ],
+            "templateData": "<div class=\"page recomendations-page\">\n  <div class=\"container\">\n    <div class=\"spinner-wrapper\">\n      <mat-spinner *ngIf=\"!data\"></mat-spinner>\n    </div>\n    <div *ngIf=\"data\">\n      <div class=\"recomendations-title\">\n        <h2>List recommendations</h2>\n        <span class=\"recomendations-title_img\" (click)=\"createRecomendation()\"\n          ><img src=\"../../../../assets/icons8-add-new-50.png\" alt=\"icon plus\"\n        /></span>\n      </div>\n      <div class=\"box recomendations-box\">\n        <mat-card class=\"box-card\" *ngFor=\"let item of data\">\n          <mat-card-title>recommendation:</mat-card-title>\n          <mat-card-subtitle>source: {{ item.source }}</mat-card-subtitle>\n          <mat-card-content>\n            <p>{{ item.description }}</p>\n            <p>\n              age:\n              <br />\n              <span>from: {{ item.ageFrom }} </span>\n              <br />\n              <span>to: {{ item.ageUpTo }}</span>\n            </p>\n            <p>period: {{ item.period }}</p>\n          </mat-card-content>\n          <mat-card-actions> </mat-card-actions>\n        </mat-card>\n      </div>\n    </div>\n  </div>\n</div>\n"
+        },
+        {
+            "name": "RecomendationsPageComponent",
+            "id": "component-RecomendationsPageComponent-8416b704267e5836f5b22aaaa5896d3c9751a15ce929e8666284a55d122f37117aa7407a4b3cfecb611cbd9e054a0a21c78de64423e67b939fc637f04a97658a",
+            "file": "src/app/start-page/recomendations/recomendations-page/recomendations-page.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-recomendations-page",
+            "styleUrls": [
+                "./recomendations-page.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./recomendations-page.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "listRecomendations$",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Observable<IDataRecomendationByAge[]>",
+                    "optional": false,
+                    "description": "",
+                    "line": 19,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "createNewRecomendation",
+                    "args": [
+                        {
+                            "name": "recomendation",
+                            "type": "IDataRecomendationByAge",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 34,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "recomendation",
+                            "type": "IDataRecomendationByAge",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 23,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "setListRecomendation",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 27,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, OnInit } from '@angular/core';\nimport { MatDialogRef, MatDialog, MatDialogModule } from '@angular/material/dialog';\nimport { Observable, map, filter, catchError, tap, switchMap, of } from 'rxjs';\nimport { IDataRecomendationByAge } from 'src/app/models/lDataRecomendationsByAge';\nimport { RecomendationsService } from 'src/app/services/recomendations.service';\nimport { CreateRecomendationComponent } from '../dialogs/create-recomendation/create-recomendation.component';\nimport { MessageDialogComponent } from '../dialogs/message-dialog/message-dialog.component';\nimport { RecomendationsFormComponent } from '../recomendations-form/recomendations-form.component';\n\n@Component({\n  selector: 'app-recomendations-page',\n  templateUrl: './recomendations-page.component.html',\n  styleUrls: ['./recomendations-page.component.scss'],\n  standalone: true,\n  imports:[CommonModule, RecomendationsFormComponent, CreateRecomendationComponent, MatDialogModule]\n})\nexport class RecomendationsPageComponent implements OnInit {\n  public listRecomendations$!: Observable<IDataRecomendationByAge[]>;\n\n  constructor(private recomendationsService: RecomendationsService, private dialog: MatDialog) { }\n\n  ngOnInit(): void {\n    this.setListRecomendation(); \n  }\n\n  setListRecomendation(): void {\n    this.listRecomendations$ = this.recomendationsService.getListRecomendationsByAge().pipe(map(data => {\n      return data ?? [];\n    }));\n\n  }\n\n  createNewRecomendation(recomendation:IDataRecomendationByAge): any{   \n    const dialogRef =  this.dialog.open(CreateRecomendationComponent, \n      {enterAnimationDuration:'500ms',\n       exitAnimationDuration:'500ms',\n      data: recomendation});\n    return dialogRef.afterClosed().pipe(filter(response=> response),\n    switchMap(data=> this.recomendationsService.postRecomendation(data)),\n    tap(()=> this.dialog.open(MessageDialogComponent)),\n    tap(()=> this.setListRecomendation()),\n    catchError(() =>\n        of(alert(\"Something went wrong. Recomendation wasn't created/updated. Repeat the action.\")),\n      ),\n    ).subscribe();\n    }   \n}\n  \n\n\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".mat-card {\r\n  max-height: 200px;\r\n}",
+                    "styleUrl": "./recomendations-page.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "recomendationsService",
+                        "type": "RecomendationsService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "dialog",
+                        "type": "MatDialog",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 19,
+                "jsdoctags": [
+                    {
+                        "name": "recomendationsService",
+                        "type": "RecomendationsService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "dialog",
+                        "type": "MatDialog",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<app-recomendations-form\n  [data]=\"listRecomendations$ | async\"\n  (createNewRecomendation)=\"createNewRecomendation($event)\"\n></app-recomendations-form>\n"
+        },
+        {
+            "name": "StartPageComponentTableComponent",
+            "id": "component-StartPageComponentTableComponent-e82d7fedd43e9179aadb80876ac41d8aa69544107a3d0b79161e5f8e1857c0231bf0ec360c4843405f608d42f8f52ca5a67deaee1289d3f52035e721f5dc22ee",
+            "file": "src/app/start-page/start-page-table/start-page-table/start-page-component-table.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-start-page-component-table",
+            "styleUrls": [
+                "./start-page-component-table.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./start-page-component-table.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "data",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "IDataUser[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "chooseCurrentUser",
+                    "defaultValue": "new EventEmitter()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "EventEmitter<any>"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "dataSource",
+                    "defaultValue": "new MatTableDataSource<IDataUser>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 22
+                },
+                {
+                    "name": "displayedColumns",
+                    "defaultValue": "['name', 'lastName', 'birthdayDate', 'telegramID']",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 26
+                },
+                {
+                    "name": "paginator",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "MatPaginator",
+                    "optional": false,
+                    "description": "",
+                    "line": 24,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "MatPaginator"
+                        }
+                    ]
+                },
+                {
+                    "name": "userName",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 28,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "chooseUser",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 41,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngAfterViewInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 37,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnChanges",
+                    "args": [
+                        {
+                            "name": "changes",
+                            "type": "SimpleChanges",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 33,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "changes",
+                            "type": "SimpleChanges",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { AfterViewInit, Component, EventEmitter, Input, OnChanges, Output, SimpleChanges, ViewChild } from '@angular/core';\r\nimport { MatCardModule } from '@angular/material/card';\r\nimport { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';\r\nimport { MatProgressSpinnerModule } from '@angular/material/progress-spinner';\r\nimport { MatTableDataSource, MatTableModule } from '@angular/material/table';\r\nimport { IDataUser } from 'src/app/models/users';\r\n\r\n\r\n@Component({\r\n  selector: 'app-start-page-component-table',\r\n  templateUrl: './start-page-component-table.component.html',\r\n  styleUrls: ['./start-page-component-table.component.scss'],\r\n  standalone: true,\r\n  imports: [CommonModule, MatCardModule, MatProgressSpinnerModule, MatTableModule, MatPaginatorModule, MatProgressSpinnerModule]\r\n})\r\nexport class StartPageComponentTableComponent implements OnChanges, AfterViewInit {\r\n  @Input() data: IDataUser[];\r\n\r\n  @Output() chooseCurrentUser: EventEmitter<any> = new EventEmitter();\r\n\r\n  dataSource = new MatTableDataSource<IDataUser>();\r\n\r\n  @ViewChild(MatPaginator) paginator: MatPaginator;\r\n\r\n  displayedColumns: string[] = ['name', 'lastName', 'birthdayDate', 'telegramID'];\r\n\r\n  public userName: string;\r\n\r\n  constructor() {\r\n  }\r\n\r\n  ngOnChanges(changes: SimpleChanges): void {\r\n    if (changes['data'].currentValue) this.dataSource.data = changes['data'].currentValue;\r\n  }\r\n\r\n  ngAfterViewInit(): void {\r\n    this.dataSource.paginator = this.paginator;\r\n  }\r\n\r\n  chooseUser(event): void{   \r\n    this.userName = event.target.innerHTML.trim();\r\n    this.chooseCurrentUser.emit(this.userName);\r\n\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".mat-column-demo-position {\r\n  width: 32px;\r\n  border-right: 1px solid currentColor;\r\n  padding-right: 24px;\r\n  text-align: center;\r\n}\r\n\r\n.mat-column-demo-name {\r\n  padding-left: 16px;\r\n  font-size: 20px;\r\n}\r\n\r\n.mat-column-demo-weight {\r\n  font-style: italic;\r\n}\r\n\r\n.mat-column-demo-symbol {\r\n  width: 32px;\r\n  text-align: center;\r\n  font-weight: bold;\r\n}\r\n\r\n.users-table-box {  \r\n  display: flex;\r\n  justify-content: center; \r\n  flex-direction: column;\r\n  padding: 0 10px;\r\n  color: #533960;  \r\n  \r\n}\r\n\r\n.users-table,\r\n.mat-paginator {    \r\n  background-color: rgb(220 207 226 / 38%); \r\n  border-radius: 10px;\r\n  backdrop-filter: blur(6px);\r\n  color: #533960;    \r\n  font-family: 'Courgette', cursive;\r\n}\r\n\r\n\r\n.user-name-box {\r\n  cursor: grab; \r\n}\r\n\r\n\r\n@media (max-width: 640px) {\r\n  th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type {\r\n    padding-left: 10px;\r\n  }\r\n  th.mat-header-cell:last-of-type, td.mat-cell:last-of-type, td.mat-footer-cell:last-of-type {\r\n    padding-right: 10px;\r\n  }\r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+                    "styleUrl": "./start-page-component-table.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 28
+            },
+            "implements": [
+                "OnChanges",
+                "AfterViewInit"
+            ],
+            "templateData": "<div class=\"page\">\r\n  <div class=\"container\">\r\n    <div class=\"spinner-wrapper\">\r\n      <mat-spinner *ngIf=\"!data\"></mat-spinner>\r\n    </div>\r\n    <div class=\"users-table-box\" *ngIf=\"data\">\r\n      <h2>List users</h2>\r\n      <h4>*click for name and you will get the notifications for this user</h4>\r\n      <table mat-table [dataSource]=\"dataSource\" class=\"users-table\">\r\n        <!-- Position Column -->\r\n        <ng-container matColumnDef=\"name\">\r\n          <th mat-header-cell *matHeaderCellDef>Name</th>\r\n          <td\r\n            class=\"user-name-box\"\r\n            mat-cell\r\n            *matCellDef=\"let element\"\r\n            title=\"more info\"\r\n            (click)=\"chooseUser($event)\"\r\n          >\r\n            {{ element.name }}\r\n          </td>\r\n        </ng-container>\r\n\r\n        <ng-container matColumnDef=\"lastName\">\r\n          <th mat-header-cell *matHeaderCellDef>Last Name</th>\r\n          <td mat-cell *matCellDef=\"let element\">{{ element.lastName }}</td>\r\n        </ng-container>\r\n\r\n        <!-- Name Column -->\r\n        <ng-container matColumnDef=\"birthdayDate\">\r\n          <th mat-header-cell *matHeaderCellDef>Date of birthday</th>\r\n          <td mat-cell *matCellDef=\"let element\">{{ element.birthdayDate }}</td>\r\n        </ng-container>\r\n\r\n        <ng-container matColumnDef=\"telegramID\">\r\n          <th mat-header-cell *matHeaderCellDef>TelegramID</th>\r\n          <td mat-cell *matCellDef=\"let element\">{{ element.telegramID }}</td>\r\n        </ng-container>\r\n\r\n        <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\r\n        <tr mat-row *matRowDef=\"let row; columns: displayedColumns\"></tr>\r\n      </table>\r\n      <mat-paginator\r\n        [pageSizeOptions]=\"[5, 10, 25, 100]\"\r\n        showFirstLastButtons\r\n        aria-label=\"Select page of users\"\r\n      >\r\n      </mat-paginator>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+        },
+        {
+            "name": "StartPageTablePageComponent",
+            "id": "component-StartPageTablePageComponent-15ae733eb252b30c0c74690b105de089b187df1b572b8d78655bce3fc24e56db6afe13b4b19edf65811cba59bdd3c2367ca55534ebac6165d3d121d29f3b1a9d",
+            "file": "src/app/start-page/start-page-table/start-page-table-page/start-page-table-page.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-start-page-table-page",
+            "styleUrls": [
+                "./start-page-table-page.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./start-page-table-page.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "listUsers$",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Observable<IDataUser[]>",
+                    "optional": false,
+                    "description": "",
+                    "line": 25,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "notificationCurrentUser",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 27,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "chooseCurrentUser",
+                    "args": [
+                        {
+                            "name": "userName",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 38,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "userName",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 32,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';\r\nimport { MatCardModule } from '@angular/material/card';\r\nimport { MatDialog, MatDialogModule } from '@angular/material/dialog';\r\nimport { MatPaginatorModule } from '@angular/material/paginator';\r\nimport { MatProgressSpinnerModule } from '@angular/material/progress-spinner';\r\nimport { MatTableModule } from '@angular/material/table';\r\nimport { ActivatedRoute, Router } from '@angular/router';\r\nimport { map, Observable} from 'rxjs';\r\nimport { IDataUser } from 'src/app/models/users';\r\nimport { NotificationService } from 'src/app/services/notifications.service';\r\nimport { UsersService } from 'src/app/services/users.service';\r\nimport { StartPageComponentTableComponent } from '../start-page-table/start-page-component-table.component';\r\n\r\n\r\n@Component({\r\n  selector: 'app-start-page-table-page',\r\n  templateUrl: './start-page-table-page.component.html',\r\n  styleUrls: ['./start-page-table-page.component.scss'],\r\n  standalone: true,\r\n  imports: [CommonModule, MatCardModule, MatDialogModule, MatPaginatorModule, MatProgressSpinnerModule, StartPageComponentTableComponent]\r\n\r\n})\r\nexport class StartPageTablePageComponent implements OnInit {\r\n  public listUsers$!: Observable<IDataUser[]>;\r\n\r\n  public notificationCurrentUser: any;\r\n\r\n  constructor(private userService: UsersService, private router: Router) {\r\n  }\r\n\r\n  ngOnInit(): void {\r\n    this.listUsers$ = this.userService.getListUsers().pipe(map(data => {\r\n      return data ?? [];\r\n    }));\r\n  }\r\n\r\n  chooseCurrentUser(userName: string):void {\r\n  this.router.navigate(['/notifications', userName])  ;\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./start-page-table-page.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "userService",
+                        "type": "UsersService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 27,
+                "jsdoctags": [
+                    {
+                        "name": "userService",
+                        "type": "UsersService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<app-start-page-component-table\r\n  [data]=\"listUsers$ | async\"\r\n  (chooseCurrentUser)=\"chooseCurrentUser($event)\"\r\n></app-start-page-component-table>\r\n"
+        }
+    ],
+    "modules": [
+        {
+            "name": "AppModule",
+            "id": "module-AppModule-9584d92aa04c44f4ea7c6c1a2501b27669ac870a9b82ef04dda39e9220d5675c16c1b5e7d7d3f478f28d94171ce123568ef282fecdf6967c42a0bafa622fa105",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/app.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\nimport { MatToolbarModule } from '@angular/material/toolbar';\r\nimport { HttpClientModule } from '@angular/common/http';\r\nimport { CoreModule } from './core/core.module';\r\nimport { InfoPageComponent } from './start-page/info/info-page/info-page.component';\r\nimport { InfoFormComponent } from './start-page/info/info-form/info-form.component';\r\n\r\n\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n  \r\n    ],\r\n  imports: [\r\n    BrowserModule,\r\n    BrowserAnimationsModule,\r\n    AppRoutingModule,\r\n    MatToolbarModule,\r\n    HttpClientModule,\r\n    CoreModule,\r\n\r\n   \r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "AppRoutingModule"
+                        },
+                        {
+                            "name": "CoreModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "AppRoutingModule",
+            "id": "module-AppRoutingModule-34adc737767242e82c7c13e50dd74a4140d4116f89db348ef7c97ec3f1dd4283f663f04fd90cea258b9772b44bee6e8568f17cb9ac3c1ea1a9565fc93907bea4",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/app-routing.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { RouterModule, Routes } from '@angular/router';\r\n\r\nexport const routes: Routes = [\r\n  {\r\n    path: 'users',\r\n    loadComponent: () => \"import('./start-page/start-page-table/start-page-table-page/start-page-table-page.component').then(m=>m.StartPageTablePageComponent)\",\r\n    pathMatch:'full',\r\n    title: 'Users'\r\n  },\r\n  {\r\n    path: 'notifications/:user',\r\n    loadChildren: () => \"import('./start-page/notifications-control/notifications-control.module').then(m=>m.NotificationsControlModule)\",\r\n    pathMatch:'full',\r\n    title: 'Notifications'\r\n  },\r\n  {\r\n    path: 'recommendations',\r\n    loadComponent: () => \"import('./start-page/recomendations/recomendations-page/recomendations-page.component').then(m=>m.RecomendationsPageComponent)\",\r\n    pathMatch:'full',\r\n    title: 'Recomendations'\r\n  },\r\n  {\r\n    path: 'info',\r\n    loadComponent: () => \"import('./start-page/info/info-page/info-page.component').then(m=>m.InfoPageComponent)\",\r\n    pathMatch:'full',\r\n    title: 'Info'\r\n  },\r\n  {\r\n      path: '',\r\n      redirectTo: 'info',\r\n      pathMatch: 'full',\r\n  },\r\n  {\r\n    path: '**',\r\n    redirectTo: 'info',\r\n    pathMatch: 'full',\r\n  }\r\n];\r\n\r\n@NgModule({\r\n  imports: [RouterModule.forRoot(routes)],\r\n  exports: [RouterModule]\r\n})\r\nexport class AppRoutingModule { }\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "CoreModule",
+            "id": "module-CoreModule-87f2ae52235fa81a8b6ff8e168fabb3be20636e1d9bf72d403ba7d793c9746a2f1ad35ddabefcd114dc312f0e16191a417fa40424bc4eb132798f0d4cb799a81",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/core/core.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { FooterComponent } from './footer/footer.component';\nimport { HeaderComponent } from './header/header.component';\nimport { RouterModule } from '@angular/router';\n\n\n\n@NgModule({\n  declarations: [FooterComponent, HeaderComponent],\n  imports: [\n    CommonModule, RouterModule\n  ],\n  exports: [FooterComponent, HeaderComponent],\n})\nexport class CoreModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "FooterComponent"
+                        },
+                        {
+                            "name": "HeaderComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "FooterComponent"
+                        },
+                        {
+                            "name": "HeaderComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "NotificationsControlModule",
+            "id": "module-NotificationsControlModule-189bf0edacb2356877bb339a413838341b23dc4061c5f49d2e08ccc4beed95b9410a89d3c2ef1ff9e35ea4623a6570d8be4dd311d9dd2c568180858217ff8119",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/start-page/notifications-control/notifications-control.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { NotificationsControlPageComponent } from './notifications-control-page/notifications-control-page.component';\r\nimport { NotificationsControlFormComponent } from './notifications-control-form/notifications-control-form.component';\r\nimport { NotificationsControlRoutingModule } from './notifications-control-routing.module';\r\nimport { MatSlideToggleModule } from '@angular/material/slide-toggle';\r\nimport { CommonModule } from '@angular/common';\r\nimport { MatCardModule } from '@angular/material/card';\r\nimport { MatPaginatorModule } from '@angular/material/paginator';\r\nimport { MatTableModule } from '@angular/material/table';\r\nimport { MatProgressSpinnerModule } from '@angular/material/progress-spinner';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    NotificationsControlPageComponent,\r\n    NotificationsControlFormComponent\r\n  ],\r\n  imports: [CommonModule, MatSlideToggleModule, MatCardModule, MatPaginatorModule, MatTableModule, MatProgressSpinnerModule],\r\n  exports: [NotificationsControlRoutingModule],\r\n})\r\nexport class NotificationsControlModule {}\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "NotificationsControlFormComponent"
+                        },
+                        {
+                            "name": "NotificationsControlPageComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "NotificationsControlRoutingModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "NotificationsControlRoutingModule",
+            "id": "module-NotificationsControlRoutingModule-5ca66f28b3774ee4abfbf62c05e0b0cf4827965b6e963d2a3eb0c0c6b0a781ae1fc737cb8b46d96dee148473ebbcbbf0bb61316c35457556b31e3fb0fb1f3ccd",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/start-page/notifications-control/notifications-control-routing.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { RouterModule, Routes } from '@angular/router';\r\nimport { NotificationsControlPageComponent } from './notifications-control-page/notifications-control-page.component';\r\n\r\nexport const routes: Routes = [\r\n  {\r\n      path: '',\r\n      component: NotificationsControlPageComponent\r\n  },\r\n];\r\n\r\n@NgModule({\r\n  imports: [RouterModule.forChild(routes)],\r\n  exports: [RouterModule]\r\n})\r\nexport class NotificationsControlRoutingModule { }\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "context",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/test.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+            },
+            {
+                "name": "Demo",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/core/header/header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Demo",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/core/footer/footer.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Demo",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/start-page/info/info-form/info-form.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "DemoEmpty",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/start-page/notifications-control/notifications-control-form/notification-control-form.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "DemoEmpty",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/start-page/start-page-table/start-page-table/start-page-table.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "DemoFull",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/start-page/notifications-control/notifications-control-form/notification-control-form.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "DemoFull",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/start-page/start-page-table/start-page-table/start-page-table.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.prod.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  production: true,\r\n  API_URL:'https://sandbox.banksiaglobal.com/csp/femtech-reminder',\r\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  production: false,\r\n  API_URL:'https://sandbox.banksiaglobal.com/csp/femtech-reminder',\r\n}"
+            },
+            {
+                "name": "listNotifications",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/start-page/notifications-control/notifications-control-form/notification-control-form.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[{id:\"58\",recommendation:\"X-ray densitometry (DXA)\",notifyTime:\"2022-11-11 07:47:51\",patient:\"Muller251\"},{id:\"57\",recommendation:\"Low dose CT (smokers)\",notifyTime:\"2022-11-11 07:47:50\",patient:\"Muller251\"}]"
+            },
+            {
+                "name": "require",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/test.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "literal type"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/core/header/header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<HeaderComponent>",
+                "defaultValue": "(args: HeaderComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/core/footer/footer.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FooterComponent>",
+                "defaultValue": "(args: FooterComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/start-page/info/info-form/info-form.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<InfoFormComponent>",
+                "defaultValue": "(args: InfoFormComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/start-page/notifications-control/notifications-control-form/notification-control-form.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<NotificationsControlFormComponent>",
+                "defaultValue": "(args: NotificationsControlFormComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/start-page/start-page-table/start-page-table/start-page-table.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<StartPageComponentTableComponent>",
+                "defaultValue": "(args: StartPageComponentTableComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "usersList",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/start-page/start-page-table/start-page-table/start-page-table.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[{name:\"Mendoza384\",lastName:\"Nesterenko\",birthdayDate:45221,telegramID:435242786},{name:\"Mendoza384\",lastName:\"Nesterenko\",birthdayDate:45221,telegramID:435242786}]"
+            }
+        ],
+        "functions": [],
+        "typealiases": [],
+        "enumerations": [],
+        "groupedVariables": {
+            "src/test.ts": [
+                {
+                    "name": "context",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/test.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+                },
+                {
+                    "name": "require",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/test.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "literal type"
+                }
+            ],
+            "src/app/core/header/header.stories.ts": [
+                {
+                    "name": "Demo",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/core/header/header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/core/header/header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<HeaderComponent>",
+                    "defaultValue": "(args: HeaderComponent) => ({\r\n  props: args,\r\n})"
+                }
+            ],
+            "src/app/core/footer/footer.stories.ts": [
+                {
+                    "name": "Demo",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/core/footer/footer.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/core/footer/footer.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FooterComponent>",
+                    "defaultValue": "(args: FooterComponent) => ({\r\n  props: args,\r\n})"
+                }
+            ],
+            "src/app/start-page/info/info-form/info-form.stories.ts": [
+                {
+                    "name": "Demo",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/start-page/info/info-form/info-form.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/start-page/info/info-form/info-form.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<InfoFormComponent>",
+                    "defaultValue": "(args: InfoFormComponent) => ({\r\n  props: args,\r\n})"
+                }
+            ],
+            "src/app/start-page/notifications-control/notifications-control-form/notification-control-form.stories.ts": [
+                {
+                    "name": "DemoEmpty",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/start-page/notifications-control/notifications-control-form/notification-control-form.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "DemoFull",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/start-page/notifications-control/notifications-control-form/notification-control-form.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "listNotifications",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/start-page/notifications-control/notifications-control-form/notification-control-form.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[{id:\"58\",recommendation:\"X-ray densitometry (DXA)\",notifyTime:\"2022-11-11 07:47:51\",patient:\"Muller251\"},{id:\"57\",recommendation:\"Low dose CT (smokers)\",notifyTime:\"2022-11-11 07:47:50\",patient:\"Muller251\"}]"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/start-page/notifications-control/notifications-control-form/notification-control-form.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<NotificationsControlFormComponent>",
+                    "defaultValue": "(args: NotificationsControlFormComponent) => ({\r\n  props: args,\r\n})"
+                }
+            ],
+            "src/app/start-page/start-page-table/start-page-table/start-page-table.stories.ts": [
+                {
+                    "name": "DemoEmpty",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/start-page/start-page-table/start-page-table/start-page-table.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "DemoFull",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/start-page/start-page-table/start-page-table/start-page-table.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/start-page/start-page-table/start-page-table/start-page-table.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<StartPageComponentTableComponent>",
+                    "defaultValue": "(args: StartPageComponentTableComponent) => ({\r\n  props: args,\r\n})"
+                },
+                {
+                    "name": "usersList",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/start-page/start-page-table/start-page-table/start-page-table.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[{name:\"Mendoza384\",lastName:\"Nesterenko\",birthdayDate:45221,telegramID:435242786},{name:\"Mendoza384\",lastName:\"Nesterenko\",birthdayDate:45221,telegramID:435242786}]"
+                }
+            ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: true,\r\n  API_URL:'https://sandbox.banksiaglobal.com/csp/femtech-reminder',\r\n}"
+                }
+            ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: false,\r\n  API_URL:'https://sandbox.banksiaglobal.com/csp/femtech-reminder',\r\n}"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {}
+    },
+    "routes": {
+        "name": "<root>",
+        "kind": "module",
+        "className": "AppModule",
+        "children": [
+            {
+                "name": "routes",
+                "filename": "src/app/app-routing.module.ts",
+                "module": "AppRoutingModule",
+                "kind": "module"
+            }
+        ]
+    },
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "src/app/app.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/core/footer/footer.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FooterComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/core/footer/footer.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Demo",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/core/footer/footer.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/core/header/header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/core/header/header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Demo",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/core/header/header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/models/IDataNotification.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "IDataNotification",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/models/lDataRecomendationsByAge.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "IDataRecomendationByAge",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/models/users.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "IDataUser",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/services/notifications.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "NotificationService",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/services/recomendations.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "RecomendationsService",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/services/users.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "UsersService",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/start-page/info/info-form/info-form.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "InfoFormComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/start-page/info/info-form/info-form.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Demo",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/start-page/info/info-form/info-form.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/start-page/info/info-page/info-page.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "InfoPageComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/start-page/notifications-control/notifications-control-form/notification-control-form.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DemoEmpty",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/start-page/notifications-control/notifications-control-form/notification-control-form.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DemoFull",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/start-page/notifications-control/notifications-control-form/notification-control-form.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "listNotifications",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/start-page/notifications-control/notifications-control-form/notification-control-form.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/start-page/notifications-control/notifications-control-form/notifications-control-form.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "NotificationsControlFormComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/start-page/notifications-control/notifications-control-page/notifications-control-page.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "NotificationsControlPageComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/start-page/recomendations/dialogs/create-recomendation/create-recomendation.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CreateRecomendationComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/start-page/recomendations/dialogs/message-dialog/message-dialog.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "MessageDialogComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/start-page/recomendations/recomendations-form/recomendations-form.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "RecomendationsFormComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/start-page/recomendations/recomendations-page/recomendations-page.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "RecomendationsPageComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/start-page/start-page-table/start-page-table-page/start-page-table-page.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "StartPageTablePageComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/start-page/start-page-table/start-page-table/start-page-component-table.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "StartPageComponentTableComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/11",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/start-page/start-page-table/start-page-table/start-page-table.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DemoEmpty",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/start-page/start-page-table/start-page-table/start-page-table.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DemoFull",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/start-page/start-page-table/start-page-table/start-page-table.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/start-page/start-page-table/start-page-table/start-page-table.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "usersList",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/environments/environment.prod.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/environments/environment.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "context",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "require",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}

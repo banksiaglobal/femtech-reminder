@@ -1,25 +1,39 @@
 .notifications-title {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
-  gap: 20px;
   font-size: 27px;
 
   &_img {
   cursor: grab;
-
   }
 }
 
-.notifications-page {
-  .mat-typography h3 {
-    margin: 20% 0 30%;
-    display: flex;
-    justify-content: center;
-    height: 100%;
-    font-size: 30px;
-    font-family: "Courgette", cursive !important;
+  .message-title {   
+    margin-top: 10%;    
   }
+
+.notifications-box-card {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.title-username,
+.message-title {
+  text-decoration: underline;
+  text-align: center;
+  font-size: 30px;
+  font-family: "Courgette", cursive;
+  color:#533960;
+}
+
+.notifications-subtitle {
+  margin-bottom: 30px;
+  font-family: "Courgette", cursive;
+  color: #533960;
+  text-decoration: underline;
 }
 
 
