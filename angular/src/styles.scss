@@ -72,9 +72,9 @@ body {
     flex-direction: column;    
     gap: 10px;
     width: 200px;
-    min-height: 200px;      
+    min-height: 200px;     
+    border-radius: 0; 
     background-color: rgb(220 207 226 / 21%); 
-    border-radius: 10px;
     backdrop-filter: blur(6px);
     color: #533960;
   }
