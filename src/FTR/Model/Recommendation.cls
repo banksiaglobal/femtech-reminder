@@ -1,5 +1,5 @@
 /// Common class of recommendation
-Class FTR.Model.Recommendation Extends %Persistent
+Class FTR.Model.Recommendation Extends (%Library.Persistent, %ZEN.DataModel.Adaptor)
 {
 
 /// Notification description
@@ -8,13 +8,16 @@ Property Description As %String(MAXLEN = "");
 /// Notification source
 Property Source As %String(MAXLEN = "");
 
+/// Sended Notifications
+Relationship Notifications As FTR.Model.Notification [ Cardinality = many, Inverse = Recommendation ];
+
 /// Notification text
 Property NotificationText As %String [ Calculated, SqlComputeCode = {
 	If {ID}="" {
 		Set {NotificationText}=""
 	} else {
 		Set classname=$s({x__classname}'="":$p({x__classname},"~",$l({x__classname},"~")-1),1:{%%CLASSNAMEQ})
-		Set {NotificationText} = $zobjclassmethod(classname,"GetNotificationText",{ID})
+		Set {NotificationText} = $classmethod(classname,"GetNotificationText",{ID})
 	}	
 }, SqlComputed ];
 
@@ -25,6 +28,7 @@ ClassMethod GetNotificationText(recommendationId As %String) As %String
 	quit ""
 }
 
+/// d ##class(FTR.Model.Recommendation).ImitateApointment()
 Storage Default
 {
 <Data name="RecommendationDefaultData">
@@ -40,6 +44,8 @@ Storage Default
 </Data>
 <DataLocation>^FTR.Model.RecommendationD</DataLocation>
 <DefaultData>RecommendationDefaultData</DefaultData>
+<Description>
+<![CDATA[d ##class(FTR.Model.Recommendation).ImitateApointment()]]></Description>
 <ExtentSize>1</ExtentSize>
 <IdLocation>^FTR.Model.RecommendationD</IdLocation>
 <IndexLocation>^FTR.Model.RecommendationI</IndexLocation>

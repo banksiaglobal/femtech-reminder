@@ -13,6 +13,7 @@ XData UrlMap
 <Route Url="/patient"	Method="GET"	Call="GetPatient"/>
 <Route Url="/recommendation-age"	Method="GET"	Call="GetRecommendationAgeList"/>
 <Route Url="/recommendation-age"	Method="POST"	Call="SetRecommendationAge"/>
+<Route Url="/get-log"	Method="GET"	Call="GetLog"/>
 </Routes>
 }
 
@@ -40,7 +41,8 @@ ClassMethod Response(pResponse = "", pSC = 1) As %Status
 /// Description
 ClassMethod GetPatient() As %Library.DynamicObject
 {
-	Set response = []
+	Set response = {}
+	Set response.patients = []
 	Set csql = "select Name, LastName, DOB, TelegramID from FTR_Model.Patient"
 	Set tcStatement = ##class(%SQL.Statement).%New()
 	Set tcStatus = tcStatement.%Prepare(csql)
@@ -54,7 +56,7 @@ ClassMethod GetPatient() As %Library.DynamicObject
                     "birthdayDate" : (tcResult.DOB),
                     "telegramID" : (tcResult.TelegramID)
 				}
-				Do response.%Push(tPatientInfo)
+				Do response.patients.%Push(tPatientInfo)
 			}
 		}
 	}
@@ -65,28 +67,79 @@ ClassMethod GetRecommendationAgeList() As %Library.DynamicObject
 {
 	Set response = {}
 	Set response.recommendations = []
-	Set csql = "select Description from FTR_Model_Recommendation.Age"
+	Set csql = "select ID,Description, Source, AgeFrom, AgeUpTo, Period  from FTR_Model_Recommendation.Age"
 	Set tcStatement = ##class(%SQL.Statement).%New()
 	Set tcStatus = tcStatement.%Prepare(csql)
 	If ($$$ISOK(tcStatus)) { 
 		Set tcResult = tcStatement.%Execute()
 		If (tcResult.%SQLCODE=0) {
 			While tcResult.%Next() {
-				Do response.recommendations.%Push(tcResult.Description)
+				Set recommendation = {}
+				Set recommendation.id = tcResult.ID
+				Set recommendation.description = tcResult.Description
+				Set recommendation.source = tcResult.Source
+				Set recommendation.ageFrom = tcResult.AgeFrom
+				Set recommendation.ageUpTo = tcResult.AgeUpTo
+				Set recommendation.period = tcResult.Period
+				Do response.recommendations.%Push(recommendation)
 			}
 		}
 	}
 	Quit ..Response(response)
 }
 
-ClassMethod SetRecommendationAge() As %Status
+// select recommendation -> NotificationText from FTR_Model.Notification
+
+ClassMethod GetLog() As %Library.DynamicObject
 {
-	Set json = %request.Content
-	
-	Set csql = "insert into FTR_Model_Recommendation.Age (AgeFrom, AgeUpTo, Description) values (20, 30, 'Test2')"
+	Set response = {}
+	Set response.notifications = []
+	Set csql = "select *, recommendation -> NotificationText, patient->Name from FTR_Model.Notification order by id desc"
 	Set tcStatement = ##class(%SQL.Statement).%New()
 	Set tcStatus = tcStatement.%Prepare(csql)
-	Return $$$OK
+	If ($$$ISOK(tcStatus)) { 
+		Set tcResult = tcStatement.%Execute()
+		If (tcResult.%SQLCODE=0) {
+			While tcResult.%Next() {
+				Set notification = {}
+				Set notification.id = tcResult.ID
+				Set notification.recommendation = tcResult.NotificationText
+				Set notification.notifyTime = tcResult.NotifyTime
+				Set notification.patient = tcResult.Name
+				Do response.notifications.%Push(notification)
+			}
+		}
+	}
+	Quit ..Response(response)
+}
+
+ClassMethod SetRecommendationAge() As %Library.DynamicObject
+{
+	Set json = {}.%FromJSON(%request.Content)
+	&sql(select id into :recommendationId from FTR_Model_Recommendation.Age where ID = :json.id)
+	If SQLCODE=0 {
+    	set Recommendation = ##class(FTR.Model.Recommendation.Age).%OpenId(recommendationId)
+	} else {
+    	set Recommendation = ##class(FTR.Model.Recommendation.Age).%New()
+	}
+	Set Recommendation.AgeFrom = json.ageFrom
+	Set Recommendation.AgeUpTo = json.ageUpTo
+	Set Recommendation.Description = json.description
+	Set Recommendation.Source = json.source
+	Set Recommendation.Period = json.period
+	
+	Set tSC = Recommendation.%Save()
+	Set response = {}
+	Set response.status = 1
+	Set response.recommendation = {}
+	Set response.recommendation.id = Recommendation.%Id()
+	Set response.recommendation.description = Recommendation.Description
+	Set response.recommendation.source = Recommendation.Source
+	Set response.recommendation.ageForm = Recommendation.AgeFrom
+	Set response.recommendation.ageUpTo = Recommendation.AgeUpTo
+	Set response.recommendation.period = Recommendation.Period
+		
+	Quit ..Response(response)
 }
 
 }

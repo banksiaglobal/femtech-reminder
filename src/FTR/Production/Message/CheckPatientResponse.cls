@@ -4,7 +4,7 @@ Class FTR.Production.Message.CheckPatientResponse Extends Ens.Request
 
 Property IsPatientFound As %Boolean;
 
-Property FhirId As %String;
+Property Patient As %Library.DynamicObject;
 
 Storage Default
 {
@@ -13,9 +13,11 @@ Storage Default
 <Value name="1">
 <Value>IsPatientFound</Value>
 </Value>
-<Value name="2">
-<Value>FhirId</Value>
-</Value>
+</Data>
+<Data name="Patient">
+<Attribute>Patient</Attribute>
+<Structure>node</Structure>
+<Subscript>"FTR.Production.Message.CheckPatientResponse.Patient"</Subscript>
 </Data>
 <DefaultData>CheckPatientResponseDefaultData</DefaultData>
 <Type>%Storage.Persistent</Type>

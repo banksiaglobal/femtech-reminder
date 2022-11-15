@@ -9,7 +9,7 @@ XData RuleDefinition [ XMLNamespace = "http://www.intersystems.com/rule" ]
 <ruleSet name="" effectiveBegin="" effectiveEnd="">
 <rule name="" disabled="false">
 <when condition="1">
-<send transform="" target="Alert"></send>
+<send transform="" target="EmailAlert"></send>
 <return></return>
 </when>
 </rule>

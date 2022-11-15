@@ -33,6 +33,12 @@ XData ProductionDefinition
   <Item Name="FTR.Production.Process.NotifyPatient" Category="" ClassName="FTR.Production.Process.NotifyPatient" PoolSize="1" Enabled="true" Foreground="false" Comment="" LogTraceEvents="true" Schedule="">
     <Setting Target="Host" Name="AlertOnError">1</Setting>
   </Item>
+  <Item Name="FTR.Production.Process.TelegramRouter" Category="" ClassName="FTR.Production.Process.TelegramRouter" PoolSize="1" Enabled="true" Foreground="false" Comment="" LogTraceEvents="false" Schedule="">
+  </Item>
+  <Item Name="FTR.Production.Service.Notify" Category="" ClassName="FTR.Production.Service.Notify" PoolSize="1" Enabled="true" Foreground="false" Comment="" LogTraceEvents="true" Schedule="@schedule">
+    <Setting Target="Adapter" Name="CallInterval">500</Setting>
+    <Setting Target="Host" Name="AlertOnError">1</Setting>
+  </Item>
 </Production>
 }
 

@@ -2,14 +2,14 @@
 Class FTR.Production.Message.NotifyPatientRequest Extends Ens.Request
 {
 
-Property PatientId As %String;
+Property TelegramId As %String;
 
 Storage Default
 {
 <Data name="NotifyPatientRequestDefaultData">
 <Subscript>"NotifyPatientRequest"</Subscript>
 <Value name="1">
-<Value>PatientId</Value>
+<Value>TelegramId</Value>
 </Value>
 </Data>
 <DefaultData>NotifyPatientRequestDefaultData</DefaultData>

@@ -15,6 +15,7 @@ XData BPL [ XMLNamespace = "http://www.intersystems.com/bpl" ]
 </request>
 <response type='HS.FHIRServer.Interop.Response' >
 <assign property="response.IsPatientFound" value="{}.%FromJSON(##class(HS.SDA3.QuickStream).%OpenId(callresponse.QuickStreamId)).total=1" action="set" />
+<assign property="response.Patient" value="{}.%FromJSON(##class(HS.SDA3.QuickStream).%OpenId(callresponse.QuickStreamId))" action="set" />
 </response>
 </call>
 <sync name='Wait for response' calls='Find a patient in FHIR' type='all' xpos='200' ypos='350' />
