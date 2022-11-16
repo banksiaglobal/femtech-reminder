@@ -1,0 +1,24 @@
+version: '3.2'
+
+services:
+  iris:
+    image: intersystems/iris:2021.1.0.215.0
+    command: --license-config "4691540832 iris,4002,/ISC/licenses" 
+    hostname: http://sandbox.banksiaglobal.com:52773/femtech-reminder/
+
+    ports:
+    # 1972 is the superserver default port
+    - "9091:1972"
+    # 52773 is the webserver/management portal port
+    - "9092:52773"
+    # 52773 is the JDBC Gateway port
+    - "9093:52773"
+    volumes:
+    - /data/durable:/dur
+
+    environment:
+    #user, password, db
+    - ISC_DATA_DIRECTORY=/dur/iris_conf.d
+    - ISC_CPF_MERGE_FILE=/dur/merge/merge.cpf
+    #docker compose up iris -d
+    #docker ps
