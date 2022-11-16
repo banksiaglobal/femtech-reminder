@@ -1,5 +1,3 @@
-# femtech-reminder
-
 # FemTech Reminder for InterSystems FHIR Contest 
 
 ## Introduction
@@ -32,8 +30,7 @@ When brainstorming the solution to apply for this contest, our team came up with
 
 ## Online Demo
 
-[bot](http://https://t.me/bg_fhir_bot)
-Bot: https://t.me/bg_fhir_bot
+[Bot]:(https://t.me/bg_fhir_bot)
 
 
 ## Features
@@ -71,6 +68,43 @@ The server part contains the following business components
 * OperationFHIROut - send FHIR requests;
 * TelegramOut - send messages to a telegram bot.
 
+### How to run
+
+#### Docker deployment from github
+[todo]
+
+#### ZPM deployment
+[todo]
+
+#### Setup FHIR Server
+* Sign up in Cloud Portal on portal.live.isccloud.io (portal.live.isccloud.io).
+* 
+
+#### Setup telegram-bot
+##### Create telegram-bot:
+Open a Telegram messenger, log into your account or create a new one.
+1. Enter @BotFather in the search box and select a bot.
+2. Click «Start» to activate BotFather bot.
+3. Enter and send the /newbot command.
+4. Give the name to the bot - customers will see this name when communicating with the bot. And the nickname bot - it will be possible to find a bot in Telegram. Nickname should be unique, do not repeat existing in the base and end with the word «bot».
+5. Add the necessary commands to your bot. Enter the /setcommands and select the bot you want to set the list of commands in the offered format. 
+You will need a token to connect the bot to InterSystems IRIS. Copy the token value and proceed to the last item. The token looks something like 123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11,  but we'll use simply <your token> in this document instead.
+
+####  Set up Production
+##### Connection telegram-bot to InterSystems IRIS:
+1. Set a WebHook for your Bot is to issue a GET request to the Bot API (it’s enough to open an url in your browser).
+Call the setWebHook method in the Bot API via the following url:
+```
+https://api.telegram.org/bot<your token>/setWebhook?url=<url_to_send_updates_to>
+```
+
+2. Setup the Basic Settings of operation that will send messages to the telegram bot.
+HTTP Server: api.telegram.org
+HTTP Port: 443
+URL: /bot<your token>
+
+### FHIR Data Source
+[todo]
 
 
 ## Frontend
@@ -100,3 +134,8 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ### Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Thanks
+
+**We thank InterSystems for an opportunity to work on important present-day female issues. We hope that our bot-reminder open-source project will help our colleagues to innovate and solve complex healthcare issues to help women to feel good and stay healthy.
+**
