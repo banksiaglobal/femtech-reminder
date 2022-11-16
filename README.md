@@ -1,5 +1,8 @@
 # FemTech Reminder for InterSystems FHIR Contest 
 
+![](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/photo_2022-11-16_15-59-06.jpg)
+
+
 ## Introduction
 
 **This project is still work-in-progress, we will present final version before contest cut-off date**
