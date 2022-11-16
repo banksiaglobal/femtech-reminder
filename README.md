@@ -53,7 +53,7 @@ Read related documentations: [fhir](https://www.hl7.org/fhir/)
 
 # Description of system
 
-![]([https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/mapMind.png](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/descriptionOfSystem.png))
+![](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/descriptionOfSystem.png)
 
 * ## Backend
 
@@ -85,7 +85,7 @@ The server part contains the following business components
 
 1. Sign up in Cloud Portal on portal.live.isccloud.io (portal.live.isccloud.io)
 
-![](/путь/к/изображению.jpg](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/portal1.png)
+![](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/portal1.png)
 
 2. Once you confirm your email and log into portal, you will get redirected to Deployments page. Let's click "Create Deployment" button to create deployment.
 
@@ -151,9 +151,10 @@ URL: /bot<your token>
   ![](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/setup.png)
 
 ### FHIR Data Source
-  
+  [todo]
+ 
   ![](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/dataSource.png)
-[todo]
+
 
 
 ## Frontend
