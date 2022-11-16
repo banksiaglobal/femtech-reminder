@@ -30,7 +30,7 @@ When brainstorming the solution to apply for this contest, our team came up with
 
 ## Online Demo
 
-[Bot]:(https://t.me/bg_fhir_bot)
+[bot](https://t.me/bg_fhir_bot)
 
 
 ## Features
@@ -50,7 +50,7 @@ Read related documentations: [fhir](https://www.hl7.org/fhir/)
 
 # Description of system
 
-## Backend
+* ## Backend
 
 The server part contains the following business components
 
@@ -77,8 +77,13 @@ The server part contains the following business components
 [todo]
 
 #### Setup FHIR Server
-* Sign up in Cloud Portal on portal.live.isccloud.io (portal.live.isccloud.io).
-* 
+
+1. Sign up in Cloud Portal on portal.live.isccloud.io (portal.live.isccloud.io).
+2. Once you confirm your email and log into portal, you will get redirected to Deployments page. Let's click "Create Deployment" button to create deployment.
+3. Select and create FHIR Accelerator Service with default parameters and set the unique name for deployment. (Screen here taken from live cloud portal but actually we have created deployment on test, need to think about right version for it).
+4. Once deployment is created and running, click on it and go to "Data Management" menu, and select "Bundle Operations" tab. This is where we can populate server with sample patient databases. At now we upload and import 'Synthea Population ~50' bundle. 
+5. Go to the Credentials page and create new API Key and new Server User credentials and save it for IRIS.
+6. Now we have fully set up our FHIR server! Go to the Overview page and at the FHIR Details section will be shown Api Key and OAuth 2.0 Endpoints that we can use next in IRIS for working with requests. 
 
 #### Setup telegram-bot
 ##### Create telegram-bot:
@@ -137,5 +142,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Thanks
 
-**We thank InterSystems for an opportunity to work on important present-day female issues. We hope that our bot-reminder open-source project will help our colleagues to innovate and solve complex healthcare issues to help women to feel good and stay healthy.
-**
+**We thank InterSystems for an opportunity to work on important present-day female issues. We hope that our bot-reminder open-source project will help our colleagues to innovate and solve complex healthcare issues to help women to feel good and stay healthy**
