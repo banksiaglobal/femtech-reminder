@@ -53,6 +53,8 @@ Read related documentations: [fhir](https://www.hl7.org/fhir/)
 
 # Description of system
 
+![]([https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/mapMind.png](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/descriptionOfSystem.png))
+
 * ## Backend
 
 The server part contains the following business components
@@ -81,22 +83,38 @@ The server part contains the following business components
 
 #### Setup FHIR Server
 
-1. Sign up in Cloud Portal on portal.live.isccloud.io (portal.live.isccloud.io).
+1. Sign up in Cloud Portal on portal.live.isccloud.io (portal.live.isccloud.io)
+![]([/путь/к/изображению.jpg](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/portal1.png))
 2. Once you confirm your email and log into portal, you will get redirected to Deployments page. Let's click "Create Deployment" button to create deployment.
+![](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/portal2.png)
 3. Select and create FHIR Accelerator Service with default parameters and set the unique name for deployment. (Screen here taken from live cloud portal but actually we have created deployment on test, need to think about right version for it).
+![](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/portal3.png)
 4. Once deployment is created and running, click on it and go to "Data Management" menu, and select "Bundle Operations" tab. This is where we can populate server with sample patient databases. At now we upload and import 'Synthea Population ~50' bundle. 
-5. Go to the Credentials page and create new API Key and new Server User credentials and save it for IRIS.
-6. Now we have fully set up our FHIR server! Go to the Overview page and at the FHIR Details section will be shown Api Key and OAuth 2.0 Endpoints that we can use next in IRIS for working with requests. 
+![](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/portal4.png)
+5. Go to the Credentials page and create new API Key and new Server User credentials and save it for IRIS
+![](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/portal5.png)
+6. Now we have fully set up our FHIR server! Go to the Overview page and at the FHIR Details section will be shown Api Key and OAuth 2.0 Endpoints that we can use next in IRIS for working with requests
+![](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/portal6.png)
 
 #### Setup telegram-bot
 ##### Create telegram-bot:
 Open a Telegram messenger, log into your account or create a new one.
-1. Enter @BotFather in the search box and select a bot.
-2. Click «Start» to activate BotFather bot.
-3. Enter and send the /newbot command.
-4. Give the name to the bot - customers will see this name when communicating with the bot. And the nickname bot - it will be possible to find a bot in Telegram. Nickname should be unique, do not repeat existing in the base and end with the word «bot».
-5. Add the necessary commands to your bot. Enter the /setcommands and select the bot you want to set the list of commands in the offered format. 
+1. Enter @BotFather in the search box and select a bot
+![](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/bot1.png)
+
+2. Click «Start» to activate BotFather bot
+
+3. Enter and send the /newbot command
+![](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/bot3.png)
+
+4. Give the name to the bot - customers will see this name when communicating with the bot. And the nickname bot - it will be possible to find a bot in Telegram. Nickname should be unique, do not repeat existing in the base and end with the word «bot»
+![](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/bot4.1.png)
 You will need a token to connect the bot to InterSystems IRIS. Copy the token value and proceed to the last item. The token looks something like 123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11,  but we'll use simply <your token> in this document instead.
+![](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/bot4.1.png)
+
+ 5. Add the necessary commands to your bot. Enter the /setcommands and select the bot you want to set the list of commands in the offered format. 
+You will need a token to connect the bot to InterSystems IRIS. Copy the token value and proceed to the last item. The token looks something like 123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11,  but we'll use simply <your token> in this document instead.
+ ![](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/bot5.png)
 
 ####  Set up Production
 ##### Connection telegram-bot to InterSystems IRIS:
@@ -110,8 +128,12 @@ https://api.telegram.org/bot<your token>/setWebhook?url=<url_to_send_updates_to>
 HTTP Server: api.telegram.org
 HTTP Port: 443
 URL: /bot<your token>
+  
+  ![](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/bot4.1.png](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/setup.png)
 
 ### FHIR Data Source
+  
+  ![](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/dataSource.png)
 [todo]
 
 
