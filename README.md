@@ -2,6 +2,8 @@
 
 ## Introduction
 
+**This project is still work-in-progress, we will present final version before contest cut-off date**
+
 Today in the modern society and fast life, women priorities include not just caring about family and kids, but also building business and career, leaving no time to care about her health and regularly checkups, often not suspecting about developing health issues.
 
 According to research by leading healthcare organizations, early diagnostics and observation may significantly reduce risks of severe women health problems.
