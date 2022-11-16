@@ -19,6 +19,9 @@ The server part analyses patient's data and send a notification to visit a docto
 
 When brainstorming the solution to apply for this contest, our team came up with the following possible use cases for a female health reminder application, and divided them into three levels: top level (blue) describes actors (WHO?), middle layer (yellow) describes use cases (WHAT?) and third level (pink) describes tasks (HOW?)
 
+![](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/mapMind.png)
+
+
 ## Application Layout
 
 * you go to GUI
