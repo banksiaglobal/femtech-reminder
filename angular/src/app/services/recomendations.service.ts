@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { IDataRecomendationByAge } from '../models/lDataRecomendationsByAge';
+import { IDataRecommendationPregnancy } from '../models/IDataREcommendationsPregnancy';
 
 
 
@@ -20,5 +21,9 @@ export class RecomendationsService {
 
   postRecomendation(recomendation: IDataRecomendationByAge): Observable<any> {
     return this.http.post<any>(environment.API_URL + '/recommendation-age', recomendation);
+  }
+
+  getListRecomendationsByPregnancy (): Observable<IDataRecommendationPregnancy[]> {
+    return this.http.get<IDataRecommendationPregnancy[]>(environment.API_URL + '/recommendation-pregnancy');
   }
 }

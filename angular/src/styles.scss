@@ -67,12 +67,11 @@ body {
  
 
   .mat-card {
-    display: flex;
-    justify-content: space-between;
+    display: flex;  
     flex-direction: column;    
     gap: 10px;
     width: 200px;
-    min-height: 100px;     
+    min-height: 200px;     
     border-radius: 0; 
     background-color: rgb(220 207 226 / 21%); 
     backdrop-filter: blur(6px);
