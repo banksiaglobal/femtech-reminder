@@ -6,13 +6,13 @@ import { IDataRecomendationByAge } from 'src/app/models/lDataRecomendationsByAge
 
 
 @Component({
-  selector: 'app-recomendations-form',
-  templateUrl: './recomendations-form.component.html',
-  styleUrls: ['./recomendations-form.component.scss'],
+  selector: 'app-recomendations-age-form',
+  templateUrl: './recomendations-age-form.component.html',
+  styleUrls: ['./recomendations-age-form.component.scss'],
   standalone: true,
   imports: [CommonModule, MatCardModule, MatProgressSpinnerModule]
 })
-export class RecomendationsFormComponent implements OnChanges {
+export class RecomendationsAgeFormComponent implements OnChanges {
 
   @Input()data: IDataRecomendationByAge[];
 

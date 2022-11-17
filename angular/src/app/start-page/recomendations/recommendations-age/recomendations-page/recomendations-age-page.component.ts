@@ -4,18 +4,18 @@ import { MatDialogRef, MatDialog, MatDialogModule } from '@angular/material/dial
 import { Observable, map, filter, catchError, tap, switchMap, of } from 'rxjs';
 import { IDataRecomendationByAge } from 'src/app/models/lDataRecomendationsByAge';
 import { RecomendationsService } from 'src/app/services/recomendations.service';
-import { CreateRecomendationComponent } from '../dialogs/create-recomendation/create-recomendation.component';
-import { MessageDialogComponent } from '../dialogs/message-dialog/message-dialog.component';
-import { RecomendationsFormComponent } from '../recomendations-form/recomendations-form.component';
+import { CreateRecomendationComponent } from '../../dialogs/create-recomendation/create-recomendation.component';
+import { MessageDialogComponent } from '../../dialogs/message-dialog/message-dialog.component';
+import { RecomendationsAgeFormComponent } from '../recomendations-form/recomendations-age-form.component';
 
 @Component({
-  selector: 'app-recomendations-page',
-  templateUrl: './recomendations-page.component.html',
-  styleUrls: ['./recomendations-page.component.scss'],
+  selector: 'app-recomendations-age-page',
+  templateUrl: './recomendations-age-page.component.html',
+  styleUrls: ['./recomendations-age-page.component.scss'],
   standalone: true,
-  imports:[CommonModule, RecomendationsFormComponent, CreateRecomendationComponent, MatDialogModule]
+  imports:[CommonModule, RecomendationsAgeFormComponent, CreateRecomendationComponent, MatDialogModule]
 })
-export class RecomendationsPageComponent implements OnInit {
+export class RecomendationsAgePageComponent implements OnInit {
   public listRecomendations$!: Observable<IDataRecomendationByAge[]>;
 
   constructor(private recomendationsService: RecomendationsService, private dialog: MatDialog) { }

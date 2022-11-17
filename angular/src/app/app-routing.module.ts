@@ -15,10 +15,16 @@ export const routes: Routes = [
     title: 'Notifications'
   },
   {
-    path: 'recommendations',
-    loadComponent: () => import('./start-page/recomendations/recomendations-page/recomendations-page.component').then(m=>m.RecomendationsPageComponent),
+    path: 'recommendations-age',
+    loadComponent: () => import('./start-page/recomendations/recommendations-age/recomendations-page/recomendations-age-page.component').then(m=>m.RecomendationsAgePageComponent),
     pathMatch:'full',
-    title: 'Recomendations'
+    title: 'Age recomendations'
+  },
+  {
+    path: 'recommendations-pregnancy',
+    loadComponent: () => import('./start-page/recomendations/recommendations-pregnancy/recommendations-pregnancy-page/recommendations-pregnancy-page.component').then(m=>m.RecommendationsPregnancyPageComponent),
+    pathMatch:'full',
+    title: 'Pregnancy recomendations'
   },
   {
     path: 'info',

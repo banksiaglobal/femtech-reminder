@@ -3,13 +3,14 @@ import { CommonModule } from '@angular/common';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { RouterModule } from '@angular/router';
+import {CdkMenuModule} from '@angular/cdk/menu';
 
 
 
 @NgModule({
   declarations: [FooterComponent, HeaderComponent],
   imports: [
-    CommonModule, RouterModule
+    CommonModule, RouterModule, CdkMenuModule
   ],
   exports: [FooterComponent, HeaderComponent],
 })

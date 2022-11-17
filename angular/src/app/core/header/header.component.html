@@ -1,11 +1,6 @@
 <header class="header">
   <div class="container">
     <div class="header-menu">
-      <!-- <img
-        class="header-logo_img"
-        src="../../../assets/alarm-clock.png"
-        alt="logo alarm"
-      /> -->
       <div class="header-menu-left">
         <a
           href="https://calendar.google.com/calendar"
@@ -21,22 +16,48 @@
         </a>
       </div>
       <div class="header-menu-right">
-        <div>
-          <a class="link-page" href="" routerLink="/users"> Users </a>
-        </div>
-        <!-- <div class="header-button">
-        <a class="link-page" href="" routerLink="/notifications-control">
-          Notifications
-        </a>
-      </div> -->
-        <div>
-          <a class="link-page" href="" routerLink="/recommendations">
+        <div cdkMenuBar class="header-menu-bar">
+          <button
+            class="header-menu-bar-item"
+            cdkMenuItem
+            (click)="gotoUsers()"
+          >
+            Users
+          </button>
+          <button
+            class="header-menu-bar-item"
+            cdkMenuItem
+            [cdkMenuTriggerFor]="recommendations"
+          >
             Recommendations
-          </a>
+          </button>
+          <button
+            class="header-menu-bar-item"
+            cdkMenuItem
+            (click)="goToInfo()"
+            goToInfo
+          >
+            Info
+          </button>
         </div>
-        <div>
-          <a class="link-page" href="" routerLink="/info"> Info </a>
-        </div>
+        <ng-template #recommendations>
+          <div class="header-submenu" cdkMenu>
+            <button
+              class="header-submenu-item"
+              cdkMenuItem
+              (click)="goToRecommedationsAge()"
+            >
+              age
+            </button>
+            <button
+              class="header-submenu-item"
+              cdkMenuItem
+              (click)="goToRecommedationsPregnancy()"
+            >
+              pregnancy
+            </button>
+          </div>
+        </ng-template>
       </div>
     </div>
   </div>

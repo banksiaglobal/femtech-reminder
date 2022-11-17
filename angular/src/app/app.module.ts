@@ -7,8 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { HttpClientModule } from '@angular/common/http';
 import { CoreModule } from './core/core.module';
-import { InfoPageComponent } from './start-page/info/info-page/info-page.component';
-import { InfoFormComponent } from './start-page/info/info-form/info-form.component';
 
 
 

@@ -25,7 +25,46 @@
 &-right div:last-child {
   margin-left: 40px;
 }
+
+&-bar-item {  
+  line-height: 26px;
+  padding: 10px 16px;
+  min-width: 34px;
+  user-select: none;
+  background-color: rgb(220 207 226 / 21%); 
+  color: rgb(246, 243, 238);
+  cursor: pointer;
+  border: none;
+  font-size: 20px;
 }
+}
+
+.header-submenu {
+  display: inline-flex;
+  flex-direction: column;
+  min-width: 180px;
+  max-width: 280px;
+  background-color: rgb(186 156 202); 
+ 
+  &-item {
+    padding: 5px 0;
+    background-color: rgb(220 207 226 / 21%); 
+    color: rgb(246, 243, 238);
+  }
+
+  &-item:hover {
+    background-color: rgb(220 207 226 / 21%); 
+  }
+  
+  &-item:active {
+    background-color: rgba(41, 25, 49, 0.21); 
+  }
+  
+
+}
+
+
+
 
 @import url('../../../scss/fonts.scss');
 .header-logo {
@@ -37,27 +76,8 @@
   }
 }
 
-.link-page {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  color: white;
-  font-size: 25px;
-  text-decoration: none;
-  font-weight: 600;
-  font-family: 'Courgette', cursive;
-}
-
-.link-page:active {
-  color: rgb(111, 53, 99);
-}
-
 @media (max-width: 640px) {
-  .link-page {
-   font-size: 20px;  
-  }
-  
-  .header-menu {
+   .header-menu {
     justify-content: center;
     gap: 0;
   
