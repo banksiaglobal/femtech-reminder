@@ -2,10 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { filter, switchMap, tap, catchError, of, Observable, map } from 'rxjs';
-import { IDataRecommendationPregnancy } from 'src/app/models/IDataREcommendationsPregnancy';
+import { IDataRecommendationPregnancy } from 'src/app/models/IDataRecommendationsPregnancy';
 import { IDataRecomendationByAge } from 'src/app/models/lDataRecomendationsByAge';
 import { RecomendationsService } from 'src/app/services/recomendations.service';
 import { CreateRecomendationComponent } from '../../dialogs/create-recomendation/create-recomendation.component';
+import { CreatePegnancyRecommendationComponent } from '../../dialogs/create-recommendation-pregnancy/create-pegnancy-recommendation/create-pegnancy-recommendation.component';
 import { MessageDialogComponent } from '../../dialogs/message-dialog/message-dialog.component';
 import { RecommendationsPregnancyFormComponent } from '../recommendations-pregnancy-form/recommendations-pregnancy-form.component';
 
@@ -31,13 +32,13 @@ export class RecommendationsPregnancyPageComponent implements OnInit {
     }));
   }
 
-  createNewRecomendation(recommendation:IDataRecommendationPregnancy): any{   
-    const dialogRef =  this.dialog.open(CreateRecomendationComponent, 
+  createNewRecomendation(recommendation:IDataRecommendationPregnancy): any {   
+    const dialogRef =  this.dialog.open(CreatePegnancyRecommendationComponent, 
       {enterAnimationDuration:'500ms',
        exitAnimationDuration:'500ms',
       data: recommendation});
     return dialogRef.afterClosed().pipe(filter(response=> response),
-    switchMap(data=> this.recomendationsService.postRecomendation(data)),
+    switchMap(data=> this.recomendationsService.postRecomendationPregnancy(data)),
     tap(()=> this.dialog.open(MessageDialogComponent)),
     tap(()=> this.setListRecomendation()),
     catchError(() =>

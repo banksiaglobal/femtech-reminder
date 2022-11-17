@@ -7,13 +7,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { HttpClientModule } from '@angular/common/http';
 import { CoreModule } from './core/core.module';
+import { CreatePegnancyRecommendationComponent } from './start-page/recomendations/dialogs/create-recommendation-pregnancy/create-pegnancy-recommendation/create-pegnancy-recommendation.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-  
+   
     ],
   imports: [
     BrowserModule,

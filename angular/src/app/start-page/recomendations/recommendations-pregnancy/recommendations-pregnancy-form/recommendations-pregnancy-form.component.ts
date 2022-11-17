@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { IDataRecommendationPregnancy } from 'src/app/models/IDataREcommendationsPregnancy';
+import { IDataRecommendationPregnancy } from 'src/app/models/IDataRecommendationsPregnancy';
 
 @Component({
   selector: 'app-recommendations-pregnancy-form',
