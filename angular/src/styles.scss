@@ -79,6 +79,7 @@ body {
   }
 }
   .mat-card-title {
+    flex: 0 0 auto;
     margin-bottom: 10px;
     text-align: center;
     font-size: 17px;
@@ -86,10 +87,14 @@ body {
   }
 
   .mat-card-content {
-    flex: 0 0 auto;    
+    flex: 0 1 auto;    
     font-size: 15px;
     text-align: justify;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+
+  .mat-card-footer {
+    margin-top: auto !important;
   }
 
   .mat-slide-toggle{

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { filter, switchMap, tap, catchError, of, Observable, map } from 'rxjs';
 import { IDataRecommendationPregnancy } from 'src/app/models/IDataREcommendationsPregnancy';
 import { IDataRecomendationByAge } from 'src/app/models/lDataRecomendationsByAge';
@@ -14,7 +14,7 @@ import { RecommendationsPregnancyFormComponent } from '../recommendations-pregna
   templateUrl: './recommendations-pregnancy-page.component.html',
   styleUrls: ['./recommendations-pregnancy-page.component.scss'],
   standalone: true,
-  imports: [RecommendationsPregnancyFormComponent, CommonModule]
+  imports: [RecommendationsPregnancyFormComponent, CommonModule, CreateRecomendationComponent, MatDialogModule]
 })
 export class RecommendationsPregnancyPageComponent implements OnInit {
   public listRecomendations$!: Observable<IDataRecommendationPregnancy[]>;

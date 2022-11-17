@@ -11,31 +11,19 @@
         <div class="notifications-title">
           <h2>List notifications for:</h2>
           <p class="notifications-subtitle">{{ userName }}</p>
-          <!-- <div class="notifications-title_img" (click)="createNotifications()">
-            <img
-              src="../../../../assets/icons8-add-new-50.png"
-              alt="icon plus"
-            />
-          </div> -->
         </div>
         <div *ngIf="!isEmptyData" class="box notifications-box-card">
           <mat-card class="box-card" *ngFor="let item of data">
             <mat-card-title>notification</mat-card-title>
             <mat-card-content>
               <p>{{ item.recommendation }}</p>
-              <p>
-                notify time:
-                <br />
-                <span>{{ item.notifyTime | date: "medium" }} </span>
-                <br />
-              </p>
             </mat-card-content>
-            <!-- <mat-card-actions>
-              <mat-slide-toggle
-                [checked]=""
-                (change)="changeState.emit(item.id)"
-              ></mat-slide-toggle>
-            </mat-card-actions> -->
+            <p class="mat-card-footer">
+              <span>notify time:</span>
+              <br />
+              <span>{{ item.notifyTime | date: "medium" }} </span>
+              <br />
+            </p>
           </mat-card>
         </div>
       </div>
