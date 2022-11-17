@@ -28,7 +28,6 @@ export class RecomendationsAgePageComponent implements OnInit {
     this.listRecomendations$ = this.recomendationsService.getListRecomendationsByAge().pipe(map(data => {
       return data ?? [];
     }));
-
   }
 
   createNewRecomendation(recomendation:IDataRecomendationByAge): any{   

@@ -1,1 +1,4 @@
-<app-recommendations-pregnancy-form></app-recommendations-pregnancy-form>
+<app-recommendations-pregnancy-form
+  [data]="listRecomendations$ | async"
+  (createNewRecomendation)="createNewRecomendation($event)"
+></app-recommendations-pregnancy-form>

@@ -23,10 +23,10 @@ export class RecomendationsAgeFormComponent implements OnChanges {
   constructor() { }
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['data'].currentValue) {
-      this.data = changes['data'].currentValue.recommendations;
-    
+      this.data = changes['data'].currentValue.recommendations;    
     }
   }
+  
   createRecomendation(){
 
     this.createNewRecomendation.emit();

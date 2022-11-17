@@ -1,1 +1,29 @@
-<p>recommendations-pregnancy-form works!</p>
+<div class="page recomendations-page">
+  <div class="container">
+    <div class="spinner-wrapper">
+      <mat-spinner *ngIf="!data"></mat-spinner>
+    </div>
+    <div *ngIf="data">
+      <div class="recomendations-title">
+        <h2>List recommendations</h2>
+        <span class="recomendations-title_img" (click)="createRecomendation()"
+          ><img src="../../../../assets/icons8-add-new-50.png" alt="icon plus"
+        /></span>
+      </div>
+      <div class="box recomendations-box">
+        <mat-card class="box-card" *ngFor="let item of data">
+          <mat-card-title>recommendation:</mat-card-title>
+          <mat-card-subtitle>source: {{ item.source }}</mat-card-subtitle>
+          <mat-card-content>
+            <p>{{ item.description }}</p>
+            <p>
+              age:
+              <br />
+              <span>from: {{ item.week }} </span>
+              <br /></p
+          ></mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

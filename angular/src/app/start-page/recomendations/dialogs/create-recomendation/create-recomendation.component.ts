@@ -29,8 +29,8 @@ export class CreateRecomendationComponent implements OnInit  {
       "id": new FormControl('', Validators.required),
       "description": new FormControl('', Validators.required),
       "source": new FormControl('', Validators.required),
-      "ageFrom": new FormControl('', Validators.required),
-      "ageUpTo": new FormControl('', Validators.required),
+      "ageFrom": new FormControl(),
+      "ageUpTo": new FormControl(),
       "period": new FormControl('', Validators.required),
   });
   }
