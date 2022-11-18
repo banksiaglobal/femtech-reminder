@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="Cache" version="25">
+  <Document name="femtech-reminder.ZPM">
+    <Module>
+      <Name>femtech-reminder</Name>
+      <Description>FemTech Reminder helps you to remember important healthcare events using FHIR repository and Telegram integration</Description>
+      <Version>0.0.1</Version>
+      <Packaging>module</Packaging>
+      <SourcesRoot>src</SourcesRoot>
+      <Resource Name="FTR.PKG"/>
+      <SystemRequirements Version=">=2021.1" Interoperability="enabled" />
+    </Module>
+  </Document>
+</Export>
