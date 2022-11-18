@@ -1,6 +1,6 @@
 
+ARG IMAGE=intersystemsdc/irishealth-community-arm64
 ARG IMAGE=intersystemsdc/irishealth-community
-ARG IMAGE=intersystemsdc/irishealth-community-arm64:2022.3.0.539.0-zpm
 FROM $IMAGE
 
 WORKDIR /home/irisowner/irisbuild
