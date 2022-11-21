@@ -24,16 +24,22 @@ The server part analyses patient's data and send a notification to visit a docto
 
 When brainstorming the solution to apply for this contest, our team came up with the following possible use cases for a female health reminder application, and divided them into three levels: top level (blue) describes actors (WHO?), middle layer (yellow) describes use cases (WHAT?) and third level (pink) describes tasks (HOW?)
 
-![](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/mapMind.png)
+![mind map](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/map.png)
 
 
 ## Application Layout
 
 * you go to GUI
 * create a new recommendation
+
+![gui](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/Application-Layout-GUI.gif)
+
+
 * go into the telegram bot
 * enter your data
 * get a recomendations*/
+
+![telegram](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/Application-Layout-Telegram.gif)
 
 
 ## Online Demo
@@ -58,7 +64,7 @@ Read related documentations: [fhir](https://www.hl7.org/fhir/)
 
 # Description of system
 
-![](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/descriptionOfSystem.png)
+![](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/schema.png)
 
 * ## Backend
 
