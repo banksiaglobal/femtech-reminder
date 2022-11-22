@@ -13,6 +13,8 @@ XData UrlMap
 <Route Url="/patient"	Method="GET"	Call="GetPatient"/>
 <Route Url="/recommendation-age"	Method="GET"	Call="GetRecommendationAgeList"/>
 <Route Url="/recommendation-age"	Method="POST"	Call="SetRecommendationAge"/>
+<Route Url="/recommendation-pregnancy"	Method="GET"	Call="GetRecommendationPregnancyList"/>
+<Route Url="/recommendation-pregnancy"	Method="POST"	Call="SetRecommendationPregnancy"/>
 <Route Url="/get-log"	Method="GET"	Call="GetLog"/>
 </Routes>
 }
@@ -38,7 +40,6 @@ ClassMethod Response(pResponse = "", pSC = 1) As %Status
 	Quit $$$OK
 }
 
-/// Description
 ClassMethod GetPatient() As %Library.DynamicObject
 {
 	Set response = {}
@@ -87,8 +88,6 @@ ClassMethod GetRecommendationAgeList() As %Library.DynamicObject
 	}
 	Quit ..Response(response)
 }
-
-// select recommendation -> NotificationText from FTR_Model.Notification
 
 ClassMethod GetLog() As %Library.DynamicObject
 {
@@ -139,6 +138,54 @@ ClassMethod SetRecommendationAge() As %Library.DynamicObject
 	Set response.recommendation.ageUpTo = Recommendation.AgeUpTo
 	Set response.recommendation.period = Recommendation.Period
 		
+	Quit ..Response(response)
+}
+
+ClassMethod SetRecommendationPregnancy() As %Library.DynamicObject
+{
+	Set json = {}.%FromJSON(%request.Content)
+	&sql(select id into :recommendationId from FTR_Model_Recommendation.Pregnancy where ID = :json.id)
+	If SQLCODE=0 {
+    	set Recommendation = ##class(FTR.Model.Recommendation.Pregnancy).%OpenId(recommendationId)
+	} else {
+    	set Recommendation = ##class(FTR.Model.Recommendation.Pregnancy).%New()
+	}
+	Set Recommendation.Description = json.description
+	Set Recommendation.Source = json.source
+	Set Recommendation.Week = json.week
+	
+	Set tSC = Recommendation.%Save()
+	Set response = {}
+	Set response.status = 1
+	Set response.recommendation = {}
+	Set response.recommendation.id = Recommendation.%Id()
+	Set response.recommendation.description = Recommendation.Description
+	Set response.recommendation.source = Recommendation.Source
+	Set response.recommendation.week = Recommendation.Week
+		
+	Quit ..Response(response)
+}
+
+ClassMethod GetRecommendationPregnancyList() As %Library.DynamicObject
+{
+	Set response = {}
+	Set response.recommendations = []
+	Set csql = "select ID,Description, Source, Week  from FTR_Model_Recommendation.Pregnancy"
+	Set tcStatement = ##class(%SQL.Statement).%New()
+	Set tcStatus = tcStatement.%Prepare(csql)
+	If ($$$ISOK(tcStatus)) { 
+		Set tcResult = tcStatement.%Execute()
+		If (tcResult.%SQLCODE=0) {
+			While tcResult.%Next() {
+				Set recommendation = {}
+				Set recommendation.id = tcResult.ID
+				Set recommendation.description = tcResult.Description
+				Set recommendation.source = tcResult.Source
+				Set recommendation.week = tcResult.Week
+				Do response.recommendations.%Push(recommendation)
+			}
+		}
+	}
 	Quit ..Response(response)
 }
 

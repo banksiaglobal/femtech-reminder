@@ -1,4 +1,3 @@
-/// Description
 Class FTR.Production.Operation.TelegramOutNotification Extends FTR.Production.Operation.TelegramOutRequest
 {
 

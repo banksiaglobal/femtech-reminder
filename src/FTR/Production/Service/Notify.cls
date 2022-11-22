@@ -21,35 +21,46 @@ Method OnProcessInput(pInput As %RegisteredObject, Output pOutput As %Registered
 			}
 		}
 	}
-    //set ..%WaitForNextCallInterval=1
 
-	set tSC = ..ImitateApointment()
     Quit tSC
 }
 
-Method ImitateApointment() As %Status
+/*
+bg-mn: 
+	generation appointment for women to collect test data
+*/
+Method ImitateAppointment() As %Status
 {
-	write !, "start"
+	
 	set tSC = $$$OK
 	Try {
+		// get all patient from FHIR-server
 		set request = ##class(HS.FHIRServer.Interop.Request).%New()
-		set request.Request.Method = "GET"
+		set request.Request.RequestMethod = "GET"
 		set request.Request.RequestPath = "/Patient"
 		set tSC = ..SendRequestSync("FTR.Production.Operation.FHIROut",request,.response) 
-
+		
+		// get data from response
 		set Patients = {}.%FromJSON(##class(HS.SDA3.QuickStream).%OpenId(response.QuickStreamId))
 		
+		// look for female patient
 		do{
-			set randomNumPatient = $RANDOM(Patients.total) 
+			// generate index of patient in array response
+			set randomNumPatient = $RANDOM(Patients.entry.%Size()) 
+			// get 
 			set Patient = Patients.entry.%Get(randomNumPatient)
-			write !, Patient.resource.id, Patient.resource.gender
 		}while(Patient.resource.gender = "male")
 
+		// generate recommendation
 		set listRecommend = ["Add vitamins and menerals to the diet","Normalizing sleep","Include daily sports activity","Increase water intake"]
 		set randomNumRec = $RANDOM(listRecommend.%Size())
 
+		// set now date in necessary format
 		set dt = ##class(%Library.UTC).NowUTC()
+		set dt = $TRANSLATE(dt," ","T")_"+00:00"
 
+
+		// make up the request body
 		set body = {}
 		set body.resourceType = "Appointment"
 		set body.status = "booked"
@@ -65,18 +76,31 @@ Method ImitateApointment() As %Status
 		set body.participant."0".actor = actor
 		set body.participant."0".status = "accepted"
 
-		set request.Request.Method = "POST"
-		set request.Request.RequestPath = "/Appointment"
-		set request.Request.Json = body.%ToJSON()
+		// create stream
+		set stream = ##class(HS.SDA3.QuickStream).%New()
+		set jsonCharStream = ##class(%Stream.GlobalCharacter).%New()
+		// add request body to stream
+		do jsonCharStream.Write(body.%ToJSON())
+		
+		// save stream 
+		do stream.CopyFromAndSave(jsonCharStream)
+		s sc = stream.%Save()
 
-		set tSC = ..SendRequestAsync("FTR.Production.Operation.FHIROut",request) 
+		// create POST request object for FHIR
+		set requestAppointment = ##class(HS.FHIRServer.Interop.Request).%New()
+		set requestAppointment.Request.RequestMethod = "POST"
+		set requestAppointment.Request.RequestPath = "/Appointment"
+		set requestAppointment.Request.RequestFormatCode = "JSON"
+		set requestAppointment.QuickStreamId = stream.%Id()
+		
+		// send synchronous request to FHIR 
+		set tSC = ..SendRequestSync("FTR.Production.Operation.FHIROut",requestAppointment,.responseAppointment) 
 
 	}
 	Catch ex {
 		Set tSC=ex.AsStatus()
 	}
 	
-	/// send custom apointment to custom patient
 	
 	q tSC
 }

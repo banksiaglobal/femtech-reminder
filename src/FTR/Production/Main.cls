@@ -26,6 +26,7 @@ XData ProductionDefinition
     <Setting Target="Host" Name="ServiceName">FHIRR</Setting>
     <Setting Target="Host" Name="ArchiveIO">1</Setting>
     <Setting Target="Host" Name="AlertOnError">1</Setting>
+    <Setting Target="Host" Name="XApiKey">EQXEZ5l0V45V2X7xGQr5O7gb0p5vLy7d7WYWzVZB</Setting>
   </Item>
   <Item Name="FTR.Process.CheckPatient" Category="" ClassName="FTR.Production.Process.CheckPatient" PoolSize="1" Enabled="true" Foreground="false" Comment="" LogTraceEvents="false" Schedule="">
     <Setting Target="Host" Name="AlertOnError">1</Setting>
@@ -35,8 +36,8 @@ XData ProductionDefinition
   </Item>
   <Item Name="FTR.Production.Process.TelegramRouter" Category="" ClassName="FTR.Production.Process.TelegramRouter" PoolSize="1" Enabled="true" Foreground="false" Comment="" LogTraceEvents="false" Schedule="">
   </Item>
-  <Item Name="FTR.Production.Service.Notify" Category="" ClassName="FTR.Production.Service.Notify" PoolSize="1" Enabled="true" Foreground="false" Comment="" LogTraceEvents="true" Schedule="@schedule">
-    <Setting Target="Adapter" Name="CallInterval">500</Setting>
+  <Item Name="FTR.Production.Service.Notify" Category="" ClassName="FTR.Production.Service.Notify" PoolSize="1" Enabled="true" Foreground="false" Comment="" LogTraceEvents="true" Schedule="">
+    <Setting Target="Adapter" Name="CallInterval">86400</Setting>
     <Setting Target="Host" Name="AlertOnError">1</Setting>
   </Item>
 </Production>

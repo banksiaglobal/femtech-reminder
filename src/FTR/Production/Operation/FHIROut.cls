@@ -1,6 +1,11 @@
 Class FTR.Production.Operation.FHIROut Extends HS.FHIRServer.Interop.HTTPOperation
 {
 
+Parameter SETTINGS As %String = "XApiKey:Basic";
+
+/// X-API-KEY Header content
+Property XApiKey As %String;
+
 Method DispatchRequest(pInteropRequest As HS.FHIRServer.Interop.Request, Output pInteropResponse As HS.FHIRServer.Interop.Response) As %Status
 {
 	Set tSC = $$$OK
@@ -45,7 +50,8 @@ Method DispatchRequest(pInteropRequest As HS.FHIRServer.Interop.Request, Output 
 		If $Data(requestHeaders) {
 			Do httpClient.SetOtherRequestHeaders(.requestHeaders)
 		}
-		Set pOtherRequestHeadersAPIKey("X-API-Key") = "EQXEZ5l0V45V2X7xGQr5O7gb0p5vLy7d7WYWzVZB"
+		//Set pOtherRequestHeadersAPIKey("X-API-Key") = "EQXEZ5l0V45V2X7xGQr5O7gb0p5vLy7d7WYWzVZB"
+		Set pOtherRequestHeadersAPIKey("X-API-Key") = ..XApiKey
 		Set pOtherRequestHeadersAPIKey("content-type") = "application/fhir+json"
 		Do httpClient.SetOtherRequestHeaders(.pOtherRequestHeadersAPIKey)
 		
