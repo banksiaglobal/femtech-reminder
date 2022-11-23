@@ -19,6 +19,8 @@ Our project helps to solve this problem and allows the user to receive reminders
 This system is a set of components: the server part based on InterSystems IRIS for Health, a cloud-based FHIR server, and two client parts: - telegram bot-reminder and Web GUI.
 The server part analyses patient's data and send a notification to visit a doctor or to do laboratory examinations via the telegram bot. Administrators use web-based GUI interface to configure recommendations.
 
+![](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/schema.png)
+
 
 ## Map mind
 
@@ -44,7 +46,13 @@ When brainstorming the solution to apply for this contest, our team came up with
 
 ## Online Demo
 
+[demo](//todo)
+
 [bot](https://t.me/bg_fhir_bot)
+
+## Video
+
+[youtube](//todo)
 
 
 ## Features
@@ -64,7 +72,8 @@ Read related documentations: [fhir](https://www.hl7.org/fhir/)
 
 # Description of system
 
-![](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/schema.png)
+![](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/descriptionSystem.png)
+
 
 * ## Backend
 
@@ -87,7 +96,17 @@ The server part contains the following business components
 ### How to run
 
 #### Docker deployment from github
-[todo]
+
+1. You should clone this repo 
+
+```
+git@github.com:banksiaglobal/femtech-reminder.git
+```
+
+2. You should select the command `docker compose up`
+
+![image](https://user-images.githubusercontent.com/110831804/203649662-247a8fba-9000-4d05-977e-c3e33eab41ad.png)
+
 
 #### ZPM deployment
 [todo]
@@ -149,23 +168,55 @@ You will need a token to connect the bot to InterSystems IRIS. Copy the token va
 ##### Connection telegram-bot to InterSystems IRIS:
 
 1. Set a WebHook for your Bot is to issue a GET request to the Bot API (it’s enough to open an url in your browser).
+
 Call the setWebHook method in the Bot API via the following url:
 ```
 https://api.telegram.org/bot<your token>/setWebhook?url=<url_to_send_updates_to>
 ```
 
 2. Setup the Basic Settings of operation that will send messages to the telegram bot.
+
 HTTP Server: api.telegram.org
+
 HTTP Port: 443
+
 URL: /bot<your token>
   
   ![](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/setup.png)
+  
+### Telegram-bot interaction tools
+
+#### Commands:
+
+* /start - initiation of work with bot;
+* /stop - log off user from system;
+* /help - show all commands;
+* /registration - initialization of the regression process;
+* /next_notification - send the following recommendation note;
+
+#### User from FHIR for test:
+
+* female
+```
+User User 2000-01-01
+```
+* female, pregnant
+```
+Freeda113 Schoen8 1955-09-23
+```
+
+### Visual trace
+
+Example visual trace of command /next_notification
+
+![] (https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/virtualTrace.png)
+
 
 ### FHIR Data Source
-  [todo]
- 
-  ![](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/dataSource.png)
 
+![image](https://user-images.githubusercontent.com/110831804/203654739-4fdd48a0-3304-4e30-9ec0-766da5df4efb.png)
+ 
+![](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/dataSource.png)
 
 
 ## Frontend
