@@ -100,7 +100,7 @@ The server part contains the following business components
 1. You should clone this repo 
 
 ```
-git@github.com:banksiaglobal/femtech-reminder.git
+git clone https://github.com/banksiaglobal/femtech-reminder.git
 ```
 
 2. You should select the command `docker compose up`
@@ -138,8 +138,11 @@ git@github.com:banksiaglobal/femtech-reminder.git
 ![](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/portal6.png)
 
 #### Setup telegram-bot
+
 ##### Create telegram-bot:
+
 Open a Telegram messenger, log into your account or create a new one.
+
 1. Enter @BotFather in the search box and select a bot
 
 ![](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/bot1.png)
@@ -209,10 +212,11 @@ Freeda113 Schoen8 1955-09-23
 
 Example visual trace of command /next_notification
 
-![] (https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/virtualTrace.png)
+![]https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/virtualTrace.png)
 
 
 ### FHIR Data Source
+ 
 
 ![image](https://user-images.githubusercontent.com/110831804/203654739-4fdd48a0-3304-4e30-9ec0-766da5df4efb.png)
  
