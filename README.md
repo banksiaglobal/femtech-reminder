@@ -212,13 +212,13 @@ Freeda113 Schoen8 1955-09-23
 
 Example visual trace of command /next_notification
 
-![]https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/virtualTrace.png)
+![](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/virtualTrace.png)
 
 
 ### FHIR Data Source
  
 
-![image](https://user-images.githubusercontent.com/110831804/203654739-4fdd48a0-3304-4e30-9ec0-766da5df4efb.png)
+![](https://user-images.githubusercontent.com/110831804/203654739-4fdd48a0-3304-4e30-9ec0-766da5df4efb.png)
  
 ![](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/dataSource.png)
 
