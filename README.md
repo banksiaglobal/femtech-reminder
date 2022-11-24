@@ -183,9 +183,12 @@ HTTP Server: api.telegram.org
 
 HTTP Port: 443
 
-URL: /bot<your token>
+URL: /bot
+
+BotToken: <your token>
   
-  ![](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/setup.png)
+![image](https://user-images.githubusercontent.com/110831804/203779668-d27c70d4-6a1b-48c8-9563-4b3329d0b357.png)
+
   
 ### Telegram-bot interaction tools
 
