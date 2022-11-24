@@ -1,4 +1,3 @@
-/// Description
 Class FTR.Production.Message.TelegramOutRequest Extends Ens.Request
 {
 

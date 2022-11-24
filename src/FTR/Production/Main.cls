@@ -19,8 +19,9 @@ XData ProductionDefinition
     <Setting Target="Adapter" Name="HTTPPort">443</Setting>
     <Setting Target="Adapter" Name="HTTPServer">api.telegram.org</Setting>
     <Setting Target="Adapter" Name="SSLConfig">sslclient</Setting>
-    <Setting Target="Adapter" Name="URL">/bot5328126407:AAFpgnP7WROZS0IGTOQLQrxwyJCgoo0mTZM</Setting>
+    <Setting Target="Adapter" Name="URL">/bot</Setting>
     <Setting Target="Host" Name="AlertOnError">1</Setting>
+    <Setting Target="Host" Name="BotToken">5328126407:AAFpgnP7WROZS0IGTOQLQrxwyJCgoo0mTZM</Setting>
   </Item>
   <Item Name="FTR.Production.Operation.FHIROut" Category="" ClassName="FTR.Production.Operation.FHIROut" PoolSize="1" Enabled="true" Foreground="false" Comment="" LogTraceEvents="true" Schedule="">
     <Setting Target="Host" Name="ServiceName">FHIRR</Setting>

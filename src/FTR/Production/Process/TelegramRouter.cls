@@ -15,6 +15,7 @@ Method OnRequest(pRequest As FTR.Production.Message.RouterRequest, Output pRespo
     // set defoult message for request to TelegramOut
     set message = "Sorry, I'm lost.%0APlease, enter the correct command."
 
+
     // get nessesary data from input massage
     set text = pRequest.InterMessage.message.text
     set User = pRequest.User
@@ -35,17 +36,18 @@ Method OnRequest(pRequest As FTR.Production.Message.RouterRequest, Output pRespo
     }
 
     // if input command is start and user not yet registered in the system
+    
     elseif ((text = "/start") && (User.LastMessage = "")) {
-        set message = "Welcome, if you want to registrating in our reminder please enter /registration"
+        set message = "Welcome, if you want to registrating in our reminder please enter /registration."
 		set User.LastMessage = text
     }
     // if user not yet registered in the system
     elseif ((User.LastMessage = "")){
-        set message = "Hello, if you want to start using our bot, click /start"
+        set message = "Hello, if you want to start using our bot, click /start."
     }
     // if user wonna to register in the system
-    elseif ((text = "/registration") && (User.LastMessage = "/start" || User.LastMessage = "")){
-		set message =  "Please, enter your full name and birthday in the fromat(without further punctuation):%0AFirstName LastName YYYY-MM-DD"
+    elseif ((text = "/registration") && ((User.LastMessage = "/start") || (User.LastMessage = ""))){
+		set message =  "Please, enter your full name and birthday in the format(without further punctuation):%0AFirstName LastName YYYY-MM-DD."
 		set User.LastMessage = text
 	}
     // incoming data message for registration 
@@ -55,7 +57,7 @@ Method OnRequest(pRequest As FTR.Production.Message.RouterRequest, Output pRespo
 
     // if input command is help
     elseif (text = "/help"){
-		set message = "Sattings of BG-FHIR bot:%0A/start - Running the notification;%0A/stop - Stop sending messages;%0A/help - Get all commands of the bot,%0A/registration - Registration user in systems FHIR,%0A/next_notification - Send the next notification"
+		set message = "Settings of BG-FHIR bot:%0A/start - Initiation of work with bot;%0A/stop - log off user from system and stop notification;%0A/help - Get all commands of the bot,%0A/registration - Initialization of the regression process,%0A/next_notification - Send the next notification."
 	}
     
     Try {
@@ -80,11 +82,11 @@ Method StopNotification(userId As %String) As %String
     Try {
             // remove the user from the system
             do ##class(FTR.Model.Patient).%DeleteId(userId)
-            set mes = "Bot work has been suspended%0APlease, go through the regestartion again to get notification"
+            set mes = "Bot work has been suspended%0APlease, go through the regestartion again to get notification."
         }
     Catch ex {
             Set tSC=ex.AsStatus()
-            set mes = "Something went wrong, maybe you're not registered in our system"
+            set mes = "Something went wrong, maybe you're not registered in our system."
         }
     return mes
 }
@@ -148,11 +150,11 @@ Method Registration(User As FTR.Model.Patient, mes As %String) As %String
 			set User.FhirId = dataPatient.id
 			set User.DOB = $ZDATEH(dataPatient.birthDate,3) 
 			set User.LastMessage = "/after"
-			quit "Registration was successful"
+			quit "Registration was successful%0APlease, expect recommendatory notices."
 		} 
 	}
 	
-	quit "User is not found, please, try again"
+	quit "User is not found, please, try again."
 	
 	return $$$OK
 }

@@ -1,4 +1,3 @@
-/// Description
 Class FTR.Production.Message.CheckPatientRequest Extends Ens.Request
 {
 
