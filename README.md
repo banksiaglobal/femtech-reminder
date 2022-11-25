@@ -42,10 +42,6 @@ When brainstorming the solution to apply for this contest, our team came up with
 ![telegram](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/Application-Layout-Telegram.gif)
 
 
-## Online Demo
-
-[demo](//todo)
-
 [bot](https://t.me/bg_fhir_bot)
 
 ## Video
