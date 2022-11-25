@@ -256,7 +256,7 @@ HTTP Port: 443
 
 URL: /bot
 
-BotToken: <your token>
+BotToken: ```<your token>```
   
 ![image](https://user-images.githubusercontent.com/110831804/203779668-d27c70d4-6a1b-48c8-9563-4b3329d0b357.png)
 
