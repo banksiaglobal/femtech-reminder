@@ -93,7 +93,7 @@ The server part contains the following business components
 * OperationFHIROut - send FHIR requests;
 * TelegramOut - send messages to a telegram bot.
 
-### How to run
+## How to run
 
 ## Docker deployment from github
 
@@ -141,7 +141,7 @@ You need to install web-server with https (for telegram bot webhook) or implemen
    
 ![image](https://user-images.githubusercontent.com/110831804/203927159-95828a50-bb8c-4b68-a45e-3a7fba507489.png)
 
-5. [##### Install ZPM](https://github.com/intersystems/ipm)
+5. [Install ZPM](https://github.com/intersystems/ipm)
 
 6. ##### Install FEMTECHREMINDER package by ZPM
 
@@ -158,7 +158,7 @@ Open production
 
 ![image](https://user-images.githubusercontent.com/110831804/203928009-9744329f-beae-46aa-80ad-ee4cf50e30aa.png)
 
-#### Check settings:
+### Check settings:
 
 ##### FTR.Production.Service.TelegramIn:
 
@@ -180,7 +180,7 @@ Open production
 * SSL Configuration (sslclient)
    
    
-#### Setup FHIR Server
+## Setup FHIR Server
 
 1. Sign up in Cloud Portal on portal.live.isccloud.io (portal.live.isccloud.io)
 
@@ -206,7 +206,8 @@ Open production
 
 ![](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/portal6.png)
 
-#### Setup telegram-bot
+
+## Setup telegram-bot
 
 ##### Create telegram-bot:
 
@@ -235,7 +236,7 @@ You will need a token to connect the bot to InterSystems IRIS. Copy the token va
  
  ![](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/bot5.png)
 
-####  Set up Production
+##  Set up Production
 
 ##### Connection telegram-bot to InterSystems IRIS:
 
@@ -300,6 +301,16 @@ Example visual trace of command /next_notification
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.2.
 
 ### Development server
+   
+ * you should clone this repo 
+   
+```
+git clone https://github.com/banksiaglobal/femtech-reminder.git
+```
+ * enter in your terminal
+```
+cd angular/src/app
+```
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
