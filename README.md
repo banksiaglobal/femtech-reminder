@@ -352,5 +352,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ![image](https://user-images.githubusercontent.com/110831804/203932894-74f67cf6-0681-4279-94da-752e2e747c13.png)
 
-***We hope that our bot-reminder open-source project will help our colleagues to innovate and solve complex healthcare issues to help women to feel good and stay healthy***
+<h3 style="text-align: center;">We hope that our bot-reminder open-source project will help our colleagues to innovate and solve complex healthcare issues to help women to feel good and stay healthy</h3>
+
 
