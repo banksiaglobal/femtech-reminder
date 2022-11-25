@@ -5,8 +5,6 @@
 
 ## Introduction
 
-**This project is still work-in-progress, we will present final version before contest cut-off date**
-
 Today in the modern society and fast life, women priorities include not just caring about family and kids, but also building business and career, leaving no time to care about her health and regularly checkups, often not suspecting about developing health issues.
 
 According to research by leading healthcare organizations, early diagnostics and observation may significantly reduce risks of severe women health problems.
@@ -52,7 +50,7 @@ When brainstorming the solution to apply for this contest, our team came up with
 
 ## Video
 
-[youtube](//todo)
+[youtube](https://www.youtube.com/watch?v=LaHJYejc-5I&ab_channel=ES)
 
 
 ## Features
@@ -94,26 +92,6 @@ The server part contains the following business components
 * TelegramOut - send messages to a telegram bot.
 
 ## How to run
-
-## Docker deployment from github
-
-1. You should clone this repo 
-
-```
-git clone https://github.com/banksiaglobal/femtech-reminder.git
-```
-
-2. Open a terminal in this directory and run: 
-
-```
-docker compose up
-```
-Check points 3, 4, 7 of ZPM Deployment.
-
-To view Production go to:
-
-[Production](http://localhost:52795/csp/healthshare/femtechreminder/EnsPortal.ProductionConfig.zen?PRODUCTION=FTR.Production.Main)
-
 
 ## ZPM deployment
 
@@ -185,6 +163,26 @@ Open production
 * URL (/bot)
 * BotToken (979906407:...TZK)
 * SSL Configuration (sslclient)
+
+
+## Docker deployment from github
+
+1. You should clone this repo 
+
+```
+git clone https://github.com/banksiaglobal/femtech-reminder.git
+```
+
+2. Open a terminal in this directory and run: 
+
+```
+docker compose up
+```
+Check points 3, 4, 7 of ZPM Deployment.
+
+To view Production go to:
+
+[Production](http://localhost:52795/csp/healthshare/femtechreminder/EnsPortal.ProductionConfig.zen?PRODUCTION=FTR.Production.Main)
    
    
 ## Setup FHIR Server
@@ -321,26 +319,7 @@ cd angular/src/app
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-### Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-### Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-### Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-### Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-### Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-
+   
 # Thanks
 
 <h3 style="text-align: center;">We thank InterSystems for an opportunity to work on important present-day female issues</h3>
