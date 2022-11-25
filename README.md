@@ -37,12 +37,14 @@ When brainstorming the solution to apply for this contest, our team came up with
 
 * go into the telegram bot
 * enter your data
-* get a recomendations*/
+* get a recomendations
 
 ![telegram](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/Application-Layout-Telegram.gif)
 
+## BOT
 
 [bot](https://t.me/bg_fhir_bot)
+
 
 ## Video
 
