@@ -336,4 +336,21 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 # Thanks
 
-**We thank InterSystems for an opportunity to work on important present-day female issues. We hope that our bot-reminder open-source project will help our colleagues to innovate and solve complex healthcare issues to help women to feel good and stay healthy**
+**We thank InterSystems for an opportunity to work on important present-day female issues**
+
+
+# About authors
+
+<h3 style="text-align: center;">We are the team of Banksia Global company and we always are opened for something new and interesting</h3>
+
+![image](https://user-images.githubusercontent.com/110831804/203932894-74f67cf6-0681-4279-94da-752e2e747c13.png)
+
+<h3 style="text-align: center;>We hope that our bot-reminder open-source project will help our colleagues to innovate and solve complex healthcare issues to help women to feel good and stay healthy</h3>
+
+![image](https://user-images.githubusercontent.com/110831804/203936782-568deeac-6aeb-4275-a0c5-f051770415a1.png)
+
+
+
+
+
+
