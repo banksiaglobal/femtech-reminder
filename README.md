@@ -103,9 +103,16 @@ The server part contains the following business components
 git clone https://github.com/banksiaglobal/femtech-reminder.git
 ```
 
-2. You should select the command `docker compose up`
+2. Open a terminal in this directory and run: 
 
-![image](https://user-images.githubusercontent.com/110831804/203649662-247a8fba-9000-4d05-977e-c3e33eab41ad.png)
+```
+docker compose up
+```
+Check points 3, 4, 7 of ZPM Deployment.
+
+To view Production go to:
+
+[Production](http://localhost:52795/csp/healthshare/femtechreminder/EnsPortal.ProductionConfig.zen?PRODUCTION=FTR.Production.Main)
 
 
 ## ZPM deployment
@@ -336,7 +343,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 # Thanks
 
-**We thank InterSystems for an opportunity to work on important present-day female issues**
+<h3 style="text-align: center;">We thank InterSystems for an opportunity to work on important present-day female issues</h3>
 
 
 # About authors
@@ -348,9 +355,3 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 <h3 style="text-align: center;>We hope that our bot-reminder open-source project will help our colleagues to innovate and solve complex healthcare issues to help women to feel good and stay healthy</h3>
 
 ![image](https://user-images.githubusercontent.com/110831804/203936782-568deeac-6aeb-4275-a0c5-f051770415a1.png)
-
-
-
-
-
-
