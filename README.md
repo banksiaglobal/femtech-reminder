@@ -95,7 +95,7 @@ The server part contains the following business components
 
 ### How to run
 
-#### Docker deployment from github
+## Docker deployment from github
 
 1. You should clone this repo 
 
@@ -108,7 +108,7 @@ git clone https://github.com/banksiaglobal/femtech-reminder.git
 ![image](https://user-images.githubusercontent.com/110831804/203649662-247a8fba-9000-4d05-977e-c3e33eab41ad.png)
 
 
-#### ZPM deployment
+## ZPM deployment
 
 You need to install web-server with https (for telegram bot webhook) or implement the necessary access to the local computer through a service such as
 [ngrok.com](https://ngrok.com/)
