@@ -109,8 +109,77 @@ git clone https://github.com/banksiaglobal/femtech-reminder.git
 
 
 #### ZPM deployment
-[todo]
 
+You need to install web-server with https (for telegram bot webhook) or implement the necessary access to the local computer through a service such as
+[ngrok.com](https://ngrok.com/)
+
+1. ##### Install InterSystems IRIS for Health Community [install](https://docs.intersystems.com/irisforhealthlatest/csp/docbook/DocBook.UI.Page.cls?KEY=HXIHINST_install)
+
+2. ##### Add FEMTECHREMINDER namespace
+
+![image](https://user-images.githubusercontent.com/110831804/203926203-da5a75ea-d536-4463-8047-476f6d231e05.png)
+
+3. Add SSL server config for Telegram Bot WebHook and SSL client config
+
+![image](https://user-images.githubusercontent.com/110831804/203926305-96c08c20-880c-413e-ab4c-416b10869a0c.png)
+
+![image](https://user-images.githubusercontent.com/110831804/203926382-25b797c4-1abd-4386-8a8e-9ebfdb1f8d94.png)
+
+![image](https://user-images.githubusercontent.com/110831804/203926423-ac5f9364-172c-4abf-8baf-a89e0711a473.png)
+
+4. ##### Install a Foundation and HTTP Service for FEMTECHREMINDER
+
+   Management Portal ->  Health -> Installer Wizard
+   
+![image](https://user-images.githubusercontent.com/110831804/203926572-4a1f7ccc-d3b5-4a6f-994c-36aa53fa2392.png)
+
+![image](https://user-images.githubusercontent.com/110831804/203926998-2410b12c-bf9a-4a60-9262-a581a2b491db.png)
+
+   Press "Activate" link for activate Foundation
+   
+   Management Portal ->  Health -> Service Registry
+   
+![image](https://user-images.githubusercontent.com/110831804/203927159-95828a50-bb8c-4b68-a45e-3a7fba507489.png)
+
+5. [##### Install ZPM](https://github.com/intersystems/ipm)
+
+6. ##### Install FEMTECHREMINDER package by ZPM
+
+```
+zpm "install femtech-reminder"
+```
+7. ##### Setup production
+
+![image](https://user-images.githubusercontent.com/110831804/203927858-f23dd657-4cd6-4988-904c-767702ca3230.png)
+
+Open production
+
+![image](https://user-images.githubusercontent.com/110831804/203927954-5da54b9e-4360-41a4-8822-170560f5e7df.png)
+
+![image](https://user-images.githubusercontent.com/110831804/203928009-9744329f-beae-46aa-80ad-ee4cf50e30aa.png)
+
+#### Check settings:
+
+##### FTR.Production.Service.TelegramIn:
+
+* Port: (8443)
+
+* SSL Configuration (webhook)
+
+#### FTR.Production.Operation.FHIROut:
+
+* XApiKey (API Key of Telegram bot)
+
+* ServiceName (FHIRR)
+
+#### Operation.TelegramOut:
+* HTTP Server (api.telegram.org)
+* HTTP Port (443)
+* URL (/bot)
+* BotToken (979906407:...TZK)
+* SSL Configuration (sslclient)
+   
+   
 #### Setup FHIR Server
 
 1. Sign up in Cloud Portal on portal.live.isccloud.io (portal.live.isccloud.io)
