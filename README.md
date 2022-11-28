@@ -41,9 +41,12 @@ When brainstorming the solution to apply for this contest, our team came up with
 
 ![telegram](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/Application-Layout-Telegram.gif)
 
-## BOT
+
+# BOT
 
 [bot](https://t.me/bg_fhir_bot)
+![image](https://user-images.githubusercontent.com/110831804/204274213-c7d20f2e-7b2f-4c67-8547-23057a491e1e.png)
+
 
 
 ## Video
@@ -281,7 +284,7 @@ User User 2000-01-01
 ```
 * female, pregnant
 ```
-Freeda113 Schoen8 1955-09-23
+Charise827 Balistreri607 2001-11-07
 ```
 
 ### Visual trace
