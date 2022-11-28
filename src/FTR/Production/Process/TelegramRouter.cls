@@ -47,7 +47,7 @@ Method OnRequest(pRequest As FTR.Production.Message.RouterRequest, Output pRespo
     }
     // if user wonna to register in the system
     elseif ((text = "/registration") && ((User.LastMessage = "/start") || (User.LastMessage = ""))){
-		set message =  "Please, enter your full name and birthday in the format(without further punctuation):%0AFirstName LastName YYYY-MM-DD."
+		set message =  "Please, enter your full name and birthday in the format (without further punctuation):%0AFirstName LastName YYYY-MM-DD."
 		set User.LastMessage = text
 	}
     // incoming data message for registration 
