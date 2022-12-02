@@ -14,19 +14,19 @@ export class HeaderComponent implements OnInit {
   }
 
   goToRecommedationsAge(){
-    this.router.navigate(['/recommendations-age'])  ;
+    this.router.navigate(['/recommendations-age']);
   }
 
   goToRecommedationsPregnancy(){
-    this.router.navigate(['/recommendations-pregnancy'])  ;
+    this.router.navigate(['/recommendations-pregnancy']);
   }
 
   goToInfo(){
-    this.router.navigate(['/info'])  ;
+    this.router.navigate(['/info']);
   }
   
   gotoUsers(){
-    this.router.navigate(['/users'])  ;
+    this.router.navigate(['/users']);
   }
 
 }

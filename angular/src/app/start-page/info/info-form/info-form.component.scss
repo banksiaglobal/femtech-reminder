@@ -1,6 +1,11 @@
 .box-card svg {
   padding-top: 10px;
-  
+}
+
+.box-card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .text-box {
@@ -13,19 +18,22 @@ ul {
   padding: 10px; 
   word-wrap: break-word;
   color:  #552896;
-  font-weight: 500;
-  
+  font-weight: 500;  
 }
 
 li {
   display: flex;
   gap: 5px;
-
 }
 
 .subtitle-box-card {
   text-align: center;
   word-wrap: break-word;
   font-weight: 600;
+}
+
+.mat-button-base {
+  width: 85px;
+  background-color: #ad8fbcb0;
 }
 

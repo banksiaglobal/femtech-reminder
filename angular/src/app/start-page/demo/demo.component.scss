@@ -10,8 +10,18 @@
 }
 }
 
-.mat-typography h2{
+.mat-typography h2 { 
   margin: 0 !important;
+}
+
+.title-link {
+  padding: 5px 4px;
+  box-shadow: 10px 5px 5px #956fa5;
+  opacity: 0.8;
+}
+
+.title-link:hover {
+  opacity: 1;
 }
 
 .demo-list {
