@@ -9,10 +9,13 @@
       </h3>
       <div *ngIf="!isEmptyData">
         <div class="notifications-title">
-          <h2>List notifications for:</h2>
-          <p class="notifications-subtitle">{{ userName }}</p>
+          <h2>List notifications:</h2>
+          <div class="user-info">
+            <p class="user-info__name">name: {{ userName }}</p>
+            <p class="user-info__telegramId">telegramID: {{ telegram }}</p>
+          </div>
         </div>
-        <div *ngIf="!isEmptyData" class="box notifications-box-card">
+        <div class="box notifications-box-card">
           <mat-card class="box-card" *ngFor="let item of data">
             <mat-card-title>notification</mat-card-title>
             <mat-card-content>

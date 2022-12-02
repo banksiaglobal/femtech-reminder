@@ -1,5 +1,4 @@
 <app-notifications-control-form
   [data]="listNotifications$ | async"
-  (changeState)="onChangeState($event)"
-  [userName]="userName"
+  [user]="user$ | async"
 ></app-notifications-control-form>

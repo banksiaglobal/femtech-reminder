@@ -17,7 +17,7 @@
 .notifications-box-card {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+   flex-wrap: wrap;
 }
 
 .title-username,
@@ -29,11 +29,10 @@
   color:#533960;
 }
 
-.notifications-subtitle {
+.user-info {
   margin-bottom: 30px;
   font-family: "Courgette", cursive;
-  color: #533960;
-  text-decoration: underline;
+  color: #533960; 
 }
 
 

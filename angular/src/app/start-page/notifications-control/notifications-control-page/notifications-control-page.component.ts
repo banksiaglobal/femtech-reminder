@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { map, Observable } from 'rxjs';
+import {  Observable } from 'rxjs';
 import { IDataNotification } from 'src/app/models/IDataNotification';
+import { IDataUser } from 'src/app/models/users';
 import { NotificationService } from 'src/app/services/notifications.service';
+import { UsersService } from 'src/app/services/users.service';
 
 
 @Component({
@@ -13,27 +15,30 @@ import { NotificationService } from 'src/app/services/notifications.service';
 export class NotificationsControlPageComponent implements OnInit {
 
   public listNotifications$:  Observable<IDataNotification[]>;
+  
+  private userName: string;
 
-  public userName: string;
+  public user$: Observable<IDataUser>;
+
+ 
 
 
-  constructor(private notificationService: NotificationService, private route: ActivatedRoute) { }
+  constructor(private notificationService: NotificationService, private userService: UsersService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
   this.userName = this.route.snapshot.paramMap.get('user');
+  this.setUser();
   this.setListNotifications();
+  }
+
+  setUser (): Observable<IDataUser>{
+    this.user$ = this.userService.getUserByUserName(this.userName);
+    return this.user$;
+
   }
 
   setListNotifications():Observable<IDataNotification[]>  {
   this.listNotifications$ =  this.notificationService.findNotificationsByUserName(this.userName);
   return this.listNotifications$;
 }
-
-  onChangeState(id: string) {   
-    // this.notificationsList.map(el => {
-    //   if (el.id === id) el.state = !el.state;
-    // });
-  }
-
-
 }
