@@ -32,18 +32,20 @@ When brainstorming the solution to apply for this contest, our team came up with
 * you go to GUI
 * create a new recommendation
 
-![gui](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/Application-Layout-GUI.gif)
+![gui](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/gui.gif)
 
 
 * go into the telegram bot
 * enter your data
 * get a recomendations
 
-![telegram](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/Application-Layout-Telegram.gif)
+![telegram](https://github.com/banksiaglobal/femtech-reminder/blob/main/src/image/telegram.gif)
 
 
 
 # BOT
+
+### * you can also go on the bot link and use it
 
 [bot](https://t.me/bg_fhir_bot)
 
