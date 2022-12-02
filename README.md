@@ -56,7 +56,7 @@ When brainstorming the solution to apply for this contest, our team came up with
 
 ### * and also you can go on the GUI link and use it
 
-[bot]([https://t.me/bg_fhir_bot](https://femtech-reminder.pages.dev/demo)
+[gui](https://femtech-reminder.pages.dev/demo)
 
 
 ## Video
