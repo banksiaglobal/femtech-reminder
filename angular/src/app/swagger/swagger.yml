@@ -1,0 +1,245 @@
+openapi: 3.0.0
+info:
+  title: FemTech Reminder
+  description: "The API for FomTech Reminder project"
+  version: 0.1.9
+servers:
+  - url: https://sandbox.banksiaglobal.com/csp/femtech-reminder
+    description: description
+  
+paths:
+  /patient:
+    get:
+      summary: Operate on a list users
+      description: A list of users
+      responses:
+        '200':
+          description: A JSON object patient with array of users
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/responses/UsersResponse"
+      tags:
+        - Users
+        
+  /get-log:
+    get:
+      summary: Get a list of notifications
+      description: a list of notifications 
+      responses:
+        '200':
+          description: A JSON object notifications with array of notifications
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/responses/NotificationsResponse"
+      tags:
+        - Notifications
+        
+  /recommendation-age:
+    get:
+      summary: Get a list of recommendations by age
+      description: a list of recommendations by age
+      responses:
+        '200':
+          description: A JSON object recommendations with array of recommendations
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/responses/RecommendationsAgeResponse"
+      tags:
+        - Recommendation-age
+    post:
+      summary: Add a new recommendation
+      requestBody:
+        $ref: '#/components/requestBodies/RecommendationAgeBody'
+      responses:
+        '200':
+          description: create new recommendation by age
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/responses/RecommendationsPregnancyResponse"
+      tags:
+        - Recommendation-age
+  
+  /recommendation-pregnancy:
+    get:
+      summary: Get a list of recommendations for pregnancy
+      description: a list of recommendations for pregnancy
+      responses:
+        '200':
+          description: A JSON object recommendations with array of recommendations
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/responses/RecommendationsPregnancyResponse"
+      tags:
+        - Recommendation-pregnancy
+    post:
+      summary: Add a new recommendation
+      requestBody:
+        $ref: '#/components/requestBodies/RecommendationPregnancyBody'
+      responses:
+        '200':
+          description: create new recommendation for pregnancy
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/responses/RecommendationsPregnancyCreateResponse"
+      tags:
+        - Recommendation-pregnancy
+    
+  
+#####################################
+#COMPONENTS
+components:
+  
+  ###################################
+  #SCHEMA COMPONENTS
+  schemas:
+    Users:
+      type: object
+      properties:
+        patients:
+          type: array
+          items:
+            $ref: "#/components/schemas/User"
+    User:
+      type: object
+      description: A user
+      properties:
+        name:
+          type: string
+        lastName:
+          type: string
+        birthdayDate:
+          type: string
+        telegramID:
+          type: integer
+    Notifications:
+      type: object
+      properties:
+        notifications:
+          type: array
+          items:
+            $ref: "#/components/schemas/Notification"
+    Notification:
+      type: object
+      description: A notification
+      properties:
+        id:
+          type: string
+        recommendation:
+          type: string
+        notifyTime:
+          type: string
+        patient:
+          type: string
+    RecommendationsListAge:
+      type: object
+      properties:
+        recommendations:
+          type: array
+          items:
+            $ref: "#/components/schemas/RecommendationAge"
+    RecommendationAge:
+      type: object
+      description: A recommendation
+      properties:
+        id:
+          type: string
+        description:
+          type: string
+        source:
+          type: string
+        ageFrom:
+          type: string
+        ageUpTo:
+          type: string
+        period:
+          type: integer
+    RecommendationsListPregnancy:
+      type: object
+      description: A recommendations
+      properties:
+        recommendations:
+          type: array
+          items:
+            $ref: "#/components/schemas/RecommendationPregnancy"
+    RecommendationPregnancy:
+      type: object
+      description: A recommendation
+      properties:
+        id:
+          type: string
+        description:
+          type: string
+        source:
+          type: string
+        week:
+          type: integer
+        
+  ###################################
+  #RESPONSE COMPONENTS    
+  responses:
+    UsersResponse:
+      description:
+        object patient with users array
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Users"
+    NotificationsResponse:
+      description:
+        object notifications with notifications array
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Notifications"
+    RecommendationsAgeResponse:
+      description:
+        object 'recommendations' with recommendations array
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/RecommendationsListAge"
+    RecommendationsAgeCreateResponse:
+      description:
+        object 'recommendations' with recommendations array
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/RecommendationAge"
+    RecommendationsPregnancyResponse:
+      description:
+        object 'recommendations' with recommendations array
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/RecommendationsListPregnancy"
+    RecommendationsPregnancyCreateResponse:
+      description:
+        object 'recommendations' with recommendations array
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/RecommendationPregnancy"
+  ###################################
+  #SCHEMA REQUEST
+  requestBodies:
+    RecommendationAgeBody:
+      description: A JSON object containing recommendation by age information
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/RecommendationAge'
+    RecommendationPregnancyBody:
+      description: A JSON object containing recommendation for pregnancy
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/RecommendationPregnancy'
+      

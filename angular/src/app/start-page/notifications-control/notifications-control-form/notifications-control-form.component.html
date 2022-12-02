@@ -11,8 +11,12 @@
         <div class="notifications-title">
           <h2>List notifications:</h2>
           <div class="user-info">
-            <p class="user-info__name">name: {{ userName }}</p>
-            <p class="user-info__telegramId">telegramID: {{ telegram }}</p>
+            <p class="user-info__name">
+              name: {{ userName | textTransform: "anonymous" }}
+            </p>
+            <p class="user-info__telegramId">
+              telegramID: {{ telegram | numberTransformHide: "******" }}
+            </p>
           </div>
         </div>
         <div class="box notifications-box-card">

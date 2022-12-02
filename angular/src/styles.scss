@@ -27,13 +27,19 @@ body {
 }
 //table settings
 
-.mat-typography h2 {
+.mat-typography h2,
+.mat-typography h3 {
   margin: 20px 0;
   color:  #533960;
   text-align: center;
   font-weight: bold;
   font-family: 'Courgette', cursive;
   font-size: 25px;
+}
+
+.mat-typography h3 {
+  margin: 5px 0;
+  font-size: 20px;
 }
 
 .mat-column-demo-position {

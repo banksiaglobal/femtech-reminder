@@ -8,13 +8,15 @@ import { MatCardModule } from '@angular/material/card';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { NumberTransformHide } from 'src/app/pipes/number-transform-hide.pipe';
+import { TextTransform } from 'src/app/pipes/text-transform.pipe';
 
 @NgModule({
   declarations: [
     NotificationsControlPageComponent,
     NotificationsControlFormComponent
   ],
-  imports: [CommonModule, MatSlideToggleModule, MatCardModule, MatPaginatorModule, MatTableModule, MatProgressSpinnerModule],
+  imports: [CommonModule, MatSlideToggleModule, MatCardModule, MatPaginatorModule, MatTableModule, MatProgressSpinnerModule, NumberTransformHide, TextTransform],
   exports: [NotificationsControlRoutingModule],
 })
 export class NotificationsControlModule {}

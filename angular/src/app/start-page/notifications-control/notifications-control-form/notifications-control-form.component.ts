@@ -16,7 +16,7 @@ export class NotificationsControlFormComponent  implements OnChanges {
 
   public userName: string;
 
-  public telegram: string;
+  public telegram: number;
 
   
   ngOnChanges(changes: SimpleChanges): void {
@@ -28,9 +28,9 @@ export class NotificationsControlFormComponent  implements OnChanges {
 
     if (this.user && changes['user']){
       if (changes['user'].currentValue !== changes['user'].previousValue) {
-        this.userName = changes['user'].currentValue.name.length !== 0 ? changes['user'].currentValue.name.length : 'Lady X';
-        const telegramID = String(changes['user'].currentValue.telegramID);
-        this.telegram = telegramID.replace( /./gm, '*').slice(4) + telegramID.slice(-4);    
+        this.userName = changes['user'].currentValue.name;
+        const telegramID:number = (changes['user'].currentValue.telegramID);
+        this.telegram = telegramID;
       }
       
     }

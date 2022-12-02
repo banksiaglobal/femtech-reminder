@@ -1,0 +1,36 @@
+
+.demo-page__logo {
+  display: flex;
+  justify-content: center;
+
+&-img { 
+  height: 150px;
+  width: 150px;
+  box-shadow: 10px 5px 5px #c3a9ce;
+}
+}
+
+.mat-typography h2{
+  margin: 0 !important;
+}
+
+.demo-list {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #552896;
+
+}
+
+.demo-list__p {
+  font-size: 15px;
+}
+
+.demo-lost__settings {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}

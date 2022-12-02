@@ -34,7 +34,6 @@ export class NotificationsControlPageComponent implements OnInit {
   setUser (): Observable<IDataUser>{
     this.user$ = this.userService.getUserByUserName(this.userName);
     return this.user$;
-
   }
 
   setListNotifications():Observable<IDataNotification[]>  {

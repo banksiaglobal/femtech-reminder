@@ -1,7 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DemoComponent } from './start-page/demo/demo.component';
 
-export const routes: Routes = [
+export const routes: Routes = [  
+  {
+    path: 'demo',
+    loadComponent:() => import('./start-page/demo/demo.component').then(m=>m.DemoComponent),
+    pathMatch: 'full',
+    title: 'demo'
+  },
   {
     path: 'users',
     loadComponent: () => import('./start-page/start-page-table/start-page-table-page/start-page-table-page.component').then(m=>m.StartPageTablePageComponent),
@@ -34,12 +41,12 @@ export const routes: Routes = [
   },
   {
       path: '',
-      redirectTo: 'info',
+      redirectTo: 'demo',
       pathMatch: 'full',
   },
   {
     path: '**',
-    redirectTo: 'info',
+    redirectTo: 'demo',
     pathMatch: 'full',
   }
 ];
