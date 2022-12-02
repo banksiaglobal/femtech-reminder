@@ -45,12 +45,18 @@ When brainstorming the solution to apply for this contest, our team came up with
 
 # BOT
 
-### * you can also go on the bot link and use it
+### * you can go on the bot link and use it
 
 [bot](https://t.me/bg_fhir_bot)
 
 ![image](https://user-images.githubusercontent.com/110831804/204274213-c7d20f2e-7b2f-4c67-8547-23057a491e1e.png)
 
+
+# GUI
+
+### * and also you can go on the GUI link and use it
+
+[bot]([https://t.me/bg_fhir_bot](https://femtech-reminder.pages.dev/demo)
 
 
 ## Video
